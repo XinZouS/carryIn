@@ -18,6 +18,7 @@
 		66A16AF61F3B5EDB00B32AD3 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A16AF51F3B5EDB00B32AD3 /* Item.swift */; };
 		66A16AF81F3B6B2E00B32AD3 /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A16AF71F3B6B2E00B32AD3 /* Trip.swift */; };
 		66A16AFA1F3B704A00B32AD3 /* HomePageController++.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A16AF91F3B704A00B32AD3 /* HomePageController++.swift */; };
+		66A16AFC1F3B74B000B32AD3 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 66A16AFB1F3B74B000B32AD3 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		66A16AF51F3B5EDB00B32AD3 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		66A16AF71F3B6B2E00B32AD3 /* Trip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
 		66A16AF91F3B704A00B32AD3 /* HomePageController++.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HomePageController++.swift"; sourceTree = "<group>"; };
+		66A16AFB1F3B74B000B32AD3 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 				665DE5031F3A59E9004DDB88 /* Controller */,
 				66A16AF01F3A5DC000B32AD3 /* Helpers */,
 				665DE4F01F3A0B70004DDB88 /* Main.storyboard */,
+				66A16AFB1F3B74B000B32AD3 /* README.md */,
 				665DE4F61F3A0B70004DDB88 /* Assets.xcassets */,
 				665DE4F81F3A0B70004DDB88 /* LaunchScreen.storyboard */,
 				665DE4FB1F3A0B70004DDB88 /* Info.plist */,
@@ -195,6 +198,7 @@
 				66A16AFA1F3B704A00B32AD3 /* HomePageController++.swift in Sources */,
 				66A16AF81F3B6B2E00B32AD3 /* Trip.swift in Sources */,
 				665DE4ED1F3A0B70004DDB88 /* AppDelegate.swift in Sources */,
+				66A16AFC1F3B74B000B32AD3 /* README.md in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
