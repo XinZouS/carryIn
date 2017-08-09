@@ -16,5 +16,14 @@ extension HomePageController {
         print("change user type!!!")
     }
     
+    func callShipperButtonTapped(){
+        print("call shipper button tapped!!!!!")
+    }
+    
+    func showUserInfoSideMenu(){
+        print("showUserInfoSideMenu!!!!!!")
+    }
+    
+
     
 }

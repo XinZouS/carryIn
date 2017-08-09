@@ -21,6 +21,27 @@ class HomePageController: UIViewController, MKMapViewDelegate, CLLocationManager
     
     let locationManager = CLLocationManager()
     
+    let btnTitleSender: String = "I have goods to send"
+    let btnTitleShiper: String = "I want to carry goods"
+    
+    lazy var callShipperButton : UIButton = {
+        let b = UIButton()
+        b.layer.cornerRadius = 12
+        b.layer.masksToBounds = true
+        b.setTitle("I have goods to send", for: .normal)
+        b.titleLabel?.font = UIFont(name: buttonFont, size: 20)
+        b.backgroundColor = buttonColorPurple
+        b.addTarget(self, action: #selector(callShipperButtonTapped), for: .touchUpInside)
+        return b
+    }()
+    
+    lazy var userInfoBarButtonView : UIButton = {
+        let b = UIButton()
+        b.frame = CGRect(x: 0, y: 0, width: 20, height: 20)
+        b.setImage(#imageLiteral(resourceName: "user29x29"), for: .normal)
+        b.addTarget(self, action: #selector(showUserInfoSideMenu), for: .touchUpInside)
+        return b
+    }()
     
     
     override func viewDidLoad() {
@@ -42,9 +63,27 @@ class HomePageController: UIViewController, MKMapViewDelegate, CLLocationManager
             locationManager.startUpdatingLocation()
         }
         
+        view.addSubview(callShipperButton)
+        callShipperButton.addConstraints(left: view.leftAnchor, top: nil, right: view.rightAnchor, bottom: view.bottomAnchor, leftConstent: 50, topConstent: 0, rightConstent: 50, bottomConstent: 30, width: 0, height: 50)
+        
+        setupNavigationBar()
+        
         
     }
 
+    
+    private func setupNavigationBar(){
+        UINavigationBar.appearance().tintColor = buttonColorPurple
+        navigationController?.navigationBar.tintColor = buttonColorPurple
+        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: buttonColorPurple]
+        
+        navigationItem.title = "CarryonEx"
+        
+        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: userInfoBarButtonView)
+    }
+    
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

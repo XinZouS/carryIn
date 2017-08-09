@@ -8,6 +8,28 @@
 
 import UIKit
 
+
+let buttonColorPurple = UIColor(r: 160, g: 90, b: 253)
+let buttonColorGreen  = UIColor(r: 100, g: 255, b: 100)
+let buttonColorBlue   = UIColor(r: 63, g: 133, b: 253)
+let buttonColorOrange = UIColor(r: 255, g: 166, b: 123)
+let buttonColorRed    = UIColor(r: 255, g: 100, b: 100)
+let menuColorLightPurple = UIColor(r: 246, g: 230, b: 255)
+let menuColorLightOrange = UIColor(r: 255, g: 160, b: 133)
+
+extension UIColor {
+    static func rgb(r:CGFloat, g:CGFloat, b:CGFloat) -> UIColor {
+        return UIColor(red: r/255, green: g/255, blue: b/255, alpha: 1)
+    }
+    convenience init(r:CGFloat, g:CGFloat, b:CGFloat) {
+        self.init(red: r/255, green: g/255, blue: b/255, alpha: 1)
+    }
+}
+
+
+let buttonFont = "Verdana"
+
+
 extension UIView{
     
     func addConstraints(left:NSLayoutXAxisAnchor? = nil, top:NSLayoutYAxisAnchor? = nil, right:NSLayoutXAxisAnchor? = nil, bottom:NSLayoutYAxisAnchor? = nil, leftConstent:CGFloat? = 0, topConstent:CGFloat? = 0, rightConstent:CGFloat? = 0, bottomConstent:CGFloat? = 0, width:CGFloat? = 0, height:CGFloat? = 0){

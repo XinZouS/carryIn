@@ -48,7 +48,7 @@ class User : NSObject {
         itemList = dictionary["itemList"] as? [Item]
         tripList = dictionary["tripList"] as? [Trip]
         
-        isShipper = dictionary["isShipper"] as? Bool
+        isShipper = dictionary["isShipper"] as? Bool ?? false
     }
     
     

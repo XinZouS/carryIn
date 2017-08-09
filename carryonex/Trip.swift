@@ -26,6 +26,7 @@ class Trip : NSObject {
     var startLocation: CLLocationCoordinate2D?
     var endLocation: CLLocationCoordinate2D?
     
+    
     init(id:String?, travelerId:String?, transportation:Transportation?, startLoc: CLLocationCoordinate2D?, endLoc: CLLocationCoordinate2D?){
         self.id = id
         self.travelerId = travelerId
