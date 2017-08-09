@@ -8,22 +8,32 @@
 
 /* Begin PBXBuildFile section */
 		665DE4ED1F3A0B70004DDB88 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 665DE4EC1F3A0B70004DDB88 /* AppDelegate.swift */; };
-		665DE4EF1F3A0B70004DDB88 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 665DE4EE1F3A0B70004DDB88 /* ViewController.swift */; };
+		665DE4EF1F3A0B70004DDB88 /* HomePageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 665DE4EE1F3A0B70004DDB88 /* HomePageController.swift */; };
 		665DE4F21F3A0B70004DDB88 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 665DE4F01F3A0B70004DDB88 /* Main.storyboard */; };
 		665DE4F51F3A0B70004DDB88 /* carryonex.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 665DE4F31F3A0B70004DDB88 /* carryonex.xcdatamodeld */; };
 		665DE4F71F3A0B70004DDB88 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 665DE4F61F3A0B70004DDB88 /* Assets.xcassets */; };
 		665DE4FA1F3A0B70004DDB88 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 665DE4F81F3A0B70004DDB88 /* LaunchScreen.storyboard */; };
+		66A16AF21F3A5F8100B32AD3 /* UIView++.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A16AF11F3A5F8100B32AD3 /* UIView++.swift */; };
+		66A16AF41F3B56B500B32AD3 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A16AF31F3B56B500B32AD3 /* User.swift */; };
+		66A16AF61F3B5EDB00B32AD3 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A16AF51F3B5EDB00B32AD3 /* Item.swift */; };
+		66A16AF81F3B6B2E00B32AD3 /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A16AF71F3B6B2E00B32AD3 /* Trip.swift */; };
+		66A16AFA1F3B704A00B32AD3 /* HomePageController++.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A16AF91F3B704A00B32AD3 /* HomePageController++.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		665DE4E91F3A0B70004DDB88 /* carryonex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = carryonex.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		665DE4EC1F3A0B70004DDB88 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		665DE4EE1F3A0B70004DDB88 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		665DE4EE1F3A0B70004DDB88 /* HomePageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageController.swift; sourceTree = "<group>"; };
 		665DE4F11F3A0B70004DDB88 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		665DE4F41F3A0B70004DDB88 /* carryonex.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = carryonex.xcdatamodel; sourceTree = "<group>"; };
 		665DE4F61F3A0B70004DDB88 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		665DE4F91F3A0B70004DDB88 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		665DE4FB1F3A0B70004DDB88 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		66A16AF11F3A5F8100B32AD3 /* UIView++.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView++.swift"; sourceTree = "<group>"; };
+		66A16AF31F3B56B500B32AD3 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		66A16AF51F3B5EDB00B32AD3 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		66A16AF71F3B6B2E00B32AD3 /* Trip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
+		66A16AF91F3B704A00B32AD3 /* HomePageController++.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HomePageController++.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,7 +67,10 @@
 			isa = PBXGroup;
 			children = (
 				665DE4EC1F3A0B70004DDB88 /* AppDelegate.swift */,
-				665DE4EE1F3A0B70004DDB88 /* ViewController.swift */,
+				665DE5011F3A59DA004DDB88 /* Model */,
+				665DE5021F3A59E4004DDB88 /* View */,
+				665DE5031F3A59E9004DDB88 /* Controller */,
+				66A16AF01F3A5DC000B32AD3 /* Helpers */,
 				665DE4F01F3A0B70004DDB88 /* Main.storyboard */,
 				665DE4F61F3A0B70004DDB88 /* Assets.xcassets */,
 				665DE4F81F3A0B70004DDB88 /* LaunchScreen.storyboard */,
@@ -65,6 +78,40 @@
 				665DE4F31F3A0B70004DDB88 /* carryonex.xcdatamodeld */,
 			);
 			path = carryonex;
+			sourceTree = "<group>";
+		};
+		665DE5011F3A59DA004DDB88 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				66A16AF31F3B56B500B32AD3 /* User.swift */,
+				66A16AF51F3B5EDB00B32AD3 /* Item.swift */,
+				66A16AF71F3B6B2E00B32AD3 /* Trip.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		665DE5021F3A59E4004DDB88 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				665DE4EE1F3A0B70004DDB88 /* HomePageController.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		665DE5031F3A59E9004DDB88 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				66A16AF91F3B704A00B32AD3 /* HomePageController++.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		66A16AF01F3A5DC000B32AD3 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				66A16AF11F3A5F8100B32AD3 /* UIView++.swift */,
+			);
+			name = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,8 +187,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				66A16AF21F3A5F8100B32AD3 /* UIView++.swift in Sources */,
 				665DE4F51F3A0B70004DDB88 /* carryonex.xcdatamodeld in Sources */,
-				665DE4EF1F3A0B70004DDB88 /* ViewController.swift in Sources */,
+				66A16AF61F3B5EDB00B32AD3 /* Item.swift in Sources */,
+				665DE4EF1F3A0B70004DDB88 /* HomePageController.swift in Sources */,
+				66A16AF41F3B56B500B32AD3 /* User.swift in Sources */,
+				66A16AFA1F3B704A00B32AD3 /* HomePageController++.swift in Sources */,
+				66A16AF81F3B6B2E00B32AD3 /* Trip.swift in Sources */,
 				665DE4ED1F3A0B70004DDB88 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -306,6 +358,7 @@
 				665DE5001F3A0B70004DDB88 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

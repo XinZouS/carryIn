@@ -22,8 +22,6 @@
 	<true/>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
-	<key>UIMainStoryboardFile</key>
-	<string>Main</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
@@ -34,5 +32,11 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>To Show Your Current Location.</string>
+	<key>NSLocationUsageDescription</key>
+	<string>To Show Your Current Location.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>To Show Your Current Location.</string>
 </dict>
 </plist>
