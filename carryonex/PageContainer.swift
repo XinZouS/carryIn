@@ -15,10 +15,12 @@ enum SlideOutState {
     case RightPanelExpanded
 }
 
+let centerPanelExpandedOffset: CGFloat = UIScreen.main.bounds.width / 4.6
+
+
 class PageContainer: UIViewController {
     
     // MARK: slide-out menu
-    let centerPanelExpandedOffset: CGFloat = 60
     
     var centerNavigationController: UINavigationController!
     var centerViewController: HomePageController!

@@ -37,15 +37,30 @@ class SideMenuLeftController: UITableViewController {
     
     let cellId = "UserContentCellId"
     
+    let userInfoView = SideMenuUserInfoView()
+    let userInfoHeigh : CGFloat = 80
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupTableView()
+        
+        setupUserInfoView()
+        
+    }
+    
+    
+    private func setupTableView(){
         
         tableView.register(UserContentCell.self, forCellReuseIdentifier: cellId)
+        tableView.contentInset = UIEdgeInsetsMake(userInfoHeigh, 0, 30, 0) // set range of tableView
         
-        tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.topAnchor.constraint(equalTo: view.topAnchor, constant: 60)
+    }
+    
+    private func setupUserInfoView(){
+        view.addSubview(userInfoView)
+        userInfoView.addConstraints(left: view.leftAnchor, top: view.topAnchor, right: nil, bottom: nil, leftConstent: 0, topConstent: -userInfoHeigh, rightConstent: 0, bottomConstent: 0, width:  centerPanelExpandedOffset, height: 80)
     }
     
     // MARK: Table View Data Source
