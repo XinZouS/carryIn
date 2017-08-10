@@ -15,10 +15,15 @@ enum SlideOutState {
     case RightPanelExpanded
 }
 
+protocol PageContainerDelegate : class {
+    func toggleLeftPanel()
+}
+
 let centerPanelExpandedOffset: CGFloat = UIScreen.main.bounds.width / 4.6
 
 
-class PageContainer: UIViewController {
+
+class PageContainer: UIViewController, PageContainerDelegate {
     
     // MARK: slide-out menu
     
@@ -42,6 +47,8 @@ class PageContainer: UIViewController {
         centerViewController = HomePageController()
         centerViewController.pageContainer = self
         
+        view.backgroundColor = .white
+        
         centerNavigationController = UINavigationController(rootViewController: centerViewController)
         view.addSubview(centerNavigationController.view)
         addChildViewController(centerNavigationController)
@@ -56,31 +63,31 @@ class PageContainer: UIViewController {
     func toggleLeftPanel() {
         let notAlreadyExpanded = (currentState != .LeftPanelExpanded)
         
-        print(" -- inside toggleLeftPanel(){}")
+        print("func toggleLeftPanel()  -- inside toggleLeftPanel(){}")
         if notAlreadyExpanded {
             addLeftPanelViewController()
         }
         animateLeftPanel(shouldExpand: notAlreadyExpanded)
     }
     
-    func addLeftPanelViewController() {
+    private func addLeftPanelViewController() {
         if (self.leftViewController == nil) {
             //leftViewController = UIStoryboard.leftViewController()
             //leftViewController!.animals = Animal.allCats()
             self.leftViewController = SideMenuLeftController()
+            self.leftViewController?.containerDelegate = self
         }
         print("  ---  generate leftViewController = SideMenuLeftController()")
-//        addChildSidePanelController(self.leftViewController!)
         addChildSidePanelController()
     }
     
-    func addChildSidePanelController(_ sidePanelController: SideMenuLeftController) {
-        view.insertSubview(sidePanelController.view, at: 0)
-        
-        addChildViewController(sidePanelController)
-        sidePanelController.didMove(toParentViewController: self)
-    }
-    func addChildSidePanelController() {
+//    func addChildSidePanelController(_ sidePanelController: SideMenuLeftController) {
+//        view.insertSubview(sidePanelController.view, at: 0)
+//        
+//        addChildViewController(sidePanelController)
+//        sidePanelController.didMove(toParentViewController: self)
+//    }
+    private func addChildSidePanelController() {
         guard let leftViewController = leftViewController else { return }
         view.insertSubview(leftViewController.view, at: 0)
         
@@ -88,10 +95,10 @@ class PageContainer: UIViewController {
         leftViewController.didMove(toParentViewController: self)
     }
     
-    func addRightPanelViewController() {
+    private func addRightPanelViewController() {
     }
     
-    func animateLeftPanel(shouldExpand: Bool) {
+    private func animateLeftPanel(shouldExpand: Bool) {
         if (shouldExpand) {
             currentState = .LeftPanelExpanded
             

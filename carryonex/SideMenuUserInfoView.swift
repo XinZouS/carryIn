@@ -12,13 +12,17 @@ class SideMenuUserInfoView: UIView {
     
     let profileView: UIImageView = {
         let v = UIImageView()
-        v.backgroundColor = UIColor.green
+        //v.backgroundColor = UIColor.green
+        v.layer.cornerRadius = 30
+        v.layer.masksToBounds = true
+        v.image = #imageLiteral(resourceName: "yadianwenqing")
         return v
     }()
     
     let nameLabel: UILabel = {
         let b = UILabel()
         b.text = "user name"
+        b.font = UIFont.systemFont(ofSize: 20)
         b.backgroundColor = .yellow
         return b
     }()
@@ -45,19 +49,19 @@ class SideMenuUserInfoView: UIView {
         
         addSubview(profileView)
         profileView.translatesAutoresizingMaskIntoConstraints = false
-        profileView.leftAnchor.constraint(equalTo: leftAnchor, constant: 30).isActive = true
+        profileView.leftAnchor.constraint(equalTo: leftAnchor, constant: 20).isActive = true
         profileView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
-        profileView.heightAnchor.constraint(equalToConstant: 40).isActive = true
-        profileView.widthAnchor.constraint(equalToConstant: 40).isActive = true
+        profileView.heightAnchor.constraint(equalToConstant: 60).isActive = true
+        profileView.widthAnchor.constraint(equalToConstant: 60).isActive = true
         
         addSubview(infoButton)
         infoButton.addConstraints(left: nil, top: topAnchor, right: rightAnchor, bottom: bottomAnchor, leftConstent: 0, topConstent: 0, rightConstent: 0, bottomConstent: 0, width: 40, height: 0)
         
         addSubview(nameLabel)
-        nameLabel.addConstraints(left: profileView.rightAnchor, top: topAnchor, right: infoButton.leftAnchor, bottom: nil, leftConstent: 20, topConstent: 20, rightConstent: 20, bottomConstent: 0, width: 0, height: 20)
+        nameLabel.addConstraints(left: profileView.rightAnchor, top: topAnchor, right: infoButton.leftAnchor, bottom: nil, leftConstent: 10, topConstent: 15, rightConstent: 5, bottomConstent: 0, width: 0, height: 25)
         
         addSubview(subLabel)
-        subLabel.addConstraints(left: profileView.rightAnchor, top: nameLabel.bottomAnchor, right: infoButton.leftAnchor, bottom: nil, leftConstent: 20, topConstent: 10, rightConstent: 20, bottomConstent: 0, width: 0, height: 20)
+        subLabel.addConstraints(left: profileView.rightAnchor, top: nameLabel.bottomAnchor, right: infoButton.leftAnchor, bottom: nil, leftConstent: 10, topConstent: 10, rightConstent: 5, bottomConstent: 0, width: 0, height: 20)
         
     }
     
