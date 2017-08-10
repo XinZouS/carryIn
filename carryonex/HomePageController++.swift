@@ -13,15 +13,16 @@ import UIKit
 extension HomePageController {
     
     func changeUserType() {
-        print("change user type!!!")
+        print("HomePageController++.swift: change user type!!!")
     }
     
     func callShipperButtonTapped(){
-        print("call shipper button tapped!!!!!")
+        print("HomePageController++.swift: call shipper button tapped!!!!!")
     }
     
     func showUserInfoSideMenu(){
-        print("showUserInfoSideMenu!!!!!!")
+        self.pageContainer?.toggleLeftPanel()
+        print("HomePageController++.swift: showUserInfoSideMenu!! ")
     }
     
 

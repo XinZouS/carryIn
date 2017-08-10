@@ -19,6 +19,8 @@
 		66A16AF81F3B6B2E00B32AD3 /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A16AF71F3B6B2E00B32AD3 /* Trip.swift */; };
 		66A16AFA1F3B704A00B32AD3 /* HomePageController++.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A16AF91F3B704A00B32AD3 /* HomePageController++.swift */; };
 		66A16AFC1F3B74B000B32AD3 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 66A16AFB1F3B74B000B32AD3 /* README.md */; };
+		66A16AFE1F3BA82000B32AD3 /* PageContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A16AFD1F3BA82000B32AD3 /* PageContainer.swift */; };
+		66A16B001F3BB3AA00B32AD3 /* SideMenuLeftController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A16AFF1F3BB3AA00B32AD3 /* SideMenuLeftController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,8 @@
 		66A16AF71F3B6B2E00B32AD3 /* Trip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
 		66A16AF91F3B704A00B32AD3 /* HomePageController++.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HomePageController++.swift"; sourceTree = "<group>"; };
 		66A16AFB1F3B74B000B32AD3 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		66A16AFD1F3BA82000B32AD3 /* PageContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageContainer.swift; sourceTree = "<group>"; };
+		66A16AFF1F3BB3AA00B32AD3 /* SideMenuLeftController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuLeftController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +100,7 @@
 		665DE5021F3A59E4004DDB88 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				66A16AFD1F3BA82000B32AD3 /* PageContainer.swift */,
 				665DE4EE1F3A0B70004DDB88 /* HomePageController.swift */,
 			);
 			name = View;
@@ -105,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				66A16AF91F3B704A00B32AD3 /* HomePageController++.swift */,
+				66A16AFF1F3BB3AA00B32AD3 /* SideMenuLeftController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -194,9 +200,11 @@
 				665DE4F51F3A0B70004DDB88 /* carryonex.xcdatamodeld in Sources */,
 				66A16AF61F3B5EDB00B32AD3 /* Item.swift in Sources */,
 				665DE4EF1F3A0B70004DDB88 /* HomePageController.swift in Sources */,
+				66A16B001F3BB3AA00B32AD3 /* SideMenuLeftController.swift in Sources */,
 				66A16AF41F3B56B500B32AD3 /* User.swift in Sources */,
 				66A16AFA1F3B704A00B32AD3 /* HomePageController++.swift in Sources */,
 				66A16AF81F3B6B2E00B32AD3 /* Trip.swift in Sources */,
+				66A16AFE1F3BA82000B32AD3 /* PageContainer.swift in Sources */,
 				665DE4ED1F3A0B70004DDB88 /* AppDelegate.swift in Sources */,
 				66A16AFC1F3B74B000B32AD3 /* README.md in Sources */,
 			);

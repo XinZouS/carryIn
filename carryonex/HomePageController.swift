@@ -10,9 +10,12 @@ import UIKit
 import MapKit
 
 
-
 class HomePageController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
 
+//    var delegate = HomePageControllerDelegate.self
+
+    var pageContainer: PageContainer?
+    
     let mapView : MKMapView = {
         let m = MKMapView()
         m.translatesAutoresizingMaskIntoConstraints = false
@@ -46,6 +49,8 @@ class HomePageController: UIViewController, MKMapViewDelegate, CLLocationManager
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+//        self.delegate = HomePageControllerDelegate.self
         
         view.addSubview(mapView)
         mapView.addConstraints(left: view.leftAnchor, top: view.topAnchor, right: view.rightAnchor, bottom: view.bottomAnchor, leftConstent: 0, topConstent: 0, rightConstent: 0, bottomConstent: 0, width: 0, height: 0)
