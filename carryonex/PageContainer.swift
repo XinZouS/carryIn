@@ -44,16 +44,18 @@ class PageContainer: UIViewController, PageContainerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        centerViewController = HomePageController()
-        centerViewController.pageContainer = self
         
-        view.backgroundColor = .white
-        
-        centerNavigationController = UINavigationController(rootViewController: centerViewController)
-        view.addSubview(centerNavigationController.view)
-        addChildViewController(centerNavigationController)
-        
-        centerNavigationController.didMove(toParentViewController: self)
+        // plan A: for slide-out menu:
+//        centerViewController = HomePageController()
+//        centerViewController.pageContainer = self
+//        
+//        view.backgroundColor = .white
+//        
+//        centerNavigationController = UINavigationController(rootViewController: centerViewController)
+//        view.addSubview(centerNavigationController.view)
+//        addChildViewController(centerNavigationController)
+//        
+//        centerNavigationController.didMove(toParentViewController: self)
     }
     
 

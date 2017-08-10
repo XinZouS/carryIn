@@ -19,8 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
-        window?.rootViewController = PageContainer() //  UINavigationController(rootViewController: HomePageController())
-        
+        //window?.rootViewController = PageContainer()
+        window?.rootViewController = UINavigationController(rootViewController: HomePageController())
         
         return true
     }

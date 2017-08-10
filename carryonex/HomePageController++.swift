@@ -17,14 +17,40 @@ extension HomePageController {
     }
     
     func callShipperButtonTapped(){
+        if true {
+            
+        }else{
+            // go to SendRequest
+        }
         print("HomePageController++.swift: call shipper button tapped!!!!!")
     }
     
     func showUserInfoSideMenu(){
-        self.pageContainer?.toggleLeftPanel()
+        
+        let userInfoVC = UserInfoViewController(collectionViewLayout: UICollectionViewFlowLayout())
+//        navigationController?.pushViewController(userInfoVC, animated: true)
+        pushViewFromLeftToRight(destVC: userInfoVC)
+        
+        // plan A: with slide-out menu
+        //self.pageContainer?.toggleLeftPanel()
         print("HomePageController++.swift: showUserInfoSideMenu!! ")
+    }
+    
+    private func pushViewFromLeftToRight(destVC: UIViewController){
+        // push navigationController from left-->right
+        let transition: CATransition = CATransition()
+        let timeFunc : CAMediaTimingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+        transition.duration = 0.25
+        transition.timingFunction = timeFunc
+        transition.type = kCATransitionPush
+        transition.subtype = kCATransitionFromLeft
+        navigationController?.view.layer.add(transition, forKey: kCATransition)
+        navigationController?.pushViewController(destVC, animated: false)
     }
     
 
     
 }
+
+
+

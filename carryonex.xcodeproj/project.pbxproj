@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		660704E01F3CBD42000C09FD /* SideMenuUserInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660704DF1F3CBD42000C09FD /* SideMenuUserInfoView.swift */; };
 		660704E21F3CDDC5000C09FD /* SlideMenuLeftCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660704E11F3CDDC5000C09FD /* SlideMenuLeftCell.swift */; };
+		660704E41F3CF3E8000C09FD /* VerificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660704E31F3CF3E8000C09FD /* VerificationViewController.swift */; };
+		660704E61F3CFB15000C09FD /* UserInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660704E51F3CFB15000C09FD /* UserInfoView.swift */; };
+		660704E81F3D062E000C09FD /* UserInfoViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660704E71F3D062E000C09FD /* UserInfoViewCell.swift */; };
 		665DE4ED1F3A0B70004DDB88 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 665DE4EC1F3A0B70004DDB88 /* AppDelegate.swift */; };
 		665DE4EF1F3A0B70004DDB88 /* HomePageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 665DE4EE1F3A0B70004DDB88 /* HomePageController.swift */; };
 		665DE4F21F3A0B70004DDB88 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 665DE4F01F3A0B70004DDB88 /* Main.storyboard */; };
@@ -28,6 +31,9 @@
 /* Begin PBXFileReference section */
 		660704DF1F3CBD42000C09FD /* SideMenuUserInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuUserInfoView.swift; sourceTree = "<group>"; };
 		660704E11F3CDDC5000C09FD /* SlideMenuLeftCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideMenuLeftCell.swift; sourceTree = "<group>"; };
+		660704E31F3CF3E8000C09FD /* VerificationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerificationViewController.swift; sourceTree = "<group>"; };
+		660704E51F3CFB15000C09FD /* UserInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoView.swift; sourceTree = "<group>"; };
+		660704E71F3D062E000C09FD /* UserInfoViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoViewCell.swift; sourceTree = "<group>"; };
 		665DE4E91F3A0B70004DDB88 /* carryonex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = carryonex.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		665DE4EC1F3A0B70004DDB88 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		665DE4EE1F3A0B70004DDB88 /* HomePageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageController.swift; sourceTree = "<group>"; };
@@ -105,9 +111,12 @@
 			isa = PBXGroup;
 			children = (
 				66A16AFD1F3BA82000B32AD3 /* PageContainer.swift */,
-				665DE4EE1F3A0B70004DDB88 /* HomePageController.swift */,
 				660704DF1F3CBD42000C09FD /* SideMenuUserInfoView.swift */,
 				660704E11F3CDDC5000C09FD /* SlideMenuLeftCell.swift */,
+				665DE4EE1F3A0B70004DDB88 /* HomePageController.swift */,
+				660704E51F3CFB15000C09FD /* UserInfoView.swift */,
+				660704E71F3D062E000C09FD /* UserInfoViewCell.swift */,
+				660704E31F3CF3E8000C09FD /* VerificationViewController.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -209,11 +218,14 @@
 				66A16B001F3BB3AA00B32AD3 /* SideMenuLeftController.swift in Sources */,
 				66A16AF41F3B56B500B32AD3 /* User.swift in Sources */,
 				66A16AFA1F3B704A00B32AD3 /* HomePageController++.swift in Sources */,
+				660704E81F3D062E000C09FD /* UserInfoViewCell.swift in Sources */,
 				66A16AF81F3B6B2E00B32AD3 /* Trip.swift in Sources */,
 				66A16AFE1F3BA82000B32AD3 /* PageContainer.swift in Sources */,
+				660704E61F3CFB15000C09FD /* UserInfoView.swift in Sources */,
 				660704E01F3CBD42000C09FD /* SideMenuUserInfoView.swift in Sources */,
 				660704E21F3CDDC5000C09FD /* SlideMenuLeftCell.swift in Sources */,
 				665DE4ED1F3A0B70004DDB88 /* AppDelegate.swift in Sources */,
+				660704E41F3CF3E8000C09FD /* VerificationViewController.swift in Sources */,
 				66A16AFC1F3B74B000B32AD3 /* README.md in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
