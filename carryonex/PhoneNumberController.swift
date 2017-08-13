@@ -9,13 +9,17 @@
 // page: 1.1
 
 import UIKit
+import M13Checkbox
 
 class PhoneNumberController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
     
     var countryCode: String = ""
     var phoneNumber: String = ""
     
-    let codeOfFlag : [String:String] = ["🇨🇳 +86":"86", "🇺🇸 +1":"1", "🇭🇰 852":"852", "🇹🇼 886":"886", "🇦🇺 +61":"61", "🇬🇧 +44":"44", "🇩🇪 +49":"49"]
+    var isPhoneNumValid: Bool = false
+    var isUserAgree: Bool = false
+    
+    let codeOfFlag : [String:String] = ["🇨🇳 +86":"86", "🇺🇸  +1":"1", "🇭🇰 852":"852", "🇹🇼 886":"886", "🇦🇺 +61":"61", "🇬🇧 +44":"44", "🇩🇪 +49":"49"]
     var flagsTitle : [String] = ["🇨🇳 +86", "🇺🇸 +1", "🇭🇰 852", "🇹🇼 886", "🇦🇺 +61", "🇬🇧 +44", "🇩🇪 +49"]
     // save key from above
     
@@ -42,7 +46,7 @@ class PhoneNumberController: UIViewController, UIPickerViewDelegate, UIPickerVie
     
     let textFieldH : CGFloat = 30
     
-    let phoneNumberTextField: UITextField = {
+    lazy var phoneNumberTextField: UITextField = {
         let t = UITextField()
         t.backgroundColor = .white
         t.layer.cornerRadius = 5
@@ -51,10 +55,43 @@ class PhoneNumberController: UIViewController, UIPickerViewDelegate, UIPickerVie
         t.keyboardType = .phonePad
         t.placeholder = " 请输入您的手机号"
         t.font = UIFont.systemFont(ofSize: 20)
+        t.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         return t
     }()
     
-     
+    //let agreeCheckbox1 = M13Checkbox(frame: CGRect(x: 0.0, y: 0.0, width: 15.0, height: 15.0))
+    lazy var agreeCheckbox : M13Checkbox = {
+        let b = M13Checkbox(frame: CGRect(x: 0.0, y: 0.0, width: 15.0, height: 15.0))
+        b.addTarget(self, action: #selector(agreeCheckboxChanged), for: .valueChanged)
+        return b
+    }()
+    
+    let agreeLabel : UILabel = {
+        let b = UILabel()
+        b.backgroundColor = .white
+        b.text = "我已阅读并同意"
+        b.textAlignment = .right
+        b.font = UIFont.systemFont(ofSize: 12)
+        return b
+    }()
+    
+    lazy var agreeButton : UIButton = {
+        let attributes : [String: Any] = [
+            NSFontAttributeName : UIFont.systemFont(ofSize: 12),
+            NSForegroundColorAttributeName : UIColor.blue,
+            NSUnderlineStyleAttributeName : NSUnderlineStyle.styleSingle.rawValue
+        ]
+        let attributeString = NSMutableAttributedString(string: "用户协议", attributes: attributes)
+        
+        let b = UIButton()
+        b.backgroundColor = .white
+        //b.setTitle("用户协议", for: .normal)
+        //b.titleLabel?.font = UIFont.systemFont(ofSize: 12)
+        //b.titleLabel?.tintColor = .blue
+        b.setAttributedTitle(attributeString, for: .normal)
+        b.addTarget(self, action: #selector(showUserAgreementPage), for: .touchUpInside)
+        return b
+    }()
     
     lazy var okButton: UIButton = {
         let b = UIButton()
@@ -86,8 +123,8 @@ class PhoneNumberController: UIViewController, UIPickerViewDelegate, UIPickerVie
         setupOkButton() // the order of this 3 is NOT allow to change!
         setupPhoneNumTextField()
         setupFlagButton()
-        
         setupFlagPicker()
+        setupAgreeItems()
     }
     
     
@@ -95,7 +132,7 @@ class PhoneNumberController: UIViewController, UIPickerViewDelegate, UIPickerVie
         view.addSubview(okButton)
         okButton.translatesAutoresizingMaskIntoConstraints = false
         okButton.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 0).isActive = true
-        okButton.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -10).isActive = true
+        okButton.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 20).isActive = true
         okButton.widthAnchor.constraint(equalToConstant: 180).isActive = true
         okButton.heightAnchor.constraint(equalToConstant: 40).isActive = true
     }
@@ -103,8 +140,8 @@ class PhoneNumberController: UIViewController, UIPickerViewDelegate, UIPickerVie
     func setupPhoneNumTextField(){
         view.addSubview(phoneNumberTextField)
         phoneNumberTextField.translatesAutoresizingMaskIntoConstraints = false
-        phoneNumberTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 50).isActive = true
-        phoneNumberTextField.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -100).isActive = true
+        phoneNumberTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 40).isActive = true
+        phoneNumberTextField.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -120).isActive = true
         phoneNumberTextField.widthAnchor.constraint(equalToConstant: 175).isActive = true
         phoneNumberTextField.heightAnchor.constraint(equalToConstant: textFieldH).isActive = true
     }
@@ -120,6 +157,20 @@ class PhoneNumberController: UIViewController, UIPickerViewDelegate, UIPickerVie
         flagPicker.addConstraints(left: view.leftAnchor, top: view.centerYAnchor, right: view.rightAnchor, bottom: nil, leftConstent: 20, topConstent: 60, rightConstent: 20, bottomConstent: 0, width: 0, height: 200)
     }
     
+    func setupAgreeItems(){
+        view.addSubview(agreeLabel)
+        agreeLabel.addConstraints(left: nil, top: nil, right: nil, bottom: okButton.topAnchor, leftConstent: 0, topConstent: 0, rightConstent: 0, bottomConstent: 30, width: 90, height: 20)
+        agreeLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: -10).isActive = true
+        
+        view.addSubview(agreeButton)
+        agreeButton.addConstraints(left: agreeLabel.rightAnchor, top: nil, right: nil, bottom: nil, leftConstent: 1, topConstent: 0, rightConstent: 0, bottomConstent: 0, width: 52, height: 30)
+        agreeButton.centerYAnchor.constraint(equalTo: agreeLabel.centerYAnchor).isActive = true
+        
+        view.addSubview(agreeCheckbox)
+        agreeCheckbox.addConstraints(left: nil, top: nil, right: agreeLabel.leftAnchor, bottom: nil, leftConstent: 0, topConstent: 0, rightConstent: 10, bottomConstent: 0, width: 20, height: 20)
+        agreeCheckbox.centerYAnchor.constraint(equalTo: agreeLabel.centerYAnchor).isActive = true
+    }
+
     
     
     // MARK: pickerView delegate
@@ -153,6 +204,25 @@ class PhoneNumberController: UIViewController, UIPickerViewDelegate, UIPickerVie
     }
     func textFieldDidEndEditing(_ textField: UITextField) {
         phoneNumberTextField.resignFirstResponder()
+        phoneNumber = phoneNumberTextField.text ?? ""
+        updateOkButton()
+    }
+    
+    func textFieldDidChange(_ textField: UITextField){
+        updateOkButton()
+    }
+    
+    func agreeCheckboxChanged(){
+        updateOkButton()
+    }
+    
+    private func updateOkButton(){
+        guard let num = phoneNumberTextField.text else { return }
+        isPhoneNumValid = (num.characters.count >= 10)
+        isUserAgree = agreeCheckbox.checkState == .checked
+        
+        okButton.isEnabled = isUserAgree && isPhoneNumValid
+        okButton.backgroundColor = okButton.isEnabled ? buttonColorBlue : .lightGray
     }
     
     private func setupKeyboardObserver(){
@@ -179,9 +249,12 @@ class PhoneNumberController: UIViewController, UIPickerViewDelegate, UIPickerVie
     // MARK: logic func
     
     func okButtonTapped(){
-        print("okButtonTapped, api send text msg and go to next page!!!")
+        print("TODO: okButtonTapped, api send text msg and go to next page!!!")
     }
     
+    func showUserAgreementPage(){
+        print("TODO: showUserAgreementPage...!!!")
+    }
     
     
     
