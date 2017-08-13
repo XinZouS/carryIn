@@ -29,11 +29,11 @@ extension HomePageController {
         
         let userInfoVC = UserInfoViewController(collectionViewLayout: UICollectionViewFlowLayout())
 //        navigationController?.pushViewController(userInfoVC, animated: true)
+        navigationItem.title = "  " //for change "< Back" as "<"
         pushViewFromLeftToRight(destVC: userInfoVC)
         
         // plan A: with slide-out menu
         //self.pageContainer?.toggleLeftPanel()
-        print("HomePageController++.swift: showUserInfoSideMenu!! ")
     }
     
     private func pushViewFromLeftToRight(destVC: UIViewController){

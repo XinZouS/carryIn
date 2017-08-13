@@ -75,14 +75,16 @@ class HomePageController: UIViewController, MKMapViewDelegate, CLLocationManager
         
         
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        navigationItem.title = "CarryonEx" // for returning from UserInfoPage, change title back;
+    }
 
     
     private func setupNavigationBar(){
         UINavigationBar.appearance().tintColor = buttonColorPurple
         navigationController?.navigationBar.tintColor = buttonColorPurple
         navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: buttonColorPurple]
-        
-        navigationItem.title = "CarryonEx"
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(customView: userInfoBarButtonView)
     }

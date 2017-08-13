@@ -13,14 +13,27 @@ class UserInfoViewCell: UICollectionViewCell {
     
     let titleLabel : UILabel = {
         let l = UILabel()
-        l.backgroundColor = .green
+        l.backgroundColor = .clear
         return l
+    }()
+    
+    let underlineView: UIView = {
+        let v = UIView()
+        v.backgroundColor = .lightGray
+        return v
     }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        backgroundColor = .lightGray
+        backgroundColor = .clear
+        
+        addSubview(titleLabel)
+        titleLabel.addConstraints(left: leftAnchor, top: nil, right: rightAnchor, bottom: nil, leftConstent: 0, topConstent: 0, rightConstent: 0, bottomConstent: 0, width: 0, height: 20)
+        titleLabel.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+        
+        addSubview(underlineView)
+        underlineView.addConstraints(left: leftAnchor, top: nil, right: rightAnchor, bottom: bottomAnchor, leftConstent: 0, topConstent: 0, rightConstent: 0, bottomConstent: 5, width: 0, height: 2)
         
     }
     
