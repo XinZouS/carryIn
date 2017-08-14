@@ -19,8 +19,9 @@ class PhoneNumberController: UIViewController, UIPickerViewDelegate, UIPickerVie
     var isPhoneNumValid: Bool = false
     var isUserAgree: Bool = false
     
+    //
     let codeOfFlag : [String:String] = ["🇨🇳 +86":"86", "🇺🇸  +1":"1", "🇭🇰 852":"852", "🇹🇼 886":"886", "🇦🇺 +61":"61", "🇬🇧 +44":"44", "🇩🇪 +49":"49"]
-    var flagsTitle : [String] = ["🇨🇳 +86", "🇺🇸 +1", "🇭🇰 852", "🇹🇼 886", "🇦🇺 +61", "🇬🇧 +44", "🇩🇪 +49"]
+    var flagsTitle : [String] = ["🇨🇳 +86", "🇺🇸  +1", "🇭🇰 852", "🇹🇼 886", "🇦🇺 +61", "🇬🇧 +44", "🇩🇪 +49"]
     // save key from above
     
     lazy var flagPicker: UIPickerView = {
@@ -204,16 +205,21 @@ class PhoneNumberController: UIViewController, UIPickerViewDelegate, UIPickerVie
     }
     func textFieldDidEndEditing(_ textField: UITextField) {
         phoneNumberTextField.resignFirstResponder()
-        phoneNumber = phoneNumberTextField.text ?? ""
+        updatePhoneNum()
         updateOkButton()
     }
     
     func textFieldDidChange(_ textField: UITextField){
+        updatePhoneNum()
         updateOkButton()
     }
     
     func agreeCheckboxChanged(){
         updateOkButton()
+    }
+    
+    private func updatePhoneNum(){
+        phoneNumber = phoneNumberTextField.text ?? ""
     }
     
     private func updateOkButton(){
@@ -238,24 +244,13 @@ class PhoneNumberController: UIViewController, UIPickerViewDelegate, UIPickerVie
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
         
-        guard let touch = touches.first else { return }
-        let locOnView = touch.location(in: view)
-        if locOnView.y < (view.bounds.height / 2) { // touch outside keyboard
-            phoneNumberTextField.resignFirstResponder()
-        }
+//        guard let touch = touches.first else { return }
+//        let locOnView = touch.location(in: view)
+//        if locOnView.y < (view.bounds.height / 2) { // touch outside keyboard
+//            phoneNumberTextField.resignFirstResponder()
+//        }
     }
 
-    
-    // MARK: logic func
-    
-    func okButtonTapped(){
-        print("TODO: okButtonTapped, api send text msg and go to next page!!!")
-    }
-    
-    func showUserAgreementPage(){
-        print("TODO: showUserAgreementPage...!!!")
-    }
-    
     
     
 }

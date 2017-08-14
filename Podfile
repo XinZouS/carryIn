@@ -8,6 +8,7 @@ target 'carryonex' do
   # Pods for carryonex
 
   pod 'M13Checkbox'
+  pod 'SMSSDK'
   
 
 end

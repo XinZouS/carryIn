@@ -43,6 +43,7 @@
 		660704E31F3CF3E8000C09FD /* VerificationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerificationController.swift; sourceTree = "<group>"; };
 		660704E51F3CFB15000C09FD /* UserInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoViewController.swift; sourceTree = "<group>"; };
 		660704E71F3D062E000C09FD /* UserInfoViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoViewCell.swift; sourceTree = "<group>"; };
+		665183DB1F4201F200DF2906 /* carryonex-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "carryonex-Bridging-Header.h"; sourceTree = "<group>"; };
 		665DE4E91F3A0B70004DDB88 /* carryonex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = carryonex.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		665DE4EC1F3A0B70004DDB88 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		665DE4EE1F3A0B70004DDB88 /* HomePageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageController.swift; sourceTree = "<group>"; };
@@ -59,6 +60,8 @@
 		66A16AFB1F3B74B000B32AD3 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		66A16AFD1F3BA82000B32AD3 /* PageContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageContainer.swift; sourceTree = "<group>"; };
 		66A16AFF1F3BB3AA00B32AD3 /* SideMenuLeftController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuLeftController.swift; sourceTree = "<group>"; };
+		66B1CA8F1F41FA4700EA0A43 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		66B1CA901F41FA7000EA0A43 /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
 		66C9756C1F3DEFB000450F37 /* UserInfoViewController++.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UserInfoViewController++.swift"; sourceTree = "<group>"; };
 		66C9756E1F3DF15200450F37 /* UserProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileView.swift; sourceTree = "<group>"; };
 		66C975761F3E141600450F37 /* PhoneNumberController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhoneNumberController.swift; sourceTree = "<group>"; };
@@ -103,6 +106,7 @@
 		665DE4EB1F3A0B70004DDB88 /* carryonex */ = {
 			isa = PBXGroup;
 			children = (
+				665183DB1F4201F200DF2906 /* carryonex-Bridging-Header.h */,
 				665DE4EC1F3A0B70004DDB88 /* AppDelegate.swift */,
 				665DE5011F3A59DA004DDB88 /* Model */,
 				665DE5021F3A59E4004DDB88 /* View */,
@@ -217,6 +221,8 @@
 		B74509BA4913B598D9C8BF81 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				66B1CA901F41FA7000EA0A43 /* libstdc++.tbd */,
+				66B1CA8F1F41FA4700EA0A43 /* libz.tbd */,
 				8B01604DC36E1F272CCEFB10 /* Pods_carryonex.framework */,
 			);
 			name = Frameworks;
@@ -267,6 +273,7 @@
 					665DE4E81F3A0B70004DDB88 = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = 6S4EWJH888;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -501,11 +508,14 @@
 			baseConfigurationReference = 1856822E24F8F9F9D9D689E7 /* Pods-carryonex.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 6S4EWJH888;
 				INFOPLIST_FILE = carryonex/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.carryonex.huxingjiu.carryonex;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "carryonex/carryonex-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -515,11 +525,13 @@
 			baseConfigurationReference = F7E0D7DF88CFCE43B44D3A8A /* Pods-carryonex.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 6S4EWJH888;
 				INFOPLIST_FILE = carryonex/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.carryonex.huxingjiu.carryonex;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "carryonex/carryonex-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

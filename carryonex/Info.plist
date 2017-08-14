@@ -38,5 +38,11 @@
 	<string>To Show Your Current Location.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>To Show Your Current Location.</string>
+	<key>MOBAppKey</key>
+	<string>202b81354d75e</string>
+	<key>MOBAppSecret</key>
+	<string>15e6f9dae82927d06568db03f133d75c</string>
+	<key>NSContactsUsageDescription</key>
+	<string>你可以从手机通讯录邀请好友。</string>
 </dict>
 </plist>

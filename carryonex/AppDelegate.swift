@@ -22,6 +22,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //window?.rootViewController = PageContainer()
         window?.rootViewController = UINavigationController(rootViewController: HomePageController())
         
+        // MOB msm verification
+        let smAppkey = "202b81354d75e"
+        let app_secrect = "15e6f9dae82927d06568db03f133d75c"
+        //SMSSDK.registerApp(smAppkey, withSecret: app_secrect) // no func regisiterApp() ?????
+        
+
+        
         return true
     }
 
