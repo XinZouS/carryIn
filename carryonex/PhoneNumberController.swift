@@ -11,10 +11,7 @@
 import UIKit
 import M13Checkbox
 
-class PhoneNumberController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
-    
-    var countryCode: String = ""
-    var phoneNumber: String = ""
+class PhoneNumberController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
     var isPhoneNumValid: Bool = false
     var isUserAgree: Bool = false
@@ -105,6 +102,14 @@ class PhoneNumberController: UIViewController, UIPickerViewDelegate, UIPickerVie
         return b
     }()
     
+    lazy var devBtn: UIButton = {
+        let b = UIButton()
+        b.backgroundColor = .green
+        b.setTitle("dev:GoNextPage-->", for: .normal)
+        b.addTarget(self, action: #selector(goToVerificationPage), for: .touchUpInside)
+        return b
+    }()
+    
     
     // for keyboard notification:
     override func viewWillAppear(_ animated: Bool) {
@@ -121,6 +126,8 @@ class PhoneNumberController: UIViewController, UIPickerViewDelegate, UIPickerVie
         
         view.backgroundColor = .white
         
+        setupNavigationBar()
+        
         setupOkButton() // the order of this 3 is NOT allow to change!
         setupPhoneNumTextField()
         setupFlagButton()
@@ -129,16 +136,24 @@ class PhoneNumberController: UIViewController, UIPickerViewDelegate, UIPickerVie
     }
     
     
-    func setupOkButton(){
+    private func setupNavigationBar(){
+        navigationItem.title = "输入手机"
+    }
+    
+    private func setupOkButton(){
         view.addSubview(okButton)
         okButton.translatesAutoresizingMaskIntoConstraints = false
         okButton.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 0).isActive = true
         okButton.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 20).isActive = true
         okButton.widthAnchor.constraint(equalToConstant: 180).isActive = true
         okButton.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        
+        view.addSubview(devBtn)
+        devBtn.addConstraints(left: nil, top: okButton.bottomAnchor, right: nil, bottom: nil, leftConstent: 0, topConstent: 0, rightConstent: 0, bottomConstent: 0, width: 180, height: 30)
+        devBtn.centerXAnchor.constraint(equalTo: okButton.centerXAnchor).isActive = true
     }
     
-    func setupPhoneNumTextField(){
+    private func setupPhoneNumTextField(){
         view.addSubview(phoneNumberTextField)
         phoneNumberTextField.translatesAutoresizingMaskIntoConstraints = false
         phoneNumberTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 40).isActive = true
@@ -147,18 +162,18 @@ class PhoneNumberController: UIViewController, UIPickerViewDelegate, UIPickerVie
         phoneNumberTextField.heightAnchor.constraint(equalToConstant: textFieldH).isActive = true
     }
     
-    func setupFlagButton(){
+    private func setupFlagButton(){
         view.addSubview(flagButton)
         flagButton.addConstraints(left: nil, top: nil, right: phoneNumberTextField.leftAnchor, bottom: nil, leftConstent: 0, topConstent: 0, rightConstent: 0, bottomConstent: 0, width: 90, height: textFieldH)
         flagButton.centerYAnchor.constraint(equalTo: phoneNumberTextField.centerYAnchor).isActive = true
     }
     
-    func setupFlagPicker(){
+    private func setupFlagPicker(){
         view.addSubview(flagPicker)
         flagPicker.addConstraints(left: view.leftAnchor, top: view.centerYAnchor, right: view.rightAnchor, bottom: nil, leftConstent: 20, topConstent: 60, rightConstent: 20, bottomConstent: 0, width: 0, height: 200)
     }
     
-    func setupAgreeItems(){
+    private func setupAgreeItems(){
         view.addSubview(agreeLabel)
         agreeLabel.addConstraints(left: nil, top: nil, right: nil, bottom: okButton.topAnchor, leftConstent: 0, topConstent: 0, rightConstent: 0, bottomConstent: 30, width: 90, height: 20)
         agreeLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: -10).isActive = true
@@ -174,83 +189,6 @@ class PhoneNumberController: UIViewController, UIPickerViewDelegate, UIPickerVie
 
     
     
-    // MARK: pickerView delegate
-    
-    func openFlagPicker(){
-        flagPicker.isHidden = !flagPicker.isHidden
-        // will hide when begin to set phoneNum
-    }
-    
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return flagsTitle.count
-    }
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return flagsTitle[row]
-    }
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        countryCode = codeOfFlag[flagsTitle[row]]!
-        flagButton.setTitle(flagsTitle[row], for: .normal)
-        print("pick countryCode: " , countryCode)
-    }
-    
-    
-    // MARK: textField and keyboard
-    
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        phoneNumberTextField.becomeFirstResponder()
-        flagPicker.isHidden = true
-    }
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        phoneNumberTextField.resignFirstResponder()
-        updatePhoneNum()
-        updateOkButton()
-    }
-    
-    func textFieldDidChange(_ textField: UITextField){
-        updatePhoneNum()
-        updateOkButton()
-    }
-    
-    func agreeCheckboxChanged(){
-        updateOkButton()
-    }
-    
-    private func updatePhoneNum(){
-        phoneNumber = phoneNumberTextField.text ?? ""
-    }
-    
-    private func updateOkButton(){
-        guard let num = phoneNumberTextField.text else { return }
-        isPhoneNumValid = (num.characters.count >= 10)
-        isUserAgree = agreeCheckbox.checkState == .checked
-        
-        okButton.isEnabled = isUserAgree && isPhoneNumValid
-        okButton.backgroundColor = okButton.isEnabled ? buttonColorBlue : .lightGray
-    }
-    
-    private func setupKeyboardObserver(){
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardDidShow), name: NSNotification.Name.UIKeyboardDidShow, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardDidHide), name: NSNotification.Name.UIKeyboardDidHide, object: nil)
-    }
-    func keyboardDidShow(){
-        flagPicker.isHidden = true
-    }
-    func keyboardDidHide(){
-    }
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super.touchesBegan(touches, with: event)
-        
-//        guard let touch = touches.first else { return }
-//        let locOnView = touch.location(in: view)
-//        if locOnView.y < (view.bounds.height / 2) { // touch outside keyboard
-//            phoneNumberTextField.resignFirstResponder()
-//        }
-    }
-
     
     
 }

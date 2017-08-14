@@ -17,6 +17,7 @@ class User : NSObject {
     
     var nickName: String?
     var phone:    String?
+    var phoneCountryCode: String?
     var email:    String?
     var imageUrl: String?
     
@@ -24,14 +25,34 @@ class User : NSObject {
     var idCardB_Url: String?
     var passportUrl: String?
     
-    var itemList : [Item]? // or use itemId is better???
-    var tripList : [Trip]? // tripId ???
+    var itemList : [String]? // itemId better
+    var tripList : [String]? // tripId
     
     var isShipper: Bool?
     
     
+    // use: User.sharedInstance.xxx
+    static var sharedInstance = User()  // This is singleton
     
-    init(dictionary: [String : Any]) {
+    private override init() {
+        super.init()
+        id = ""
+        username = ""
+        password = ""
+        nickName = ""
+        phone = ""
+        phoneCountryCode = ""
+        email = ""
+        imageUrl = ""
+        idCardA_Url = ""
+        idCardB_Url = ""
+        passportUrl = ""
+        itemList = []
+        tripList = []
+        isShipper = false
+    }
+    
+    func setupBy(dictionary: [String : Any]) {
         id = dictionary["id"] as? String
         username = dictionary["username"] as? String ?? ""
         password = dictionary["password"] as? String
@@ -45,8 +66,8 @@ class User : NSObject {
         idCardB_Url = dictionary["idCardB_Url"] as? String
         passportUrl = dictionary["passportUrl"] as? String
         
-        itemList = dictionary["itemList"] as? [Item]
-        tripList = dictionary["tripList"] as? [Trip]
+        itemList = dictionary["itemList"] as? [String]
+        tripList = dictionary["tripList"] as? [String]
         
         isShipper = dictionary["isShipper"] as? Bool ?? false
     }
