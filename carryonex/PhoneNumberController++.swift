@@ -9,13 +9,18 @@
 import UIKit
 
 
-extension PhoneNumberController: UITextFieldDelegate {
+protocol PhoneNumberDelegate : class {
+    func dismissAndReturnToHomePage()
+}
+
+
+extension PhoneNumberController: UITextFieldDelegate, PhoneNumberDelegate {
     
     // MARK: logic func
     
     func okButtonTapped(){
         let phoneNum = User.sharedInstance.phone ?? "0"
-        let zoneCode = User.sharedInstance.phoneCountryCode ?? "0"
+        let zoneCode = User.sharedInstance.phoneCountryCode ?? "86"
         print("get : okButtonTapped, api send text msg and go to next page!!!")
         SMSSDK.getVerificationCode(by: SMSGetCodeMethodSMS, phoneNumber: phoneNum, zone: zoneCode, result: { (err) in
             if err == nil {
@@ -35,7 +40,6 @@ extension PhoneNumberController: UITextFieldDelegate {
     // development use: go next page without phone verification
     func goToVerificationPage(){
         let verifiCtl = VerificationController()
-        verifiCtl.phoneNumberController = self
         self.navigationController?.pushViewController(verifiCtl, animated: true)
     }
 
@@ -121,9 +125,9 @@ extension PhoneNumberController: UITextFieldDelegate {
     }
     
     
-    // MARK: go back to home page
-    func dismissAndBackToHomePage(){
-        self.navigationController?.popToRootViewController(animated: true)
+    // MARK: delegate: go back to home page
+    func dismissAndReturnToHomePage(){
+        self.navigationController?.popToRootViewController(animated: false)
         self.dismiss(animated: true) {
             print("go back to home page.")
         }

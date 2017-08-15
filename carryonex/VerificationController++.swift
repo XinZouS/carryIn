@@ -9,24 +9,27 @@
 import UIKit
 
 
-extension VerificationController: UITextFieldDelegate {
+extension VerificationController {
     
     
     
     func resendButtonTapped(){
         print("should resend verification...")
-        
+        guard verificationCode.characters.count == 4 else { return }
+        commitVerificationCode()
+        resetResendButtonTo60s()
     }
     
-    func resetResendButtonTo60s(){
-        resetTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(countDown1sec), userInfo: nil, repeats: true)
+    private func resetResendButtonTo60s(){
+        resetTime = 60
+        resetTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(countDown1sec), userInfo: nil, repeats: resetTime != 0)
     }
     func countDown1sec(){
         resendButton.backgroundColor = resetTime == 0 ? buttonColorBlue : UIColor.lightGray
         resendButton.isEnabled = (resetTime == 0)
         if resetTime == 0 {
             resetTimer?.invalidate()
-            resetTime = 60
+            resendButton.setTitle("发送验证码", for: .normal)
         }else{
             resetTime -= 1
             resendButton.setTitle("\(resetTime)秒后重新发送", for: .normal)
@@ -57,10 +60,19 @@ extension VerificationController: UITextFieldDelegate {
         }else
         if cnt == 4 {
             verifiCodeLabel4?.text = String(describing: verificationCode.characters.last!)
-            commitVerificationCode()
+            if resetTime == 0 {
+                commitVerificationCode()
+                resetResendButtonTo60s()
+            }
+        }else
+        if cnt > 4 {
+            let idx = verificationCode.index(verificationCode.startIndex, offsetBy: 4)
+            let newCode = verificationCode.substring(to: idx)
+            textField.text = newCode
         }
         
     }
+    // setup limit of textField input size
     
     private func commitVerificationCode(){
         let zoneCode = String(describing: User.sharedInstance.phoneCountryCode!)
@@ -69,17 +81,27 @@ extension VerificationController: UITextFieldDelegate {
         
         guard zoneCode != "", phoneNum != "", zoneCode != "0", phoneNum != "0" else { return }
         
-        resetResendButtonTo60s()
-
         SMSSDK.commitVerificationCode(verificationCode, phoneNumber: phoneNum, zone: zoneCode, result: { (err) in
             if err == nil {
-                print("验证成功")
-                self.phoneNumberController?.dismissAndBackToHomePage()
+                self.verifySuccess()
             } else {
-                print("验证失败, TODO: use AlertView to show error: \(err!)")
+                self.verifyFaild(err)
             }
             
         })
+    }
+    
+    private func verifySuccess(){
+        print("验证成功! Go to Disclaimer page!")
+        let disCtrlView = DisclaimerController()
+        self.navigationController?.pushViewController(disCtrlView, animated: true)
+        //                self.phonenumberC?.dismissAndBackToHomePage() // replace reference by delegate
+        //self.phoneNumberCtrlDelegate?.dismissAndReturnToHomePage()
+        
+    }
+    private func verifyFaild(_ err: Error?){
+        print("验证失败, TODO: use AlertView to show error: \(err!)")
+        
     }
     
 }

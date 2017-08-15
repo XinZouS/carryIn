@@ -8,15 +8,15 @@
 
 import UIKit
 
-class VerificationController: UIViewController {
+class VerificationController: UIViewController, UITextFieldDelegate {
     
     var verificationCode = "1234"
     
-    var resetTime: Int = 60
+    var resetTime: Int = 0
 
     var resetTimer : Timer?
     
-    var phoneNumberController : PhoneNumberController?
+    weak var phoneNumberCtrlDelegate : PhoneNumberDelegate?
     
     
     let hintLabel: UILabel = {
@@ -45,8 +45,9 @@ class VerificationController: UIViewController {
     var verifiCodeLabel5: UILabel? // in case of code.len > 4
     var verifiCodeLabel6: UILabel?
     
-    let verifiTextField: UITextField = {
+    lazy var verifiTextField: UITextField = {
         let f = UITextField()
+        f.delegate = self
         //f.backgroundColor = .green
         //f.alpha = 0.5
         //f.textColor = .clear
@@ -69,6 +70,10 @@ class VerificationController: UIViewController {
     
 
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        verifiTextField.becomeFirstResponder()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -134,7 +139,6 @@ class VerificationController: UIViewController {
         
         view.addSubview(verifiTextField)
         verifiTextField.addConstraints(left: verifiCodeContainer?.leftAnchor, top: verifiCodeContainer?.topAnchor, right: verifiCodeContainer?.rightAnchor, bottom: verifiCodeContainer?.topAnchor, leftConstent: 0, topConstent: 0, rightConstent: 0, bottomConstent: 0, width: 0, height: 0)
-        verifiTextField.becomeFirstResponder()
     }
     
     private func setupHintLabels(){

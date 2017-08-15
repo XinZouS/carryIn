@@ -16,7 +16,7 @@ class PhoneNumberController: UIViewController, UIPickerViewDelegate, UIPickerVie
     var isPhoneNumValid: Bool = false
     var isUserAgree: Bool = false
     
-    //
+    // if changes the key in this map, MUST change also in the flagsTitle array
     let codeOfFlag : [String:String] = ["🇨🇳 +86":"86", "🇺🇸  +1":"1", "🇭🇰 852":"852", "🇹🇼 886":"886", "🇦🇺 +61":"61", "🇬🇧 +44":"44", "🇩🇪 +49":"49"]
     var flagsTitle : [String] = ["🇨🇳 +86", "🇺🇸  +1", "🇭🇰 852", "🇹🇼 886", "🇦🇺 +61", "🇬🇧 +44", "🇩🇪 +49"]
     // save key from above

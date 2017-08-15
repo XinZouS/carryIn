@@ -41,7 +41,7 @@ class User : NSObject {
         password = ""
         nickName = ""
         phone = ""
-        phoneCountryCode = ""
+        phoneCountryCode = "86"
         email = ""
         imageUrl = ""
         idCardA_Url = ""
