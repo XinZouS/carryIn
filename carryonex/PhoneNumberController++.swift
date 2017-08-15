@@ -27,14 +27,25 @@ extension PhoneNumberController: UITextFieldDelegate, PhoneNumberDelegate {
                 print("PhoneNumberController: 获取验证码成功, go next page!!!")
                 self.goToVerificationPage()
             } else {
-                print("PhoneNumberController: 有错误, TODO: 用alertView显示err: \(err)")
+                print("PhoneNumberController: 有错误: \(err)")
+                let msg = "未能发送验证码，请确认手机号与地区码输入正确，换个姿势稍后重试。错误信息：\(err)"
+                self .showAlertWith(title: "获取验证码失败", message: msg)
             }
-
         })
     }
+    private func showAlertWith(title:String, message:String){
+        let alertCtl = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alertCtl.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
+            alertCtl.dismiss(animated: true, completion: nil)
+        }))
+        self.present(alertCtl, animated: true, completion: nil)
+    }
+    
+
     
     func showUserAgreementPage(){
-        print("TODO: showUserAgreementPage...!!!")
+        let disCtrlView = DisclaimerController()
+        self.navigationController?.pushViewController(disCtrlView, animated: true)
     }
     
     // development use: go next page without phone verification
@@ -126,6 +137,7 @@ extension PhoneNumberController: UITextFieldDelegate, PhoneNumberDelegate {
     
     
     // MARK: delegate: go back to home page
+    
     func dismissAndReturnToHomePage(){
         self.navigationController?.popToRootViewController(animated: false)
         self.dismiss(animated: true) {

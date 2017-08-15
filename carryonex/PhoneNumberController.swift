@@ -148,6 +148,9 @@ class PhoneNumberController: UIViewController, UIPickerViewDelegate, UIPickerVie
         okButton.widthAnchor.constraint(equalToConstant: 180).isActive = true
         okButton.heightAnchor.constraint(equalToConstant: 40).isActive = true
         
+//        setupDevelopButton()
+    }
+    private func setupDevelopButton(){
         view.addSubview(devBtn)
         devBtn.addConstraints(left: nil, top: okButton.bottomAnchor, right: nil, bottom: nil, leftConstent: 0, topConstent: 0, rightConstent: 0, bottomConstent: 0, width: 180, height: 30)
         devBtn.centerXAnchor.constraint(equalTo: okButton.centerXAnchor).isActive = true

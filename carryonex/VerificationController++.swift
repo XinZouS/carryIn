@@ -9,7 +9,7 @@
 import UIKit
 
 
-extension VerificationController {
+extension VerificationController: UITextFieldDelegate {
     
     
     
@@ -65,13 +65,21 @@ extension VerificationController {
                 resetResendButtonTo60s()
             }
         }else
-        if cnt > 4 {
+        if cnt > 4 { // limit the size of input
             let idx = verificationCode.index(verificationCode.startIndex, offsetBy: 4)
             let newCode = verificationCode.substring(to: idx)
             textField.text = newCode
         }
         
     }
+    
+    // MARK: textField delegate
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        self.verifiTextField.becomeFirstResponder()
+    }
+    
+    
     // setup limit of textField input size
     
     private func commitVerificationCode(){
@@ -92,16 +100,36 @@ extension VerificationController {
     }
     
     private func verifySuccess(){
-        print("验证成功! Go to Disclaimer page!")
-        let disCtrlView = DisclaimerController()
-        self.navigationController?.pushViewController(disCtrlView, animated: true)
-        //                self.phonenumberC?.dismissAndBackToHomePage() // replace reference by delegate
-        //self.phoneNumberCtrlDelegate?.dismissAndReturnToHomePage()
+        print("验证成功! Go to Home page!")
+        dismissAndBackToHomePage()
         
+        //self.phonenumberC?.dismissAndBackToHomePage() // replace reference by delegate
+//        showAlertWith(title: "验证成功✅", message: "将返回主页面")
+//        _ = Timer.scheduledTimer(withTimeInterval: 5, repeats: false, block: { (timer) in
+//            dismissAndBackToHomePage()
+//        })
+    }
+    func dismissAndBackToHomePage(){
+        dismiss(animated: false) {
+            self.phoneNumberCtrlDelegate?.dismissAndReturnToHomePage()
+        }
     }
     private func verifyFaild(_ err: Error?){
-        print("验证失败, TODO: use AlertView to show error: \(err!)")
-        
+        print("验证失败，error: \(err!)")
+        let errMsg = "抱歉验证遇到问题，是不是验证码没填对？或请稍后重新发送新的验证码。错误原因: \(err!)"
+        showAlertWith(title: "验证失败", message: errMsg)
+    }
+    
+    func goNextPage(){ // development page jump use
+        verifySuccess()
+    }
+    
+    private func showAlertWith(title:String, message:String){
+        let alertCtl = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alertCtl.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
+            alertCtl.dismiss(animated: true, completion: nil)
+        }))
+        self.present(alertCtl, animated: true, completion: nil)
     }
     
 }

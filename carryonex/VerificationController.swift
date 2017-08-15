@@ -8,7 +8,7 @@
 
 import UIKit
 
-class VerificationController: UIViewController, UITextFieldDelegate {
+class VerificationController: UIViewController {
     
     var verificationCode = "1234"
     
@@ -68,10 +68,18 @@ class VerificationController: UIViewController, UITextFieldDelegate {
         return b
     }()
     
+    lazy var goNxPageButton: UIButton = {
+        let b = UIButton()
+        b.setTitle("go next page", for: .normal)
+        b.backgroundColor = .cyan
+        b.addTarget(self, action: #selector(goNextPage), for: .touchUpInside)
+        return b
+    }()
+        
 
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         verifiTextField.becomeFirstResponder()
     }
     
@@ -138,7 +146,7 @@ class VerificationController: UIViewController, UITextFieldDelegate {
         verifiCodeContainer?.addConstraints(left: view.leftAnchor, top: nil, right: view.rightAnchor, bottom: resendButton.topAnchor, leftConstent: 20, topConstent: 0, rightConstent: 20, bottomConstent: 40, width: 0, height: h)
         
         view.addSubview(verifiTextField)
-        verifiTextField.addConstraints(left: verifiCodeContainer?.leftAnchor, top: verifiCodeContainer?.topAnchor, right: verifiCodeContainer?.rightAnchor, bottom: verifiCodeContainer?.topAnchor, leftConstent: 0, topConstent: 0, rightConstent: 0, bottomConstent: 0, width: 0, height: 0)
+        verifiTextField.addConstraints(left: verifiCodeContainer?.leftAnchor, top: verifiCodeContainer?.topAnchor, right: verifiCodeContainer?.rightAnchor, bottom: verifiCodeContainer?.bottomAnchor, leftConstent: -90, topConstent: 0, rightConstent: 0, bottomConstent: 0, width: 0, height: 0)
     }
     
     private func setupHintLabels(){

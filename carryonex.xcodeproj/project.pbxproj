@@ -202,8 +202,8 @@
 			isa = PBXGroup;
 			children = (
 				66C975761F3E141600450F37 /* PhoneNumberController.swift */,
-				660704E31F3CF3E8000C09FD /* VerificationController.swift */,
 				66C9757E1F3E167C00450F37 /* DisclaimerController.swift */,
+				660704E31F3CF3E8000C09FD /* VerificationController.swift */,
 			);
 			name = VerificationPages;
 			sourceTree = "<group>";
@@ -212,8 +212,8 @@
 			isa = PBXGroup;
 			children = (
 				66C9757A1F3E159400450F37 /* PhoneNumberController++.swift */,
-				66C975781F3E149700450F37 /* VerificationController++.swift */,
 				66C9757C1F3E165A00450F37 /* DisclaimerController++.swift */,
+				66C975781F3E149700450F37 /* VerificationController++.swift */,
 			);
 			name = VerificationPages;
 			sourceTree = "<group>";
