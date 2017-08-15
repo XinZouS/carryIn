@@ -47,6 +47,9 @@ class UserInfoViewController: UICollectionViewController, UICollectionViewDelega
     
     private func setupNavigationBarItems(){
         navigationItem.title = "我的帐户"
+        
+        let leftBackBtn = UIBarButtonItem(title: "<", style: .plain, target: self, action: #selector(dismissSelfToLeft))
+        navigationItem.setLeftBarButton(leftBackBtn, animated: false)
     }
     
     private func setupCollectionView(){
@@ -108,7 +111,7 @@ class UserInfoViewController: UICollectionViewController, UICollectionViewDelega
         print("logout user!!!!!!")
     }
     
-
+    
 }
 
 
