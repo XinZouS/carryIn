@@ -106,7 +106,7 @@ extension VerificationController: UITextFieldDelegate {
         //self.phonenumberC?.dismissAndBackToHomePage() // replace reference by delegate
 //        showAlertWith(title: "验证成功✅", message: "将返回主页面")
 //        _ = Timer.scheduledTimer(withTimeInterval: 5, repeats: false, block: { (timer) in
-//            dismissAndBackToHomePage()
+//            self.dismissAndBackToHomePage()
 //        })
     }
     func dismissAndBackToHomePage(){

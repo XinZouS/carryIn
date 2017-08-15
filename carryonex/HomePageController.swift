@@ -29,10 +29,11 @@ class HomePageController: UIViewController, MKMapViewDelegate, CLLocationManager
     
     lazy var callShipperButton : UIButton = {
         let b = UIButton()
-        b.layer.cornerRadius = 12
+        b.layer.cornerRadius = 30
         b.layer.masksToBounds = true
-        b.setTitle("I have goods to send", for: .normal)
-        b.titleLabel?.font = UIFont(name: buttonFont, size: 20)
+        //b.setTitle("send", for: .normal)
+        //b.titleLabel?.font = UIFont(name: buttonFont, size: 20)
+        b.setImage(#imageLiteral(resourceName: "CarryonExIcon-29"), for: .normal)
         b.backgroundColor = buttonColorPurple
         b.addTarget(self, action: #selector(callShipperButtonTapped), for: .touchUpInside)
         return b
@@ -69,7 +70,8 @@ class HomePageController: UIViewController, MKMapViewDelegate, CLLocationManager
         }
         
         view.addSubview(callShipperButton)
-        callShipperButton.addConstraints(left: view.leftAnchor, top: nil, right: view.rightAnchor, bottom: view.bottomAnchor, leftConstent: 50, topConstent: 0, rightConstent: 50, bottomConstent: 30, width: 0, height: 50)
+        callShipperButton.addConstraints(left: nil, top: nil, right: nil, bottom: view.bottomAnchor, leftConstent: 0, topConstent: 0, rightConstent: 0, bottomConstent: 30, width: 60, height: 60)
+        callShipperButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         
         setupNavigationBar()
         

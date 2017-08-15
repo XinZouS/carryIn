@@ -12,6 +12,8 @@
 		660704E41F3CF3E8000C09FD /* VerificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660704E31F3CF3E8000C09FD /* VerificationController.swift */; };
 		660704E61F3CFB15000C09FD /* UserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660704E51F3CFB15000C09FD /* UserInfoViewController.swift */; };
 		660704E81F3D062E000C09FD /* UserInfoViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660704E71F3D062E000C09FD /* UserInfoViewCell.swift */; };
+		6657E94B1F435BEF00755443 /* PhotoIDController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6657E94A1F435BEF00755443 /* PhotoIDController.swift */; };
+		6657E94D1F435C1F00755443 /* PhotoIDController++.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6657E94C1F435C1F00755443 /* PhotoIDController++.swift */; };
 		665DE4ED1F3A0B70004DDB88 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 665DE4EC1F3A0B70004DDB88 /* AppDelegate.swift */; };
 		665DE4EF1F3A0B70004DDB88 /* HomePageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 665DE4EE1F3A0B70004DDB88 /* HomePageController.swift */; };
 		665DE4F21F3A0B70004DDB88 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 665DE4F01F3A0B70004DDB88 /* Main.storyboard */; };
@@ -44,6 +46,8 @@
 		660704E51F3CFB15000C09FD /* UserInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoViewController.swift; sourceTree = "<group>"; };
 		660704E71F3D062E000C09FD /* UserInfoViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoViewCell.swift; sourceTree = "<group>"; };
 		665183DB1F4201F200DF2906 /* carryonex-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "carryonex-Bridging-Header.h"; sourceTree = "<group>"; };
+		6657E94A1F435BEF00755443 /* PhotoIDController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoIDController.swift; sourceTree = "<group>"; };
+		6657E94C1F435C1F00755443 /* PhotoIDController++.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PhotoIDController++.swift"; sourceTree = "<group>"; };
 		665DE4E91F3A0B70004DDB88 /* carryonex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = carryonex.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		665DE4EC1F3A0B70004DDB88 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		665DE4EE1F3A0B70004DDB88 /* HomePageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageController.swift; sourceTree = "<group>"; };
@@ -85,6 +89,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6657E9481F435B9F00755443 /* PhotoID */ = {
+			isa = PBXGroup;
+			children = (
+				6657E94A1F435BEF00755443 /* PhotoIDController.swift */,
+			);
+			name = PhotoID;
+			sourceTree = "<group>";
+		};
+		6657E9491F435BBA00755443 /* PhotoID */ = {
+			isa = PBXGroup;
+			children = (
+				6657E94C1F435C1F00755443 /* PhotoIDController++.swift */,
+			);
+			name = PhotoID;
+			sourceTree = "<group>";
+		};
 		665DE4E01F3A0B70004DDB88 = {
 			isa = PBXGroup;
 			children = (
@@ -138,6 +158,7 @@
 				66C975701F3E12F500450F37 /* HomePages */,
 				66C975721F3E133200450F37 /* UserInfoPage */,
 				66C975741F3E139700450F37 /* VerificationPages */,
+				6657E9481F435B9F00755443 /* PhotoID */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -148,6 +169,7 @@
 				66C975711F3E130D00450F37 /* HomePages */,
 				66C975731F3E137100450F37 /* UserInfoPage */,
 				66C975751F3E13B100450F37 /* VerificationPages */,
+				6657E9491F435BBA00755443 /* PhotoID */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -364,6 +386,7 @@
 			files = (
 				66C9757D1F3E165A00450F37 /* DisclaimerController++.swift in Sources */,
 				66A16AF21F3A5F8100B32AD3 /* UIView++.swift in Sources */,
+				6657E94D1F435C1F00755443 /* PhotoIDController++.swift in Sources */,
 				66C9756F1F3DF15200450F37 /* UserProfileView.swift in Sources */,
 				66C975771F3E141600450F37 /* PhoneNumberController.swift in Sources */,
 				66C9757F1F3E167C00450F37 /* DisclaimerController.swift in Sources */,
@@ -375,6 +398,7 @@
 				66A16AF41F3B56B500B32AD3 /* User.swift in Sources */,
 				66A16AFA1F3B704A00B32AD3 /* HomePageController++.swift in Sources */,
 				66C9757B1F3E159400450F37 /* PhoneNumberController++.swift in Sources */,
+				6657E94B1F435BEF00755443 /* PhotoIDController.swift in Sources */,
 				660704E81F3D062E000C09FD /* UserInfoViewCell.swift in Sources */,
 				66A16AF81F3B6B2E00B32AD3 /* Trip.swift in Sources */,
 				66C9756D1F3DEFB000450F37 /* UserInfoViewController++.swift in Sources */,
