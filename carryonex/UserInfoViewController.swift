@@ -75,7 +75,7 @@ class UserInfoViewController: UICollectionViewController, UICollectionViewDelega
         logoutButton.addConstraints(left: view.leftAnchor, top: nil, right: nil, bottom: view.bottomAnchor, leftConstent: 0, topConstent: 0, rightConstent: 0, bottomConstent: 0, width: 40, height: 40)
     }
 
-    
+     
     
     
     // MARK: CollectionView delegate

@@ -36,7 +36,7 @@ class UserInfoViewCell: UICollectionViewCell {
         underlineView.addConstraints(left: leftAnchor, top: nil, right: rightAnchor, bottom: bottomAnchor, leftConstent: 0, topConstent: 0, rightConstent: 0, bottomConstent: 5, width: 0, height: 1)
         
     }
-    
+     
     
     
     

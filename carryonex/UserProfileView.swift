@@ -82,7 +82,7 @@ class UserProfileView: UIView {
         addSubview(profileImgButton)
         setupProfileImgButton()
         
-        
+         
     }
     
     private func setupProfileImgButton(){
