@@ -13,7 +13,7 @@ import MapKit
 class HomePageController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
 
 //    var delegate = HomePageControllerDelegate.self
-
+ 
     var pageContainer: PageContainer?
     
     let mapView : MKMapView = {
@@ -101,8 +101,8 @@ class HomePageController: UIViewController, MKMapViewDelegate, CLLocationManager
     
     lazy var userInfoBarButtonView : UIButton = {
         let b = UIButton()
-        b.frame = CGRect(x: 0, y: 0, width: 20, height: 20)
-        b.setImage(#imageLiteral(resourceName: "user29x29"), for: .normal)
+        b.frame = CGRect(x: 0, y: 0, width: 25, height: 25)
+        b.setImage(#imageLiteral(resourceName: "CarryonEx_Profile"), for: .normal)
         b.addTarget(self, action: #selector(showUserInfoSideMenu), for: .touchUpInside)
         return b
     }()
@@ -196,11 +196,18 @@ class HomePageController: UIViewController, MKMapViewDelegate, CLLocationManager
         callShipperButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
     }
     
+
+    private func setupNavigationBar(){
+        UINavigationBar.appearance().tintColor = buttonColorWhite
+        navigationController?.navigationBar.tintColor = buttonColorWhite
+        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: buttonColorWhite]
+
     private func setupSideButtonView(){
         view.addSubview(sideButtonContainerView)
         sideButtonContainerView.addConstraints(left: nil, top: view.topAnchor, right: nil, bottom: nil, leftConstent: 0, topConstent: 160, rightConstent: 0, bottomConstent: 0, width: 130, height: sideBtnViewH)
         sideBtnCtnViewLeftConstraint = sideButtonContainerView.leftAnchor.constraint(equalTo: view.rightAnchor, constant: -sideBtnW)
         sideBtnCtnViewLeftConstraint?.isActive = true
+
         
         sideButtonContainerView.addSubview(pullSideBtnViewButton)
         pullSideBtnViewButton.addConstraints(left: sideButtonContainerView.leftAnchor, top: sideButtonContainerView.topAnchor, right: nil, bottom: sideButtonContainerView.bottomAnchor, leftConstent: 0, topConstent: 0, rightConstent: 0, bottomConstent: 0, width: sideBtnW, height: 0)
