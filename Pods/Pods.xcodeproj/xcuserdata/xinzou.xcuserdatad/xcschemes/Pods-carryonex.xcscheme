@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "188002AA9987DED67AB9E13B9E95E826"
+               BlueprintIdentifier = "C5A7402DB4F8EFECFFC7AC135E4AA63E"
                BuildableName = "Pods_carryonex.framework"
                BlueprintName = "Pods-carryonex"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "188002AA9987DED67AB9E13B9E95E826"
+            BlueprintIdentifier = "C5A7402DB4F8EFECFFC7AC135E4AA63E"
             BuildableName = "Pods_carryonex.framework"
             BlueprintName = "Pods-carryonex"
             ReferencedContainer = "container:Pods.xcodeproj">

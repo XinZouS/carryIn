@@ -7,88 +7,128 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		14D3BAA480468F34405EC527A4DB0C7F /* Pods-carryonex-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F48F14B08C502891CF82C8DD1B4397E6 /* Pods-carryonex-dummy.m */; };
-		2FAE71920EE45CD2D6A26E013BD48A4C /* Pods-carryonex-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 85B53676100FF2111AF084AAC819715D /* Pods-carryonex-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3AFA54C6DC0961AD0F4CC8A4F1AF915E /* M13CheckboxDisclosurePathGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E82A51269C177981550490D25E5C3770 /* M13CheckboxDisclosurePathGenerator.swift */; };
-		3D976DD35C822B9B6971ED06121B4A44 /* M13CheckboxFlatController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA74FD8E0705C8AAC88F62644558CAF /* M13CheckboxFlatController.swift */; };
-		3E2FFD3C073383B859F71C2B1411FA89 /* M13Checkbox+IB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E77E82F68F44A90D7481973FBC9804 /* M13Checkbox+IB.swift */; };
-		40897730B01BE8C60FB61A02DD7A1F6A /* M13CheckboxStrokeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CAEB5B5CD7F339AF4581F5FC7C1BDD /* M13CheckboxStrokeController.swift */; };
-		445378EF15B25DB3370FF77B2F6F42D7 /* M13Checkbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F855E806E540CC174FB1721C1101A6 /* M13Checkbox.swift */; };
-		6B7F6283CE6F6418FD195E43D2216FBF /* M13Checkbox-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C2908B7CFF37B979D53070FFD3D488BC /* M13Checkbox-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		76D3E2602CFAE6474D2DFA89F5328A24 /* M13CheckboxPathGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41CA30DADAC045B2B58994E096E4182 /* M13CheckboxPathGenerator.swift */; };
-		80CD994ABA1A2B01AD1838A4D4BB794C /* M13CheckboxFillController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3614104CFC7CB4A9DBBBEFB91588B8E /* M13CheckboxFillController.swift */; };
-		80E34254247C5B1984E2FB9EC58774E4 /* M13CheckboxDotController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D6509DA59580E7912A5E42D84DB05C1 /* M13CheckboxDotController.swift */; };
-		85CB53B9E438E280DA1690CCFD778689 /* M13CheckboxRadioPathGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46E77027CADF360678CB42563763330 /* M13CheckboxRadioPathGenerator.swift */; };
-		867A68B6095A407BEF75CB3728E2B431 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 792165F2CA033667D6F57205316D40A1 /* Foundation.framework */; };
+		037061ACF502B93C7FED9920841D0D21 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 792165F2CA033667D6F57205316D40A1 /* Foundation.framework */; };
+		051DCF71213689178E2C6856A6C6A14D /* KMWeakObjectContainer.h in Headers */ = {isa = PBXBuildFile; fileRef = B7702A8D777BAEB963EF33C80D677BC2 /* KMWeakObjectContainer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		26288F33821445EA8E8ECB51F61D5122 /* KMNavigationBarTransition.h in Headers */ = {isa = PBXBuildFile; fileRef = A6DD1FE6C1619255768550F7CE00FCE8 /* KMNavigationBarTransition.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		30B56544DE93EBE129BD8C5BA946B5CB /* UIViewController+KMNavigationBarTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = E08F3628ABA7DFF3EE08C3FA9C9FDF7C /* UIViewController+KMNavigationBarTransition.m */; };
+		3AFA54C6DC0961AD0F4CC8A4F1AF915E /* M13CheckboxDisclosurePathGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E14B0E522420E4934AD675D6B0154AA /* M13CheckboxDisclosurePathGenerator.swift */; };
+		3D976DD35C822B9B6971ED06121B4A44 /* M13CheckboxFlatController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CDB37FE9B68307666E26BD3F74BAA34 /* M13CheckboxFlatController.swift */; };
+		3E2FFD3C073383B859F71C2B1411FA89 /* M13Checkbox+IB.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B94F1DA1F2735DDCA2E6316EC71426 /* M13Checkbox+IB.swift */; };
+		40897730B01BE8C60FB61A02DD7A1F6A /* M13CheckboxStrokeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC53D606F16A71BD01D2365A7E22D1F7 /* M13CheckboxStrokeController.swift */; };
+		445378EF15B25DB3370FF77B2F6F42D7 /* M13Checkbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6DFAF3A81243BD3F25096DFBAF2D46 /* M13Checkbox.swift */; };
+		45C493C8779D39496864239E1ECE53F0 /* KMSwizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = 75F7A0BFD52B87569BBFCFA4711901AC /* KMSwizzle.m */; };
+		4FC00FBA42C93784DDC50B0B01CD40C8 /* UINavigationController+KMNavigationBarTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = B1FB4203F148438C644BF674928DFE5D /* UINavigationController+KMNavigationBarTransition.m */; };
+		5A8D8BC1B406D77E82DB46F54D94A195 /* UIViewController+KMNavigationBarTransition.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BFEAC8C5AFF0015328C54AC4BC66D4D /* UIViewController+KMNavigationBarTransition.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5D8C415E550C4D4C4591F98979ACFF95 /* UIViewController+KMNavigationBarTransition_internal.h in Headers */ = {isa = PBXBuildFile; fileRef = A7A31E8E34FF08A6EE1CF588F03FD7D6 /* UIViewController+KMNavigationBarTransition_internal.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5E65B970682385A8534587C772AF7D4D /* KMWeakObjectContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EE84DD3F472A8F782390270820437D1 /* KMWeakObjectContainer.m */; };
+		60A304A83BBC89998B2ABD4149880E6D /* Pods-carryonex-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F48F14B08C502891CF82C8DD1B4397E6 /* Pods-carryonex-dummy.m */; };
+		6512494C68F79611CDCCFDEEC28F8011 /* UINavigationController+KMNavigationBarTransition.h in Headers */ = {isa = PBXBuildFile; fileRef = BD34B711E088494E94879AD69E1804F7 /* UINavigationController+KMNavigationBarTransition.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6B7F6283CE6F6418FD195E43D2216FBF /* M13Checkbox-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FF449CE078B472DA2F1307FBDA010EFB /* M13Checkbox-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		76D3E2602CFAE6474D2DFA89F5328A24 /* M13CheckboxPathGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B320CE1D1099D9EC33D65957B2A90CD5 /* M13CheckboxPathGenerator.swift */; };
+		80CD994ABA1A2B01AD1838A4D4BB794C /* M13CheckboxFillController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CC2CDF5240398E5180742924185544 /* M13CheckboxFillController.swift */; };
+		80E34254247C5B1984E2FB9EC58774E4 /* M13CheckboxDotController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0C15E7F6F740ADAE8EB7D2E9AA1E7C /* M13CheckboxDotController.swift */; };
+		85AE215C458E649C1056744F300F455F /* KMNavigationBarTransition-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D4A17FC682100C5ABB36FC1B8B0DF4F6 /* KMNavigationBarTransition-dummy.m */; };
+		85CB53B9E438E280DA1690CCFD778689 /* M13CheckboxRadioPathGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA010907A9364FA27469A347E229601 /* M13CheckboxRadioPathGenerator.swift */; };
 		86C713C329C0814CB0ECCC0FFD4EF091 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 695DA86B20FEA7BF7EA40FA7DB65A479 /* UIKit.framework */; };
-		8ED3FB14D1852DD05FDF6E23E94A4657 /* M13CheckboxAddRemovePathGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7191F99775364E02217C32411BD7A5AF /* M13CheckboxAddRemovePathGenerator.swift */; };
-		AAE54CDA46FD620F4BC54BC583EA255C /* M13Checkbox-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D19C1EAEA50A3A9A1A6654A6C98F3A6 /* M13Checkbox-dummy.m */; };
+		8CDEE582625B63D0578DF75640125AC6 /* KMSwizzle.h in Headers */ = {isa = PBXBuildFile; fileRef = A1E7E259EDC4B51D2D6281360B258A6F /* KMSwizzle.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8ED3FB14D1852DD05FDF6E23E94A4657 /* M13CheckboxAddRemovePathGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D728A35317898906B758BFDFDA04C66 /* M13CheckboxAddRemovePathGenerator.swift */; };
+		A09ACA138030B242B2CEEFB238BEE51C /* UINavigationController+KMNavigationBarTransition_Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = BAE14A422D033C0B4AB2D328770463CC /* UINavigationController+KMNavigationBarTransition_Internal.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A0D743D3D99BB03A5772E6CA06895F57 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 792165F2CA033667D6F57205316D40A1 /* Foundation.framework */; };
+		A3A7F00D0EBD0CE04A91243EEBEE7F9D /* Pods-carryonex-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 85B53676100FF2111AF084AAC819715D /* Pods-carryonex-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AAE54CDA46FD620F4BC54BC583EA255C /* M13Checkbox-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FAB44377698D994807643A2C7D80D50F /* M13Checkbox-dummy.m */; };
 		AC3809C0D72C84E9F1E59D6514CCE655 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 792165F2CA033667D6F57205316D40A1 /* Foundation.framework */; };
-		BCB82BDDA7C30F0B0AFE479CC479B522 /* M13CheckboxExpandController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3068DA073494775C79480A7B78E0561 /* M13CheckboxExpandController.swift */; };
-		C277B9EAC728D880FF1F15EE98C8B200 /* M13CheckboxController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5369FC2F0A0140E064707BFA49E9D5 /* M13CheckboxController.swift */; };
-		C6D0B50C214C9E7CC815F2773D702779 /* M13CheckboxAnimationGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC9B6F00C6F648CF1F210D14594C4CC /* M13CheckboxAnimationGenerator.swift */; };
+		BCB82BDDA7C30F0B0AFE479CC479B522 /* M13CheckboxExpandController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A10B068677AF8B6D43E9248ED1206E /* M13CheckboxExpandController.swift */; };
+		C277B9EAC728D880FF1F15EE98C8B200 /* M13CheckboxController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8E01484E408A65712FC12724A77082 /* M13CheckboxController.swift */; };
+		C6D0B50C214C9E7CC815F2773D702779 /* M13CheckboxAnimationGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 898D4E5A285B76474D0E058AFA6F8859 /* M13CheckboxAnimationGenerator.swift */; };
 		C85C1170ADDE3E04A0E9C9B6385BE5BF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D9AD02E9CEE9B012A246B3874CF4587 /* CoreGraphics.framework */; };
-		C8D41C0D4E89BE8510BA40F04EFF4FA8 /* M13CheckboxCheckPathGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E6AB6A24BE1E46859515BDB088352A /* M13CheckboxCheckPathGenerator.swift */; };
-		D6039515F84B2167BBAC8D1CE12A5F4E /* M13CheckboxGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F47FF0078311AD716D13B576B5A506 /* M13CheckboxGestureRecognizer.swift */; };
-		F7A5B0214108C732898DD2C00BA6FE56 /* M13CheckboxBounceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBA121B803FC6503CA05C12D795903F /* M13CheckboxBounceController.swift */; };
-		FA2B271AAF040F6C1B860C6C3DF0558F /* M13CheckboxSpiralController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83A86A0C8AB1A1A26D5A194A63689DB /* M13CheckboxSpiralController.swift */; };
-		FFF489DE367C237C0E8F7E4442DA06D7 /* M13CheckboxFadeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB16B47A47321C47E632ADE9C740CA40 /* M13CheckboxFadeController.swift */; };
+		C8D41C0D4E89BE8510BA40F04EFF4FA8 /* M13CheckboxCheckPathGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72A88325ECDA87A5404F8F19DF706AC /* M13CheckboxCheckPathGenerator.swift */; };
+		D6039515F84B2167BBAC8D1CE12A5F4E /* M13CheckboxGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071FFF6174D1EC80C47632EC983F4EDA /* M13CheckboxGestureRecognizer.swift */; };
+		E42CAE6CF8C5DE05ACFBB7DE95BD64EC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 695DA86B20FEA7BF7EA40FA7DB65A479 /* UIKit.framework */; };
+		E95B6E7223CD6DC9BBFC6E8AA4860326 /* KMNavigationBarTransition-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F3274331C53AE13D51C3621746C2199D /* KMNavigationBarTransition-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F7A5B0214108C732898DD2C00BA6FE56 /* M13CheckboxBounceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876997D4A0D94DDDD82A0E75D55BA54F /* M13CheckboxBounceController.swift */; };
+		FA2B271AAF040F6C1B860C6C3DF0558F /* M13CheckboxSpiralController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F936D1B020FC145FAB393382EC494972 /* M13CheckboxSpiralController.swift */; };
+		FFF489DE367C237C0E8F7E4442DA06D7 /* M13CheckboxFadeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B54475661831735027906771398EA6 /* M13CheckboxFadeController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		EBBB46E70A2A63127FCEB7CA27ED639D /* PBXContainerItemProxy */ = {
+		2239FD537A70805D608AE1E9AD4918D0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 20A9DD9ABBF08BC57372A26C35327BF1;
 			remoteInfo = M13Checkbox;
 		};
+		A5102B2940A2A9805C0CA69008C4D98C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 00660EA920FEC8EF697FA99E73DA257E;
+			remoteInfo = KMNavigationBarTransition;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		09E6AB6A24BE1E46859515BDB088352A /* M13CheckboxCheckPathGenerator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxCheckPathGenerator.swift; path = Sources/Paths/M13CheckboxCheckPathGenerator.swift; sourceTree = "<group>"; };
-		0B5369FC2F0A0140E064707BFA49E9D5 /* M13CheckboxController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxController.swift; path = Sources/M13CheckboxController.swift; sourceTree = "<group>"; };
+		01CC2CDF5240398E5180742924185544 /* M13CheckboxFillController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxFillController.swift; path = Sources/Managers/M13CheckboxFillController.swift; sourceTree = "<group>"; };
+		071FFF6174D1EC80C47632EC983F4EDA /* M13CheckboxGestureRecognizer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxGestureRecognizer.swift; path = Sources/M13CheckboxGestureRecognizer.swift; sourceTree = "<group>"; };
 		0BF630B353D6C9A3A7A390755EE2F008 /* Pods-carryonex.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-carryonex.debug.xcconfig"; sourceTree = "<group>"; };
-		0EA74FD8E0705C8AAC88F62644558CAF /* M13CheckboxFlatController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxFlatController.swift; path = Sources/Managers/M13CheckboxFlatController.swift; sourceTree = "<group>"; };
-		11FFD5BB4D2678CB46A3344468F1A266 /* M13Checkbox.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = M13Checkbox.framework; path = M13Checkbox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		15F47FF0078311AD716D13B576B5A506 /* M13CheckboxGestureRecognizer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxGestureRecognizer.swift; path = Sources/M13CheckboxGestureRecognizer.swift; sourceTree = "<group>"; };
-		1663909F132EA48E5783192B3C6C2E3D /* MOBFoundationEx.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MOBFoundationEx.framework; sourceTree = "<group>"; };
-		1AC9B6F00C6F648CF1F210D14594C4CC /* M13CheckboxAnimationGenerator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxAnimationGenerator.swift; path = Sources/M13CheckboxAnimationGenerator.swift; sourceTree = "<group>"; };
-		20CAEB5B5CD7F339AF4581F5FC7C1BDD /* M13CheckboxStrokeController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxStrokeController.swift; path = Sources/Managers/M13CheckboxStrokeController.swift; sourceTree = "<group>"; };
+		0F0E691DD037EBF9FE326D12494A1A07 /* M13Checkbox.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = M13Checkbox.modulemap; sourceTree = "<group>"; };
+		1B8E01484E408A65712FC12724A77082 /* M13CheckboxController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxController.swift; path = Sources/M13CheckboxController.swift; sourceTree = "<group>"; };
+		1BFEAC8C5AFF0015328C54AC4BC66D4D /* UIViewController+KMNavigationBarTransition.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIViewController+KMNavigationBarTransition.h"; path = "KMNavigationBarTransition/UIViewController+KMNavigationBarTransition.h"; sourceTree = "<group>"; };
+		1E79D064591303759F85C4DA7E9F3B68 /* KMNavigationBarTransition.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = KMNavigationBarTransition.framework; path = KMNavigationBarTransition.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2ECCC719B71F0705909352F852DC5FC4 /* KMNavigationBarTransition-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "KMNavigationBarTransition-prefix.pch"; sourceTree = "<group>"; };
 		2EE9A309BF9C204BE8485B325AC3E921 /* Pods-carryonex-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-carryonex-frameworks.sh"; sourceTree = "<group>"; };
-		30ECB6E00F23CDFBF862178E91C10AFA /* MOBFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MOBFoundation.framework; sourceTree = "<group>"; };
-		46D4E2E45A688481358A598B45D694F5 /* SMS_SDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SMS_SDK.framework; path = MobProducts/SDK/SMSSDK/SMS_SDK.framework; sourceTree = "<group>"; };
+		3772EE9187F899400F0AA12896C5E64C /* M13Checkbox.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = M13Checkbox.framework; path = M13Checkbox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3AD94E2F0027F9A841A6041AD61972C0 /* Pods_carryonex.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_carryonex.framework; path = "Pods-carryonex.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3C24F0E1BE295900C3D4132F7027205E /* MOBFoundationEx.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MOBFoundationEx.framework; sourceTree = "<group>"; };
+		3CDB37FE9B68307666E26BD3F74BAA34 /* M13CheckboxFlatController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxFlatController.swift; path = Sources/Managers/M13CheckboxFlatController.swift; sourceTree = "<group>"; };
 		4D9AD02E9CEE9B012A246B3874CF4587 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
-		4EEBC635A94E654EABC906B7C2DF8F8D /* M13Checkbox.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = M13Checkbox.xcconfig; sourceTree = "<group>"; };
-		580A81DE6CBD35F6A6464233D3B28A9F /* M13Checkbox.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = M13Checkbox.modulemap; sourceTree = "<group>"; };
-		58E77E82F68F44A90D7481973FBC9804 /* M13Checkbox+IB.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "M13Checkbox+IB.swift"; path = "Sources/M13Checkbox+IB.swift"; sourceTree = "<group>"; };
-		58F855E806E540CC174FB1721C1101A6 /* M13Checkbox.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13Checkbox.swift; path = Sources/M13Checkbox.swift; sourceTree = "<group>"; };
 		59370AAD0A221B02C7F3C7629D035B11 /* Pods-carryonex-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-carryonex-resources.sh"; sourceTree = "<group>"; };
 		695DA86B20FEA7BF7EA40FA7DB65A479 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		7191F99775364E02217C32411BD7A5AF /* M13CheckboxAddRemovePathGenerator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxAddRemovePathGenerator.swift; path = Sources/Paths/M13CheckboxAddRemovePathGenerator.swift; sourceTree = "<group>"; };
+		75F7A0BFD52B87569BBFCFA4711901AC /* KMSwizzle.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = KMSwizzle.m; path = KMNavigationBarTransition/KMSwizzle.m; sourceTree = "<group>"; };
 		792165F2CA033667D6F57205316D40A1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		7954E5DD38E2DF8F8EF815765AB3D9FC /* Pods-carryonex.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-carryonex.release.xcconfig"; sourceTree = "<group>"; };
-		7D19C1EAEA50A3A9A1A6654A6C98F3A6 /* M13Checkbox-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "M13Checkbox-dummy.m"; sourceTree = "<group>"; };
-		7D6509DA59580E7912A5E42D84DB05C1 /* M13CheckboxDotController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxDotController.swift; path = Sources/Managers/M13CheckboxDotController.swift; sourceTree = "<group>"; };
+		7B408EF342B742CDBEFF21256D552573 /* MOBFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MOBFoundation.framework; sourceTree = "<group>"; };
+		7BA62C5837D4555CC41D616C96DAC02E /* M13Checkbox-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "M13Checkbox-prefix.pch"; sourceTree = "<group>"; };
+		7E14B0E522420E4934AD675D6B0154AA /* M13CheckboxDisclosurePathGenerator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxDisclosurePathGenerator.swift; path = Sources/Paths/M13CheckboxDisclosurePathGenerator.swift; sourceTree = "<group>"; };
 		85B53676100FF2111AF084AAC819715D /* Pods-carryonex-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-carryonex-umbrella.h"; sourceTree = "<group>"; };
+		876997D4A0D94DDDD82A0E75D55BA54F /* M13CheckboxBounceController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxBounceController.swift; path = Sources/Managers/M13CheckboxBounceController.swift; sourceTree = "<group>"; };
+		898D4E5A285B76474D0E058AFA6F8859 /* M13CheckboxAnimationGenerator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxAnimationGenerator.swift; path = Sources/M13CheckboxAnimationGenerator.swift; sourceTree = "<group>"; };
+		8D728A35317898906B758BFDFDA04C66 /* M13CheckboxAddRemovePathGenerator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxAddRemovePathGenerator.swift; path = Sources/Paths/M13CheckboxAddRemovePathGenerator.swift; sourceTree = "<group>"; };
 		8FACCAB193412E4149F928269EC6A7FE /* Pods-carryonex-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-carryonex-acknowledgements.plist"; sourceTree = "<group>"; };
+		8FED803DCE3CAB0ABCA55BC51CECEA54 /* KMNavigationBarTransition.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = KMNavigationBarTransition.xcconfig; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		9966E8DEBF384AFD60A08F8EC9480944 /* M13Checkbox-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "M13Checkbox-prefix.pch"; sourceTree = "<group>"; };
-		A3068DA073494775C79480A7B78E0561 /* M13CheckboxExpandController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxExpandController.swift; path = Sources/Managers/M13CheckboxExpandController.swift; sourceTree = "<group>"; };
+		9A6EFCBB8C6098E11741B5BABB5D394C /* SMS_SDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SMS_SDK.framework; path = MobProducts/SDK/SMSSDK/SMS_SDK.framework; sourceTree = "<group>"; };
+		9EE84DD3F472A8F782390270820437D1 /* KMWeakObjectContainer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = KMWeakObjectContainer.m; path = KMNavigationBarTransition/KMWeakObjectContainer.m; sourceTree = "<group>"; };
+		A1B20E9137C7F11973E7E5E2ED9C8EE5 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A1E7E259EDC4B51D2D6281360B258A6F /* KMSwizzle.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KMSwizzle.h; path = KMNavigationBarTransition/KMSwizzle.h; sourceTree = "<group>"; };
+		A5B94F1DA1F2735DDCA2E6316EC71426 /* M13Checkbox+IB.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "M13Checkbox+IB.swift"; path = "Sources/M13Checkbox+IB.swift"; sourceTree = "<group>"; };
 		A669EE86757DCFAA4C7999758055B273 /* Pods-carryonex-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-carryonex-acknowledgements.markdown"; sourceTree = "<group>"; };
-		B41CA30DADAC045B2B58994E096E4182 /* M13CheckboxPathGenerator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxPathGenerator.swift; path = Sources/Paths/M13CheckboxPathGenerator.swift; sourceTree = "<group>"; };
-		B4D8B60753647AAE4797B43DEC343A23 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A6DD1FE6C1619255768550F7CE00FCE8 /* KMNavigationBarTransition.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KMNavigationBarTransition.h; path = KMNavigationBarTransition/KMNavigationBarTransition.h; sourceTree = "<group>"; };
+		A7A31E8E34FF08A6EE1CF588F03FD7D6 /* UIViewController+KMNavigationBarTransition_internal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIViewController+KMNavigationBarTransition_internal.h"; path = "KMNavigationBarTransition/UIViewController+KMNavigationBarTransition_internal.h"; sourceTree = "<group>"; };
+		B1FB4203F148438C644BF674928DFE5D /* UINavigationController+KMNavigationBarTransition.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UINavigationController+KMNavigationBarTransition.m"; path = "KMNavigationBarTransition/UINavigationController+KMNavigationBarTransition.m"; sourceTree = "<group>"; };
+		B2B54475661831735027906771398EA6 /* M13CheckboxFadeController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxFadeController.swift; path = Sources/Managers/M13CheckboxFadeController.swift; sourceTree = "<group>"; };
+		B320CE1D1099D9EC33D65957B2A90CD5 /* M13CheckboxPathGenerator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxPathGenerator.swift; path = Sources/Paths/M13CheckboxPathGenerator.swift; sourceTree = "<group>"; };
 		B500D44C44A6BF0903B9657FEB46AB4F /* Pods-carryonex.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-carryonex.modulemap"; sourceTree = "<group>"; };
-		B930CE07651FCCB4352AA313B536C8EC /* Pods_carryonex.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_carryonex.framework; path = "Pods-carryonex.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		C2908B7CFF37B979D53070FFD3D488BC /* M13Checkbox-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "M13Checkbox-umbrella.h"; sourceTree = "<group>"; };
-		CDBA121B803FC6503CA05C12D795903F /* M13CheckboxBounceController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxBounceController.swift; path = Sources/Managers/M13CheckboxBounceController.swift; sourceTree = "<group>"; };
-		D3614104CFC7CB4A9DBBBEFB91588B8E /* M13CheckboxFillController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxFillController.swift; path = Sources/Managers/M13CheckboxFillController.swift; sourceTree = "<group>"; };
-		DB16B47A47321C47E632ADE9C740CA40 /* M13CheckboxFadeController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxFadeController.swift; path = Sources/Managers/M13CheckboxFadeController.swift; sourceTree = "<group>"; };
+		B7702A8D777BAEB963EF33C80D677BC2 /* KMWeakObjectContainer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KMWeakObjectContainer.h; path = KMNavigationBarTransition/KMWeakObjectContainer.h; sourceTree = "<group>"; };
+		B77316FF918289FC013A0535EB513DED /* M13Checkbox.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = M13Checkbox.xcconfig; sourceTree = "<group>"; };
+		BAE14A422D033C0B4AB2D328770463CC /* UINavigationController+KMNavigationBarTransition_Internal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UINavigationController+KMNavigationBarTransition_Internal.h"; path = "KMNavigationBarTransition/UINavigationController+KMNavigationBarTransition_Internal.h"; sourceTree = "<group>"; };
+		BC53D606F16A71BD01D2365A7E22D1F7 /* M13CheckboxStrokeController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxStrokeController.swift; path = Sources/Managers/M13CheckboxStrokeController.swift; sourceTree = "<group>"; };
+		BD34B711E088494E94879AD69E1804F7 /* UINavigationController+KMNavigationBarTransition.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UINavigationController+KMNavigationBarTransition.h"; path = "KMNavigationBarTransition/UINavigationController+KMNavigationBarTransition.h"; sourceTree = "<group>"; };
+		CC0C15E7F6F740ADAE8EB7D2E9AA1E7C /* M13CheckboxDotController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxDotController.swift; path = Sources/Managers/M13CheckboxDotController.swift; sourceTree = "<group>"; };
+		CDA010907A9364FA27469A347E229601 /* M13CheckboxRadioPathGenerator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxRadioPathGenerator.swift; path = Sources/Paths/M13CheckboxRadioPathGenerator.swift; sourceTree = "<group>"; };
+		D4A17FC682100C5ABB36FC1B8B0DF4F6 /* KMNavigationBarTransition-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "KMNavigationBarTransition-dummy.m"; sourceTree = "<group>"; };
+		D72A88325ECDA87A5404F8F19DF706AC /* M13CheckboxCheckPathGenerator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxCheckPathGenerator.swift; path = Sources/Paths/M13CheckboxCheckPathGenerator.swift; sourceTree = "<group>"; };
+		D8A10B068677AF8B6D43E9248ED1206E /* M13CheckboxExpandController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxExpandController.swift; path = Sources/Managers/M13CheckboxExpandController.swift; sourceTree = "<group>"; };
+		D8AFCE7FDCEBA5F27CECAC7A75918DA1 /* KMNavigationBarTransition.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = KMNavigationBarTransition.modulemap; sourceTree = "<group>"; };
+		E08F3628ABA7DFF3EE08C3FA9C9FDF7C /* UIViewController+KMNavigationBarTransition.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+KMNavigationBarTransition.m"; path = "KMNavigationBarTransition/UIViewController+KMNavigationBarTransition.m"; sourceTree = "<group>"; };
 		E2AA43259966E1AEEE0EF58F1084BEB5 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E82A51269C177981550490D25E5C3770 /* M13CheckboxDisclosurePathGenerator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxDisclosurePathGenerator.swift; path = Sources/Paths/M13CheckboxDisclosurePathGenerator.swift; sourceTree = "<group>"; };
-		E83A86A0C8AB1A1A26D5A194A63689DB /* M13CheckboxSpiralController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxSpiralController.swift; path = Sources/Managers/M13CheckboxSpiralController.swift; sourceTree = "<group>"; };
-		F46E77027CADF360678CB42563763330 /* M13CheckboxRadioPathGenerator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxRadioPathGenerator.swift; path = Sources/Paths/M13CheckboxRadioPathGenerator.swift; sourceTree = "<group>"; };
+		E7721A8F3BE9ECCFCD87148C307D67E0 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F3274331C53AE13D51C3621746C2199D /* KMNavigationBarTransition-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "KMNavigationBarTransition-umbrella.h"; sourceTree = "<group>"; };
 		F48F14B08C502891CF82C8DD1B4397E6 /* Pods-carryonex-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-carryonex-dummy.m"; sourceTree = "<group>"; };
+		F936D1B020FC145FAB393382EC494972 /* M13CheckboxSpiralController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxSpiralController.swift; path = Sources/Managers/M13CheckboxSpiralController.swift; sourceTree = "<group>"; };
+		FAB44377698D994807643A2C7D80D50F /* M13Checkbox-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "M13Checkbox-dummy.m"; sourceTree = "<group>"; };
+		FC6DFAF3A81243BD3F25096DFBAF2D46 /* M13Checkbox.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13Checkbox.swift; path = Sources/M13Checkbox.swift; sourceTree = "<group>"; };
+		FF449CE078B472DA2F1307FBDA010EFB /* M13Checkbox-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "M13Checkbox-umbrella.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,44 +142,26 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DAE974F02E9CB9FFC6DC41549103AF02 /* Frameworks */ = {
+		8D3FBDF5E029B7C64049142B9596E746 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				867A68B6095A407BEF75CB3728E2B431 /* Foundation.framework in Frameworks */,
+				037061ACF502B93C7FED9920841D0D21 /* Foundation.framework in Frameworks */,
+				E42CAE6CF8C5DE05ACFBB7DE95BD64EC /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B2C412F068B01A7F09B1E486A8AA56CA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A0D743D3D99BB03A5772E6CA06895F57 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		10AC4FBE7A26000F790E08A79022EA92 /* M13Checkbox */ = {
-			isa = PBXGroup;
-			children = (
-				58F855E806E540CC174FB1721C1101A6 /* M13Checkbox.swift */,
-				58E77E82F68F44A90D7481973FBC9804 /* M13Checkbox+IB.swift */,
-				7191F99775364E02217C32411BD7A5AF /* M13CheckboxAddRemovePathGenerator.swift */,
-				1AC9B6F00C6F648CF1F210D14594C4CC /* M13CheckboxAnimationGenerator.swift */,
-				CDBA121B803FC6503CA05C12D795903F /* M13CheckboxBounceController.swift */,
-				09E6AB6A24BE1E46859515BDB088352A /* M13CheckboxCheckPathGenerator.swift */,
-				0B5369FC2F0A0140E064707BFA49E9D5 /* M13CheckboxController.swift */,
-				E82A51269C177981550490D25E5C3770 /* M13CheckboxDisclosurePathGenerator.swift */,
-				7D6509DA59580E7912A5E42D84DB05C1 /* M13CheckboxDotController.swift */,
-				A3068DA073494775C79480A7B78E0561 /* M13CheckboxExpandController.swift */,
-				DB16B47A47321C47E632ADE9C740CA40 /* M13CheckboxFadeController.swift */,
-				D3614104CFC7CB4A9DBBBEFB91588B8E /* M13CheckboxFillController.swift */,
-				0EA74FD8E0705C8AAC88F62644558CAF /* M13CheckboxFlatController.swift */,
-				15F47FF0078311AD716D13B576B5A506 /* M13CheckboxGestureRecognizer.swift */,
-				B41CA30DADAC045B2B58994E096E4182 /* M13CheckboxPathGenerator.swift */,
-				F46E77027CADF360678CB42563763330 /* M13CheckboxRadioPathGenerator.swift */,
-				E83A86A0C8AB1A1A26D5A194A63689DB /* M13CheckboxSpiralController.swift */,
-				20CAEB5B5CD7F339AF4581F5FC7C1BDD /* M13CheckboxStrokeController.swift */,
-				632AAA4442644D5F244733A242797DB0 /* Support Files */,
-			);
-			name = M13Checkbox;
-			path = M13Checkbox;
-			sourceTree = "<group>";
-		};
 		122DA2E5084A4393C29BE363C764795C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -148,13 +170,13 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		1FB0E629F7027119A26B5CA340B0656C /* Frameworks */ = {
+		1D48AE76BC122F67A854E107AB3BD27D /* SMSSDK */ = {
 			isa = PBXGroup;
 			children = (
-				30ECB6E00F23CDFBF862178E91C10AFA /* MOBFoundation.framework */,
-				1663909F132EA48E5783192B3C6C2E3D /* MOBFoundationEx.framework */,
+				F269FBAC17D1AED37B179AD255E427B2 /* Frameworks */,
 			);
-			name = Frameworks;
+			name = SMSSDK;
+			path = SMSSDK;
 			sourceTree = "<group>";
 		};
 		2D185E38271E1279D6AC3E7A00CAF9BA /* iOS */ = {
@@ -167,10 +189,10 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		436C53BB0865E0FD00499FBE2A57AAAF /* MOBFoundation */ = {
+		45A46B42E6B18B341C281F915707D7A5 /* MOBFoundation */ = {
 			isa = PBXGroup;
 			children = (
-				1FB0E629F7027119A26B5CA340B0656C /* Frameworks */,
+				AB3DEB195A02D7149A9355B19413A63E /* Frameworks */,
 			);
 			name = MOBFoundation;
 			path = MOBFoundation;
@@ -194,28 +216,18 @@
 			path = "Target Support Files/Pods-carryonex";
 			sourceTree = "<group>";
 		};
-		632AAA4442644D5F244733A242797DB0 /* Support Files */ = {
+		591A25776EA3B007C8290BFEC0838CA7 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				B4D8B60753647AAE4797B43DEC343A23 /* Info.plist */,
-				580A81DE6CBD35F6A6464233D3B28A9F /* M13Checkbox.modulemap */,
-				4EEBC635A94E654EABC906B7C2DF8F8D /* M13Checkbox.xcconfig */,
-				7D19C1EAEA50A3A9A1A6654A6C98F3A6 /* M13Checkbox-dummy.m */,
-				9966E8DEBF384AFD60A08F8EC9480944 /* M13Checkbox-prefix.pch */,
-				C2908B7CFF37B979D53070FFD3D488BC /* M13Checkbox-umbrella.h */,
+				A1B20E9137C7F11973E7E5E2ED9C8EE5 /* Info.plist */,
+				0F0E691DD037EBF9FE326D12494A1A07 /* M13Checkbox.modulemap */,
+				B77316FF918289FC013A0535EB513DED /* M13Checkbox.xcconfig */,
+				FAB44377698D994807643A2C7D80D50F /* M13Checkbox-dummy.m */,
+				7BA62C5837D4555CC41D616C96DAC02E /* M13Checkbox-prefix.pch */,
+				FF449CE078B472DA2F1307FBDA010EFB /* M13Checkbox-umbrella.h */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/M13Checkbox";
-			sourceTree = "<group>";
-		};
-		7450DEBA344EEBB2FCBC95C6C7C4EF3E /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				10AC4FBE7A26000F790E08A79022EA92 /* M13Checkbox */,
-				436C53BB0865E0FD00499FBE2A57AAAF /* MOBFoundation */,
-				812A76ABAC233ECC5C8BFB78CECFFEFB /* SMSSDK */,
-			);
-			name = Pods;
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
@@ -223,19 +235,30 @@
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				122DA2E5084A4393C29BE363C764795C /* Frameworks */,
-				7450DEBA344EEBB2FCBC95C6C7C4EF3E /* Pods */,
-				E88FF2ED4E92B4A60DCED3AE658531A2 /* Products */,
+				E5AF1B2BE575D69D32548D3DA6D6E515 /* Pods */,
+				A3CDCD12550F20D72A16C07E8D33A3ED /* Products */,
 				87814D564F9C3F923D28393219AB6EBC /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		812A76ABAC233ECC5C8BFB78CECFFEFB /* SMSSDK */ = {
+		7E153601E024F7E1F371EA2A0C80FC4D /* KMNavigationBarTransition */ = {
 			isa = PBXGroup;
 			children = (
-				B3A6F8951F045C17AB57CF691724702B /* Frameworks */,
+				A6DD1FE6C1619255768550F7CE00FCE8 /* KMNavigationBarTransition.h */,
+				A1E7E259EDC4B51D2D6281360B258A6F /* KMSwizzle.h */,
+				75F7A0BFD52B87569BBFCFA4711901AC /* KMSwizzle.m */,
+				B7702A8D777BAEB963EF33C80D677BC2 /* KMWeakObjectContainer.h */,
+				9EE84DD3F472A8F782390270820437D1 /* KMWeakObjectContainer.m */,
+				BD34B711E088494E94879AD69E1804F7 /* UINavigationController+KMNavigationBarTransition.h */,
+				B1FB4203F148438C644BF674928DFE5D /* UINavigationController+KMNavigationBarTransition.m */,
+				BAE14A422D033C0B4AB2D328770463CC /* UINavigationController+KMNavigationBarTransition_Internal.h */,
+				1BFEAC8C5AFF0015328C54AC4BC66D4D /* UIViewController+KMNavigationBarTransition.h */,
+				E08F3628ABA7DFF3EE08C3FA9C9FDF7C /* UIViewController+KMNavigationBarTransition.m */,
+				A7A31E8E34FF08A6EE1CF588F03FD7D6 /* UIViewController+KMNavigationBarTransition_internal.h */,
+				A5735D0274BE7E94E06951CA58E9DEA1 /* Support Files */,
 			);
-			name = SMSSDK;
-			path = SMSSDK;
+			name = KMNavigationBarTransition;
+			path = KMNavigationBarTransition;
 			sourceTree = "<group>";
 		};
 		87814D564F9C3F923D28393219AB6EBC /* Targets Support Files */ = {
@@ -246,26 +269,96 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		B3A6F8951F045C17AB57CF691724702B /* Frameworks */ = {
+		A3CDCD12550F20D72A16C07E8D33A3ED /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				46D4E2E45A688481358A598B45D694F5 /* SMS_SDK.framework */,
+				1E79D064591303759F85C4DA7E9F3B68 /* KMNavigationBarTransition.framework */,
+				3772EE9187F899400F0AA12896C5E64C /* M13Checkbox.framework */,
+				3AD94E2F0027F9A841A6041AD61972C0 /* Pods_carryonex.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A5735D0274BE7E94E06951CA58E9DEA1 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				E7721A8F3BE9ECCFCD87148C307D67E0 /* Info.plist */,
+				D8AFCE7FDCEBA5F27CECAC7A75918DA1 /* KMNavigationBarTransition.modulemap */,
+				8FED803DCE3CAB0ABCA55BC51CECEA54 /* KMNavigationBarTransition.xcconfig */,
+				D4A17FC682100C5ABB36FC1B8B0DF4F6 /* KMNavigationBarTransition-dummy.m */,
+				2ECCC719B71F0705909352F852DC5FC4 /* KMNavigationBarTransition-prefix.pch */,
+				F3274331C53AE13D51C3621746C2199D /* KMNavigationBarTransition-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/KMNavigationBarTransition";
+			sourceTree = "<group>";
+		};
+		AB3DEB195A02D7149A9355B19413A63E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7B408EF342B742CDBEFF21256D552573 /* MOBFoundation.framework */,
+				3C24F0E1BE295900C3D4132F7027205E /* MOBFoundationEx.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		E88FF2ED4E92B4A60DCED3AE658531A2 /* Products */ = {
+		C9CC490E6B66ACD7DFFD3278667EA0AA /* M13Checkbox */ = {
 			isa = PBXGroup;
 			children = (
-				11FFD5BB4D2678CB46A3344468F1A266 /* M13Checkbox.framework */,
-				B930CE07651FCCB4352AA313B536C8EC /* Pods_carryonex.framework */,
+				FC6DFAF3A81243BD3F25096DFBAF2D46 /* M13Checkbox.swift */,
+				A5B94F1DA1F2735DDCA2E6316EC71426 /* M13Checkbox+IB.swift */,
+				8D728A35317898906B758BFDFDA04C66 /* M13CheckboxAddRemovePathGenerator.swift */,
+				898D4E5A285B76474D0E058AFA6F8859 /* M13CheckboxAnimationGenerator.swift */,
+				876997D4A0D94DDDD82A0E75D55BA54F /* M13CheckboxBounceController.swift */,
+				D72A88325ECDA87A5404F8F19DF706AC /* M13CheckboxCheckPathGenerator.swift */,
+				1B8E01484E408A65712FC12724A77082 /* M13CheckboxController.swift */,
+				7E14B0E522420E4934AD675D6B0154AA /* M13CheckboxDisclosurePathGenerator.swift */,
+				CC0C15E7F6F740ADAE8EB7D2E9AA1E7C /* M13CheckboxDotController.swift */,
+				D8A10B068677AF8B6D43E9248ED1206E /* M13CheckboxExpandController.swift */,
+				B2B54475661831735027906771398EA6 /* M13CheckboxFadeController.swift */,
+				01CC2CDF5240398E5180742924185544 /* M13CheckboxFillController.swift */,
+				3CDB37FE9B68307666E26BD3F74BAA34 /* M13CheckboxFlatController.swift */,
+				071FFF6174D1EC80C47632EC983F4EDA /* M13CheckboxGestureRecognizer.swift */,
+				B320CE1D1099D9EC33D65957B2A90CD5 /* M13CheckboxPathGenerator.swift */,
+				CDA010907A9364FA27469A347E229601 /* M13CheckboxRadioPathGenerator.swift */,
+				F936D1B020FC145FAB393382EC494972 /* M13CheckboxSpiralController.swift */,
+				BC53D606F16A71BD01D2365A7E22D1F7 /* M13CheckboxStrokeController.swift */,
+				591A25776EA3B007C8290BFEC0838CA7 /* Support Files */,
 			);
-			name = Products;
+			name = M13Checkbox;
+			path = M13Checkbox;
+			sourceTree = "<group>";
+		};
+		E5AF1B2BE575D69D32548D3DA6D6E515 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7E153601E024F7E1F371EA2A0C80FC4D /* KMNavigationBarTransition */,
+				C9CC490E6B66ACD7DFFD3278667EA0AA /* M13Checkbox */,
+				45A46B42E6B18B341C281F915707D7A5 /* MOBFoundation */,
+				1D48AE76BC122F67A854E107AB3BD27D /* SMSSDK */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		F269FBAC17D1AED37B179AD255E427B2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9A6EFCBB8C6098E11741B5BABB5D394C /* SMS_SDK.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		57FCCBD0F7B1FCF716427DA549CC8520 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A3A7F00D0EBD0CE04A91243EEBEE7F9D /* Pods-carryonex-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		714DC262BF2FB332E82AC2E7CD6D73D1 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -274,33 +367,39 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		739FD737B8A8DD0B86EC45E711D0FE98 /* Headers */ = {
+		EC02DEE089F6540A2D8F58FB38738EFF /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2FAE71920EE45CD2D6A26E013BD48A4C /* Pods-carryonex-umbrella.h in Headers */,
+				E95B6E7223CD6DC9BBFC6E8AA4860326 /* KMNavigationBarTransition-umbrella.h in Headers */,
+				26288F33821445EA8E8ECB51F61D5122 /* KMNavigationBarTransition.h in Headers */,
+				8CDEE582625B63D0578DF75640125AC6 /* KMSwizzle.h in Headers */,
+				051DCF71213689178E2C6856A6C6A14D /* KMWeakObjectContainer.h in Headers */,
+				6512494C68F79611CDCCFDEEC28F8011 /* UINavigationController+KMNavigationBarTransition.h in Headers */,
+				A09ACA138030B242B2CEEFB238BEE51C /* UINavigationController+KMNavigationBarTransition_Internal.h in Headers */,
+				5A8D8BC1B406D77E82DB46F54D94A195 /* UIViewController+KMNavigationBarTransition.h in Headers */,
+				5D8C415E550C4D4C4591F98979ACFF95 /* UIViewController+KMNavigationBarTransition_internal.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		188002AA9987DED67AB9E13B9E95E826 /* Pods-carryonex */ = {
+		00660EA920FEC8EF697FA99E73DA257E /* KMNavigationBarTransition */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 511BEF7CE8CF02F18AB08B26E73A2BDF /* Build configuration list for PBXNativeTarget "Pods-carryonex" */;
+			buildConfigurationList = C1F5E0AB19A1E81EADA1C20DF189E0EA /* Build configuration list for PBXNativeTarget "KMNavigationBarTransition" */;
 			buildPhases = (
-				CA53C8C0EA6AC42EC1FCBE7DD41BD7E6 /* Sources */,
-				DAE974F02E9CB9FFC6DC41549103AF02 /* Frameworks */,
-				739FD737B8A8DD0B86EC45E711D0FE98 /* Headers */,
+				9B0D3DC257B934348EC4D29C515EA5AC /* Sources */,
+				8D3FBDF5E029B7C64049142B9596E746 /* Frameworks */,
+				EC02DEE089F6540A2D8F58FB38738EFF /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				2E6E4DE479430007900586A1585DA8C3 /* PBXTargetDependency */,
 			);
-			name = "Pods-carryonex";
-			productName = "Pods-carryonex";
-			productReference = B930CE07651FCCB4352AA313B536C8EC /* Pods_carryonex.framework */;
+			name = KMNavigationBarTransition;
+			productName = KMNavigationBarTransition;
+			productReference = 1E79D064591303759F85C4DA7E9F3B68 /* KMNavigationBarTransition.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		20A9DD9ABBF08BC57372A26C35327BF1 /* M13Checkbox */ = {
@@ -317,7 +416,26 @@
 			);
 			name = M13Checkbox;
 			productName = M13Checkbox;
-			productReference = 11FFD5BB4D2678CB46A3344468F1A266 /* M13Checkbox.framework */;
+			productReference = 3772EE9187F899400F0AA12896C5E64C /* M13Checkbox.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		C5A7402DB4F8EFECFFC7AC135E4AA63E /* Pods-carryonex */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F3EA025C849C2965046E4F4212E9384B /* Build configuration list for PBXNativeTarget "Pods-carryonex" */;
+			buildPhases = (
+				103F6F9411A4457E74DF3AD946B0D6E5 /* Sources */,
+				B2C412F068B01A7F09B1E486A8AA56CA /* Frameworks */,
+				57FCCBD0F7B1FCF716427DA549CC8520 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AA89F6D4713D2B3ECAAD0303299D0E64 /* PBXTargetDependency */,
+				3BAC80CF4E168DF29EBFAD01E28FF29D /* PBXTargetDependency */,
+			);
+			name = "Pods-carryonex";
+			productName = "Pods-carryonex";
+			productReference = 3AD94E2F0027F9A841A6041AD61972C0 /* Pods_carryonex.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -337,17 +455,26 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = E88FF2ED4E92B4A60DCED3AE658531A2 /* Products */;
+			productRefGroup = A3CDCD12550F20D72A16C07E8D33A3ED /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
+				00660EA920FEC8EF697FA99E73DA257E /* KMNavigationBarTransition */,
 				20A9DD9ABBF08BC57372A26C35327BF1 /* M13Checkbox */,
-				188002AA9987DED67AB9E13B9E95E826 /* Pods-carryonex */,
+				C5A7402DB4F8EFECFFC7AC135E4AA63E /* Pods-carryonex */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
+		103F6F9411A4457E74DF3AD946B0D6E5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				60A304A83BBC89998B2ABD4149880E6D /* Pods-carryonex-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		923F4E7F3A2B8E74326EFD309DCEEE04 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -374,29 +501,39 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CA53C8C0EA6AC42EC1FCBE7DD41BD7E6 /* Sources */ = {
+		9B0D3DC257B934348EC4D29C515EA5AC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				14D3BAA480468F34405EC527A4DB0C7F /* Pods-carryonex-dummy.m in Sources */,
+				85AE215C458E649C1056744F300F455F /* KMNavigationBarTransition-dummy.m in Sources */,
+				45C493C8779D39496864239E1ECE53F0 /* KMSwizzle.m in Sources */,
+				5E65B970682385A8534587C772AF7D4D /* KMWeakObjectContainer.m in Sources */,
+				4FC00FBA42C93784DDC50B0B01CD40C8 /* UINavigationController+KMNavigationBarTransition.m in Sources */,
+				30B56544DE93EBE129BD8C5BA946B5CB /* UIViewController+KMNavigationBarTransition.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		2E6E4DE479430007900586A1585DA8C3 /* PBXTargetDependency */ = {
+		3BAC80CF4E168DF29EBFAD01E28FF29D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = M13Checkbox;
 			target = 20A9DD9ABBF08BC57372A26C35327BF1 /* M13Checkbox */;
-			targetProxy = EBBB46E70A2A63127FCEB7CA27ED639D /* PBXContainerItemProxy */;
+			targetProxy = 2239FD537A70805D608AE1E9AD4918D0 /* PBXContainerItemProxy */;
+		};
+		AA89F6D4713D2B3ECAAD0303299D0E64 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = KMNavigationBarTransition;
+			target = 00660EA920FEC8EF697FA99E73DA257E /* KMNavigationBarTransition */;
+			targetProxy = A5102B2940A2A9805C0CA69008C4D98C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		0241C69DB86CFE9C95F781C0F7848B9E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4EEBC635A94E654EABC906B7C2DF8F8D /* M13Checkbox.xcconfig */;
+			baseConfigurationReference = B77316FF918289FC013A0535EB513DED /* M13Checkbox.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -467,7 +604,7 @@
 			};
 			name = Release;
 		};
-		1E23737CB13B9B37B6FA0D6F0E6A5FC6 /* Debug */ = {
+		3B0C0372CD55D960178BF53A72EE5A06 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0BF630B353D6C9A3A7A390755EE2F008 /* Pods-carryonex.debug.xcconfig */;
 			buildSettings = {
@@ -503,9 +640,73 @@
 			};
 			name = Debug;
 		};
+		3E58E5EE9E2895FC8D634F1D7EDB0C99 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8FED803DCE3CAB0ABCA55BC51CECEA54 /* KMNavigationBarTransition.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/KMNavigationBarTransition/KMNavigationBarTransition-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/KMNavigationBarTransition/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/KMNavigationBarTransition/KMNavigationBarTransition.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = KMNavigationBarTransition;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		4D611B60B70B88D049930AD24F4DAB6C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8FED803DCE3CAB0ABCA55BC51CECEA54 /* KMNavigationBarTransition.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/KMNavigationBarTransition/KMNavigationBarTransition-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/KMNavigationBarTransition/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/KMNavigationBarTransition/KMNavigationBarTransition.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = KMNavigationBarTransition;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		B99F646D4B2652928D787694A7A909CA /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4EEBC635A94E654EABC906B7C2DF8F8D /* M13Checkbox.xcconfig */;
+			baseConfigurationReference = B77316FF918289FC013A0535EB513DED /* M13Checkbox.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -579,7 +780,7 @@
 			};
 			name = Debug;
 		};
-		EC21CF1766475CBE34B5C7CA3ACD0B2F /* Release */ = {
+		C742001FDFEAF51B1A5FBF4860292278 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7954E5DD38E2DF8F8EF815765AB3D9FC /* Pods-carryonex.release.xcconfig */;
 			buildSettings = {
@@ -635,11 +836,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		511BEF7CE8CF02F18AB08B26E73A2BDF /* Build configuration list for PBXNativeTarget "Pods-carryonex" */ = {
+		C1F5E0AB19A1E81EADA1C20DF189E0EA /* Build configuration list for PBXNativeTarget "KMNavigationBarTransition" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				1E23737CB13B9B37B6FA0D6F0E6A5FC6 /* Debug */,
-				EC21CF1766475CBE34B5C7CA3ACD0B2F /* Release */,
+				3E58E5EE9E2895FC8D634F1D7EDB0C99 /* Debug */,
+				4D611B60B70B88D049930AD24F4DAB6C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F3EA025C849C2965046E4F4212E9384B /* Build configuration list for PBXNativeTarget "Pods-carryonex" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3B0C0372CD55D960178BF53A72EE5A06 /* Debug */,
+				C742001FDFEAF51B1A5FBF4860292278 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

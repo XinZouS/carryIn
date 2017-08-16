@@ -24,11 +24,12 @@ class User : NSObject {
     var idCardA_Url: String?
     var idCardB_Url: String?
     var passportUrl: String?
+    var isVerified: Bool = false
     
     var itemList : [String]? // itemId better
     var tripList : [String]? // tripId
     
-    var isShipper: Bool?
+    var isShipper: Bool = false
     
     
     // use: User.sharedInstance.xxx
@@ -47,6 +48,7 @@ class User : NSObject {
         idCardA_Url = ""
         idCardB_Url = ""
         passportUrl = ""
+        isVerified = false
         itemList = []
         tripList = []
         isShipper = false

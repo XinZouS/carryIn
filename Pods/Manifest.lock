@@ -1,18 +1,21 @@
 PODS:
+  - KMNavigationBarTransition (1.0.0)
   - M13Checkbox (3.1.3)
   - MOBFoundation (3.0.2)
   - SMSSDK (3.0.1):
     - MOBFoundation
 
 DEPENDENCIES:
+  - KMNavigationBarTransition
   - M13Checkbox
   - SMSSDK
 
 SPEC CHECKSUMS:
+  KMNavigationBarTransition: b3fb8337f7a1e4542add07fd6c45fb9980794d59
   M13Checkbox: c132a7e0eb964731855eff67b883a0b21b7c0977
   MOBFoundation: d5e27c4638d911d3c7501aa5df458955d4814359
   SMSSDK: a811c8ea6e89393097037b7cf6493248a40e50f0
 
-PODFILE CHECKSUM: 31857c2417b27f53b66094836f2b685d81c97814
+PODFILE CHECKSUM: 5c9ba2151f35ac16889b72413a73017e543c88d5
 
 COCOAPODS: 1.1.1

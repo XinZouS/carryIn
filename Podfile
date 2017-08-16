@@ -9,6 +9,6 @@ target 'carryonex' do
 
   pod 'M13Checkbox'
   pod 'SMSSDK'
-  
+  pod 'KMNavigationBarTransition'
 
 end

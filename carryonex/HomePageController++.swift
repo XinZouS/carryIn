@@ -10,11 +10,39 @@ import UIKit
 
 
 
-extension HomePageController {
+extension HomePageController: UITableViewDelegate, UITableViewDataSource {
     
-    func changeUserType() {
-        print("HomePageController++.swift: change user type!!!")
+    func searchButtonTapped(){
+        print("searchButtonTapped!!!")
     }
+    
+    // MARK: - Table view data source
+    
+    func setupSearchTableView(){
+        tableView.register(HomePageTableCell.self, forCellReuseIdentifier: searchCellId)
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return searchFilteredResult.count != 0 ? searchFilteredResult.count : searchDataPool.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: searchCellId, for: indexPath)
+        
+        if searchFilteredResult.count > 0 {
+            cell.textLabel?.text = searchFilteredResult[indexPath.row]
+        } else {
+            cell.textLabel?.text = searchDataPool[indexPath.row]
+        }
+        return cell
+    }
+    
+    
+
     
     func callShipperButtonTapped(){
         if true {
@@ -29,12 +57,40 @@ extension HomePageController {
         
         let userInfoVC = UserInfoViewController(collectionViewLayout: UICollectionViewFlowLayout())
 //        navigationController?.pushViewController(userInfoVC, animated: true)
+        // replace above by custimize transit animation:
         navigationItem.title = "  " //for change "< Back" as "<"
         pushViewFromLeftToRight(destVC: userInfoVC)
         
         // plan A: with slide-out menu
         //self.pageContainer?.toggleLeftPanel()
     }
+    
+    func showGiftController(){
+        print("showGiftController!!!!!!")
+    }
+    
+    func pullSideButtonTapped(){
+        let offset = switchUserTypeButton.bounds.width
+        if isSideBtnViewShowing {
+            sideBtnCtnViewLeftConstraint?.constant += offset
+        }else{
+            sideBtnCtnViewLeftConstraint?.constant -= offset
+        }
+        isSideBtnViewShowing = !isSideBtnViewShowing
+        UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 1.6, initialSpringVelocity: 1.5, options: .curveEaseInOut, animations: {
+            self.view.layoutIfNeeded()
+        }, completion: nil)
+    }
+    
+    func switchUserType(){
+        let s = User.sharedInstance.isShipper
+        User.sharedInstance.isShipper = !(s ?? false)
+        let uStr = User.sharedInstance.isShipper ? btnTitleShipForMe : btnTitleShipForYou
+        setupSwitchUserTypeBtnTitle(str: uStr)
+        print("now I am a sipper == \(User.sharedInstance.isShipper), I can change to \(uStr)")
+    }
+    
+
     
     private func pushViewFromLeftToRight(destVC: UIViewController){
         // push navigationController from left-->right
@@ -48,9 +104,28 @@ extension HomePageController {
         navigationController?.pushViewController(destVC, animated: false)
     }
     
+    func setupSwipGestureRecognizer(){
+        let swipLeft = UISwipeGestureRecognizer(target: sideButtonContainerView, action: #selector(swiped))
+        
+        let swipRight = UISwipeGestureRecognizer(target: sideButtonContainerView, action: #selector(swiped))
+    }
+
+    func swiped(_ gesture: UIGestureRecognizer){
+        guard let swipeGesture = gesture as? UISwipeGestureRecognizer else { return }
+        
+        switch swipeGesture.direction {
+        case UISwipeGestureRecognizerDirection.left:
+            pullSideButtonTapped()
+        case UISwipeGestureRecognizerDirection.right:
+            pullSideButtonTapped()
+        default:
+            break
+        }
+    }
 
     
 }
+
 
 
 

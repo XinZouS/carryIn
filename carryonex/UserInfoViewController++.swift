@@ -12,6 +12,17 @@ import UIKit
 extension UserInfoViewController {
     
     
+    func dismissSelfToLeft(){
+        let transition: CATransition = CATransition()
+        let timeFunc : CAMediaTimingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+        transition.duration = 0.25
+        transition.timingFunction = timeFunc
+        transition.type = kCATransitionPush
+        transition.subtype = kCATransitionFromRight
+        navigationController?.view.layer.add(transition, forKey: kCATransition)
+        navigationController?.popViewController(animated: false)
+
+    }
     
 }
 

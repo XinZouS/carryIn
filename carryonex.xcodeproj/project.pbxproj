@@ -12,6 +12,10 @@
 		660704E41F3CF3E8000C09FD /* VerificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660704E31F3CF3E8000C09FD /* VerificationController.swift */; };
 		660704E61F3CFB15000C09FD /* UserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660704E51F3CFB15000C09FD /* UserInfoViewController.swift */; };
 		660704E81F3D062E000C09FD /* UserInfoViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660704E71F3D062E000C09FD /* UserInfoViewCell.swift */; };
+		663F1C941F44ABEB00E866C2 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 663F1C931F44ABEB00E866C2 /* README.md */; };
+		663F1C961F44DBD000E866C2 /* HomePageTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 663F1C951F44DBD000E866C2 /* HomePageTableCell.swift */; };
+		6657E94B1F435BEF00755443 /* PhotoIDController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6657E94A1F435BEF00755443 /* PhotoIDController.swift */; };
+		6657E94D1F435C1F00755443 /* PhotoIDController++.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6657E94C1F435C1F00755443 /* PhotoIDController++.swift */; };
 		665DE4ED1F3A0B70004DDB88 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 665DE4EC1F3A0B70004DDB88 /* AppDelegate.swift */; };
 		665DE4EF1F3A0B70004DDB88 /* HomePageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 665DE4EE1F3A0B70004DDB88 /* HomePageController.swift */; };
 		665DE4F21F3A0B70004DDB88 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 665DE4F01F3A0B70004DDB88 /* Main.storyboard */; };
@@ -23,7 +27,6 @@
 		66A16AF61F3B5EDB00B32AD3 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A16AF51F3B5EDB00B32AD3 /* Item.swift */; };
 		66A16AF81F3B6B2E00B32AD3 /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A16AF71F3B6B2E00B32AD3 /* Trip.swift */; };
 		66A16AFA1F3B704A00B32AD3 /* HomePageController++.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A16AF91F3B704A00B32AD3 /* HomePageController++.swift */; };
-		66A16AFC1F3B74B000B32AD3 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 66A16AFB1F3B74B000B32AD3 /* README.md */; };
 		66A16AFE1F3BA82000B32AD3 /* PageContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A16AFD1F3BA82000B32AD3 /* PageContainer.swift */; };
 		66A16B001F3BB3AA00B32AD3 /* SideMenuLeftController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A16AFF1F3BB3AA00B32AD3 /* SideMenuLeftController.swift */; };
 		66C9756D1F3DEFB000450F37 /* UserInfoViewController++.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C9756C1F3DEFB000450F37 /* UserInfoViewController++.swift */; };
@@ -43,7 +46,11 @@
 		660704E31F3CF3E8000C09FD /* VerificationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerificationController.swift; sourceTree = "<group>"; };
 		660704E51F3CFB15000C09FD /* UserInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoViewController.swift; sourceTree = "<group>"; };
 		660704E71F3D062E000C09FD /* UserInfoViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoViewCell.swift; sourceTree = "<group>"; };
+		663F1C931F44ABEB00E866C2 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
+		663F1C951F44DBD000E866C2 /* HomePageTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePageTableCell.swift; sourceTree = "<group>"; };
 		665183DB1F4201F200DF2906 /* carryonex-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "carryonex-Bridging-Header.h"; sourceTree = "<group>"; };
+		6657E94A1F435BEF00755443 /* PhotoIDController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoIDController.swift; sourceTree = "<group>"; };
+		6657E94C1F435C1F00755443 /* PhotoIDController++.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PhotoIDController++.swift"; sourceTree = "<group>"; };
 		665DE4E91F3A0B70004DDB88 /* carryonex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = carryonex.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		665DE4EC1F3A0B70004DDB88 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		665DE4EE1F3A0B70004DDB88 /* HomePageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageController.swift; sourceTree = "<group>"; };
@@ -57,7 +64,6 @@
 		66A16AF51F3B5EDB00B32AD3 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		66A16AF71F3B6B2E00B32AD3 /* Trip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
 		66A16AF91F3B704A00B32AD3 /* HomePageController++.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HomePageController++.swift"; sourceTree = "<group>"; };
-		66A16AFB1F3B74B000B32AD3 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		66A16AFD1F3BA82000B32AD3 /* PageContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageContainer.swift; sourceTree = "<group>"; };
 		66A16AFF1F3BB3AA00B32AD3 /* SideMenuLeftController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuLeftController.swift; sourceTree = "<group>"; };
 		66B1CA8F1F41FA4700EA0A43 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
@@ -85,6 +91,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6657E9481F435B9F00755443 /* PhotoID */ = {
+			isa = PBXGroup;
+			children = (
+				6657E94A1F435BEF00755443 /* PhotoIDController.swift */,
+			);
+			name = PhotoID;
+			sourceTree = "<group>";
+		};
+		6657E9491F435BBA00755443 /* PhotoID */ = {
+			isa = PBXGroup;
+			children = (
+				6657E94C1F435C1F00755443 /* PhotoIDController++.swift */,
+			);
+			name = PhotoID;
+			sourceTree = "<group>";
+		};
 		665DE4E01F3A0B70004DDB88 = {
 			isa = PBXGroup;
 			children = (
@@ -113,7 +135,7 @@
 				665DE5031F3A59E9004DDB88 /* Controller */,
 				66A16AF01F3A5DC000B32AD3 /* Helpers */,
 				665DE4F01F3A0B70004DDB88 /* Main.storyboard */,
-				66A16AFB1F3B74B000B32AD3 /* README.md */,
+				663F1C931F44ABEB00E866C2 /* README.md */,
 				665DE4F61F3A0B70004DDB88 /* Assets.xcassets */,
 				665DE4F81F3A0B70004DDB88 /* LaunchScreen.storyboard */,
 				665DE4FB1F3A0B70004DDB88 /* Info.plist */,
@@ -138,6 +160,7 @@
 				66C975701F3E12F500450F37 /* HomePages */,
 				66C975721F3E133200450F37 /* UserInfoPage */,
 				66C975741F3E139700450F37 /* VerificationPages */,
+				6657E9481F435B9F00755443 /* PhotoID */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -148,6 +171,7 @@
 				66C975711F3E130D00450F37 /* HomePages */,
 				66C975731F3E137100450F37 /* UserInfoPage */,
 				66C975751F3E13B100450F37 /* VerificationPages */,
+				6657E9491F435BBA00755443 /* PhotoID */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -176,6 +200,7 @@
 			isa = PBXGroup;
 			children = (
 				66A16AF91F3B704A00B32AD3 /* HomePageController++.swift */,
+				663F1C951F44DBD000E866C2 /* HomePageTableCell.swift */,
 			);
 			name = HomePages;
 			sourceTree = "<group>";
@@ -364,7 +389,9 @@
 			files = (
 				66C9757D1F3E165A00450F37 /* DisclaimerController++.swift in Sources */,
 				66A16AF21F3A5F8100B32AD3 /* UIView++.swift in Sources */,
+				6657E94D1F435C1F00755443 /* PhotoIDController++.swift in Sources */,
 				66C9756F1F3DF15200450F37 /* UserProfileView.swift in Sources */,
+				663F1C961F44DBD000E866C2 /* HomePageTableCell.swift in Sources */,
 				66C975771F3E141600450F37 /* PhoneNumberController.swift in Sources */,
 				66C9757F1F3E167C00450F37 /* DisclaimerController.swift in Sources */,
 				665DE4F51F3A0B70004DDB88 /* carryonex.xcdatamodeld in Sources */,
@@ -373,8 +400,10 @@
 				665DE4EF1F3A0B70004DDB88 /* HomePageController.swift in Sources */,
 				66A16B001F3BB3AA00B32AD3 /* SideMenuLeftController.swift in Sources */,
 				66A16AF41F3B56B500B32AD3 /* User.swift in Sources */,
+				663F1C941F44ABEB00E866C2 /* README.md in Sources */,
 				66A16AFA1F3B704A00B32AD3 /* HomePageController++.swift in Sources */,
 				66C9757B1F3E159400450F37 /* PhoneNumberController++.swift in Sources */,
+				6657E94B1F435BEF00755443 /* PhotoIDController.swift in Sources */,
 				660704E81F3D062E000C09FD /* UserInfoViewCell.swift in Sources */,
 				66A16AF81F3B6B2E00B32AD3 /* Trip.swift in Sources */,
 				66C9756D1F3DEFB000450F37 /* UserInfoViewController++.swift in Sources */,
@@ -384,7 +413,6 @@
 				660704E21F3CDDC5000C09FD /* SlideMenuLeftCell.swift in Sources */,
 				665DE4ED1F3A0B70004DDB88 /* AppDelegate.swift in Sources */,
 				660704E41F3CF3E8000C09FD /* VerificationController.swift in Sources */,
-				66A16AFC1F3B74B000B32AD3 /* README.md in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

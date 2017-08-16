@@ -19,6 +19,9 @@ extension PhoneNumberController: UITextFieldDelegate, PhoneNumberDelegate {
     // MARK: logic func
     
     func okButtonTapped(){
+        okButtonDisable()
+        _ = Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(okButtonEnable), userInfo: nil, repeats: false)
+        
         let phoneNum = User.sharedInstance.phone ?? "0"
         let zoneCode = User.sharedInstance.phoneCountryCode ?? "86"
         print("get : okButtonTapped, api send text msg and go to next page!!!")
@@ -32,6 +35,16 @@ extension PhoneNumberController: UITextFieldDelegate, PhoneNumberDelegate {
                 self .showAlertWith(title: "获取验证码失败", message: msg)
             }
         })
+    }
+    private func okButtonDisable(){
+        okButton.setTitle("正在请求验证码...", for: .normal)
+        okButton.backgroundColor = .lightGray
+        okButton.isEnabled = false
+    }
+    @objc private func okButtonEnable(){
+        okButton.setTitle("获取验证码", for: .normal)
+        okButton.backgroundColor = buttonColorBlue
+        okButton.isEnabled = true
     }
     private func showAlertWith(title:String, message:String){
         let alertCtl = UIAlertController(title: title, message: message, preferredStyle: .alert)
