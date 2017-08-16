@@ -40,8 +40,8 @@ class HomePageController: UIViewController, MKMapViewDelegate, CLLocationManager
     
     lazy var userInfoBarButtonView : UIButton = {
         let b = UIButton()
-        b.frame = CGRect(x: 0, y: 0, width: 20, height: 20)
-        b.setImage(#imageLiteral(resourceName: "user29x29"), for: .normal)
+        b.frame = CGRect(x: 0, y: 0, width: 25, height: 25)
+        b.setImage(#imageLiteral(resourceName: "CarryonEx_Profile"), for: .normal)
         b.addTarget(self, action: #selector(showUserInfoSideMenu), for: .touchUpInside)
         return b
     }()
@@ -82,13 +82,11 @@ class HomePageController: UIViewController, MKMapViewDelegate, CLLocationManager
 
     
     private func setupNavigationBar(){
-        UINavigationBar.appearance().tintColor = buttonColorPurple
-        navigationController?.navigationBar.tintColor = buttonColorPurple
-        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: buttonColorPurple]
+        UINavigationBar.appearance().tintColor = buttonColorWhite
+        navigationController?.navigationBar.tintColor = buttonColorWhite
+        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: buttonColorWhite]
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(customView: userInfoBarButtonView)
-        
-        UINavigationBar.appearance().backgroundColor = UIColor()
     }
     
     

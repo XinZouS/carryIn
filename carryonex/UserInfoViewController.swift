@@ -25,7 +25,9 @@ class UserInfoViewController: UICollectionViewController, UICollectionViewDelega
     lazy var logoutButton: UIButton = {
         let b = UIButton()
         b.setTitle("退出登陆", for: .normal)
-        b.backgroundColor = buttonColorRed
+        b.setImage( UIImage.init(named: "CarryonEx_Exit.png"), for: .normal)
+        b.imageView?.contentMode = .scaleAspectFit
+        //b.backgroundColor = buttonColorRed
         b.addTarget(self, action: #selector(logoutButtonTapped), for: .touchUpInside)
         return b
     }()
@@ -55,7 +57,7 @@ class UserInfoViewController: UICollectionViewController, UICollectionViewDelega
             layout.minimumLineSpacing = 0
         }
         collectionView?.backgroundColor = .white
-        collectionView?.contentInset = UIEdgeInsetsMake(userProfileH + 10, margin, 50, margin) // top, left, bottom, right;
+        collectionView?.contentInset = UIEdgeInsetsMake(userProfileH + 30, margin, 50, margin) // top, left, bottom, right;
         collectionView?.isScrollEnabled = false
         collectionView?.isPagingEnabled = false
         
@@ -70,7 +72,7 @@ class UserInfoViewController: UICollectionViewController, UICollectionViewDelega
     
     private func setupLogoutButton(){
         view.addSubview(logoutButton)
-        logoutButton.addConstraints(left: view.leftAnchor, top: nil, right: view.rightAnchor, bottom: view.bottomAnchor, leftConstent: 0, topConstent: 0, rightConstent: 0, bottomConstent: 0, width: 0, height: 40)
+        logoutButton.addConstraints(left: view.leftAnchor, top: nil, right: nil, bottom: view.bottomAnchor, leftConstent: 0, topConstent: 0, rightConstent: 0, bottomConstent: 0, width: 40, height: 40)
     }
 
     

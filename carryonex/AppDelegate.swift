@@ -13,9 +13,14 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+   
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        
+         //change navigation bar color
+        UINavigationBar.appearance().barTintColor = barColorGray.withAlphaComponent(0.1)
+        //UINavigationBar.appearance().isTranslucent = true
+        UIApplication.shared.statusBarStyle = .lightContent
         
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
