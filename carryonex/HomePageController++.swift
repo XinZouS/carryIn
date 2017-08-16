@@ -10,11 +10,39 @@ import UIKit
 
 
 
-extension HomePageController {
+extension HomePageController: UITableViewDelegate, UITableViewDataSource {
     
-    func changeUserType() {
-        print("HomePageController++.swift: change user type!!!")
+    func searchButtonTapped(){
+        print("searchButtonTapped!!!")
     }
+    
+    // MARK: - Table view data source
+    
+    func setupSearchTableView(){
+        tableView.register(HomePageTableCell.self, forCellReuseIdentifier: searchCellId)
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return searchFilteredResult.count != 0 ? searchFilteredResult.count : searchDataPool.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: searchCellId, for: indexPath)
+        
+        if searchFilteredResult.count > 0 {
+            cell.textLabel?.text = searchFilteredResult[indexPath.row]
+        } else {
+            cell.textLabel?.text = searchDataPool[indexPath.row]
+        }
+        return cell
+    }
+    
+    
+
     
     func callShipperButtonTapped(){
         if true {
@@ -37,6 +65,10 @@ extension HomePageController {
         //self.pageContainer?.toggleLeftPanel()
     }
     
+    func showGiftController(){
+        print("showGiftController!!!!!!")
+    }
+    
     func pullSideButtonTapped(){
         let offset = switchUserTypeButton.bounds.width
         if isSideBtnViewShowing {
@@ -53,9 +85,9 @@ extension HomePageController {
     func switchUserType(){
         let s = User.sharedInstance.isShipper
         User.sharedInstance.isShipper = !(s ?? false)
-        let uStr = User.sharedInstance.isShipper! ? btnTitleShipForMe : btnTitleShipForYou
+        let uStr = User.sharedInstance.isShipper ? btnTitleShipForMe : btnTitleShipForYou
         setupSwitchUserTypeBtnTitle(str: uStr)
-        print("now I am a sipper == \(User.sharedInstance.isShipper!), I can change to \(uStr)")
+        print("now I am a sipper == \(User.sharedInstance.isShipper), I can change to \(uStr)")
     }
     
 
@@ -93,6 +125,7 @@ extension HomePageController {
 
     
 }
+
 
 
 

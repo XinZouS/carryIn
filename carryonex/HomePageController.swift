@@ -24,6 +24,34 @@ class HomePageController: UIViewController, MKMapViewDelegate, CLLocationManager
     
     let locationManager = CLLocationManager()
     
+    // for searchController:
+    var searchDataPool : [String] = ["apple", "ball", "cat", "dog", "elf", "friends", "God"]
+    var searchFilteredResult : [String] = []
+    
+//    var searchController = UISearchController()
+    
+    let searchCellId: String = "searchCellId"
+    var searchContainerView : UIView = {
+        let v = UIView()
+        v.backgroundColor = .white
+        return v
+    }()
+    var tableView = UITableView() // for search results
+    lazy var searchButton : UIButton = { // replaced by searchController
+        let b = UIButton()
+        b.backgroundColor = .white
+        b.setImage(#imageLiteral(resourceName: "search29x29"), for: .normal)
+        b.addTarget(self, action: #selector(searchButtonTapped), for: .touchUpInside)
+        return b
+    }()
+    
+    let searchTextField : UITextField = {
+        let t = UITextField()
+        t.placeholder = " 搜索地址"
+        return t
+    }()
+
+    
     let btnTitleShipForMe : String = "帮我带"
     let btnTitleShipForYou: String = "帮你带"
     
@@ -79,6 +107,14 @@ class HomePageController: UIViewController, MKMapViewDelegate, CLLocationManager
         return b
     }()
     
+    lazy var giftBarButtonView: UIButton = {
+        let b = UIButton()
+        b.frame = CGRect(x: 0, y: 0, width: 20, height: 20)
+        b.setImage(#imageLiteral(resourceName: "search29x29"), for: .normal)
+        b.addTarget(self, action: #selector(showGiftController), for: .touchUpInside)
+        return b
+    }()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -89,6 +125,9 @@ class HomePageController: UIViewController, MKMapViewDelegate, CLLocationManager
         setupNavigationBar()
         
         setupMapView()
+        
+        setupSearchContents()
+        setupSearchTableView()
         
         setupCallShipperButton()
         
@@ -106,6 +145,7 @@ class HomePageController: UIViewController, MKMapViewDelegate, CLLocationManager
         navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: buttonColorPurple]
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(customView: userInfoBarButtonView)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: giftBarButtonView)
     }
     
     private func setupMapView(){
@@ -126,6 +166,30 @@ class HomePageController: UIViewController, MKMapViewDelegate, CLLocationManager
         }
     }
     
+    private func setupSearchContents(){
+        let margin: CGFloat = 40
+        let h: CGFloat = 40
+        
+        view.addSubview(searchContainerView)
+        searchContainerView.addConstraints(left: view.leftAnchor, top: view.topAnchor, right: view.rightAnchor, bottom: nil, leftConstent: margin, topConstent: 90, rightConstent: margin, bottomConstent: 0, width: 0, height: h)
+        
+        setupTableView()
+        
+        view.addSubview(searchButton)
+        searchButton.addConstraints(left: view.leftAnchor, top: view.topAnchor, right: nil, bottom: nil, leftConstent: margin, topConstent: 90, rightConstent: 0, bottomConstent: 0, width: h, height: h)
+        
+        view.addSubview(searchTextField)
+        searchTextField.addConstraints(left: searchButton.rightAnchor, top: searchButton.topAnchor, right: view.rightAnchor, bottom: searchButton.bottomAnchor, leftConstent: 0, topConstent: 0, rightConstent: margin, bottomConstent: 0, width: 0, height: h)
+        
+    }
+    
+    private func setupTableView(){
+        view.addSubview(tableView)
+        tableView.addConstraints(left: searchContainerView.leftAnchor, top: searchContainerView.bottomAnchor, right: searchContainerView.rightAnchor, bottom: nil, leftConstent: 0, topConstent: 6, rightConstent: 0, bottomConstent: 0, width: 0, height: 300)
+     
+        tableView.isHidden = true
+    }
+
     private func setupCallShipperButton(){
         view.addSubview(callShipperButton)
         callShipperButton.addConstraints(left: nil, top: nil, right: nil, bottom: view.bottomAnchor, leftConstent: 0, topConstent: 0, rightConstent: 0, bottomConstent: 30, width: 60, height: 60)

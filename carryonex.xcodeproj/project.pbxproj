@@ -13,6 +13,7 @@
 		660704E61F3CFB15000C09FD /* UserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660704E51F3CFB15000C09FD /* UserInfoViewController.swift */; };
 		660704E81F3D062E000C09FD /* UserInfoViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660704E71F3D062E000C09FD /* UserInfoViewCell.swift */; };
 		663F1C941F44ABEB00E866C2 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 663F1C931F44ABEB00E866C2 /* README.md */; };
+		663F1C961F44DBD000E866C2 /* HomePageTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 663F1C951F44DBD000E866C2 /* HomePageTableCell.swift */; };
 		6657E94B1F435BEF00755443 /* PhotoIDController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6657E94A1F435BEF00755443 /* PhotoIDController.swift */; };
 		6657E94D1F435C1F00755443 /* PhotoIDController++.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6657E94C1F435C1F00755443 /* PhotoIDController++.swift */; };
 		665DE4ED1F3A0B70004DDB88 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 665DE4EC1F3A0B70004DDB88 /* AppDelegate.swift */; };
@@ -46,6 +47,7 @@
 		660704E51F3CFB15000C09FD /* UserInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoViewController.swift; sourceTree = "<group>"; };
 		660704E71F3D062E000C09FD /* UserInfoViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoViewCell.swift; sourceTree = "<group>"; };
 		663F1C931F44ABEB00E866C2 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
+		663F1C951F44DBD000E866C2 /* HomePageTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePageTableCell.swift; sourceTree = "<group>"; };
 		665183DB1F4201F200DF2906 /* carryonex-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "carryonex-Bridging-Header.h"; sourceTree = "<group>"; };
 		6657E94A1F435BEF00755443 /* PhotoIDController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoIDController.swift; sourceTree = "<group>"; };
 		6657E94C1F435C1F00755443 /* PhotoIDController++.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PhotoIDController++.swift"; sourceTree = "<group>"; };
@@ -198,6 +200,7 @@
 			isa = PBXGroup;
 			children = (
 				66A16AF91F3B704A00B32AD3 /* HomePageController++.swift */,
+				663F1C951F44DBD000E866C2 /* HomePageTableCell.swift */,
 			);
 			name = HomePages;
 			sourceTree = "<group>";
@@ -388,6 +391,7 @@
 				66A16AF21F3A5F8100B32AD3 /* UIView++.swift in Sources */,
 				6657E94D1F435C1F00755443 /* PhotoIDController++.swift in Sources */,
 				66C9756F1F3DF15200450F37 /* UserProfileView.swift in Sources */,
+				663F1C961F44DBD000E866C2 /* HomePageTableCell.swift in Sources */,
 				66C975771F3E141600450F37 /* PhoneNumberController.swift in Sources */,
 				66C9757F1F3E167C00450F37 /* DisclaimerController.swift in Sources */,
 				665DE4F51F3A0B70004DDB88 /* carryonex.xcdatamodeld in Sources */,

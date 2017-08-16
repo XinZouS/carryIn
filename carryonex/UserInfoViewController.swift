@@ -37,9 +37,9 @@ class UserInfoViewController: UICollectionViewController, UICollectionViewDelega
         
         setupNavigationBarItems()
         
-        setupUserProfileView()
-        
         setupCollectionView()
+        
+        setupUserProfileView()
         
         setupLogoutButton()
         
