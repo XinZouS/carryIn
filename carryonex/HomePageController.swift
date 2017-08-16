@@ -87,6 +87,8 @@ class HomePageController: UIViewController, MKMapViewDelegate, CLLocationManager
         navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: buttonColorPurple]
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(customView: userInfoBarButtonView)
+        
+        UINavigationBar.appearance().backgroundColor = UIColor()
     }
     
     
