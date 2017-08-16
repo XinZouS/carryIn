@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>KMNavigationBarTransition.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>M13Checkbox.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -17,12 +22,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>188002AA9987DED67AB9E13B9E95E826</key>
+		<key>00660EA920FEC8EF697FA99E73DA257E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>20A9DD9ABBF08BC57372A26C35327BF1</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C5A7402DB4F8EFECFFC7AC135E4AA63E</key>
 		<dict>
 			<key>primary</key>
 			<true/>

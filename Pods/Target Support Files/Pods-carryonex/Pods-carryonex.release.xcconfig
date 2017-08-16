@@ -1,11 +1,11 @@
 ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES
 EMBEDDED_CONTENT_CONTAINS_SWIFT = YES
-FRAMEWORK_SEARCH_PATHS = $(inherited) "$PODS_CONFIGURATION_BUILD_DIR/M13Checkbox" "${PODS_ROOT}/MOBFoundation" "${PODS_ROOT}/SMSSDK/MobProducts/SDK/SMSSDK"
+FRAMEWORK_SEARCH_PATHS = $(inherited) "$PODS_CONFIGURATION_BUILD_DIR/KMNavigationBarTransition" "$PODS_CONFIGURATION_BUILD_DIR/M13Checkbox" "${PODS_ROOT}/MOBFoundation" "${PODS_ROOT}/SMSSDK/MobProducts/SDK/SMSSDK"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
 HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/MOBFoundation" "${PODS_ROOT}/Headers/Public/SMSSDK"
 LD_RUNPATH_SEARCH_PATHS = $(inherited) '@executable_path/Frameworks' '@loader_path/Frameworks'
-OTHER_CFLAGS = $(inherited) -iquote "$PODS_CONFIGURATION_BUILD_DIR/M13Checkbox/M13Checkbox.framework/Headers" -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/MOBFoundation" -isystem "${PODS_ROOT}/Headers/Public/SMSSDK"
-OTHER_LDFLAGS = $(inherited) -ObjC -l"icucore" -l"stdc++" -l"z" -framework "JavaScriptCore" -framework "M13Checkbox" -framework "MOBFoundation" -framework "MOBFoundationEx" -framework "SMS_SDK"
+OTHER_CFLAGS = $(inherited) -iquote "$PODS_CONFIGURATION_BUILD_DIR/KMNavigationBarTransition/KMNavigationBarTransition.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/M13Checkbox/M13Checkbox.framework/Headers" -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/MOBFoundation" -isystem "${PODS_ROOT}/Headers/Public/SMSSDK"
+OTHER_LDFLAGS = $(inherited) -ObjC -l"icucore" -l"stdc++" -l"z" -framework "JavaScriptCore" -framework "KMNavigationBarTransition" -framework "M13Checkbox" -framework "MOBFoundation" -framework "MOBFoundationEx" -framework "SMS_SDK"
 OTHER_SWIFT_FLAGS = $(inherited) "-D" "COCOAPODS"
 PODS_BUILD_DIR = $BUILD_DIR
 PODS_CONFIGURATION_BUILD_DIR = $PODS_BUILD_DIR/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
