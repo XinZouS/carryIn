@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import MapKit
 
 
 extension HomePageController: UITableViewDelegate, UITableViewDataSource {
@@ -45,10 +45,18 @@ extension HomePageController: UITableViewDelegate, UITableViewDataSource {
 
     
     func callShipperButtonTapped(){
-        if true {
-            
+        if User.sharedInstance.isVerified {
+            let isShipper = User.sharedInstance.isShipper
+            if isShipper {
+                print("TODO: push TripPostController!!!")
+            }else{
+                print("TODO: push SendRequestCollectionViewController!!!")
+            }
         }else{
-            // go to SendRequest
+            let verifyView = PhotoIDController()
+//            let verifyNvg = UINavigationController(rootViewController: verifyView) // for single page
+//            present(verifyNvg, animated: false, completion: nil)
+            navigationController?.pushViewController(verifyView, animated: true) // for navigation page
         }
         print("HomePageController++.swift: call shipper button tapped!!!!!")
     }
@@ -66,7 +74,7 @@ extension HomePageController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func showGiftController(){
-        print("showGiftController!!!!!!")
+        print("TODO: showGiftController!!!!!!")
     }
     
     func pullSideButtonTapped(){
@@ -88,8 +96,19 @@ extension HomePageController: UITableViewDelegate, UITableViewDataSource {
         let uStr = User.sharedInstance.isShipper ? btnTitleShipForMe : btnTitleShipForYou
         setupSwitchUserTypeBtnTitle(str: uStr)
         print("now I am a sipper == \(User.sharedInstance.isShipper), I can change to \(uStr)")
+        
+        flipPageHorizontally()
     }
     
+    private func flipPageHorizontally(){
+        var rotate3D = CATransform3DIdentity
+        rotate3D.m34 = 1.0 / -1000
+        rotate3D = CATransform3DRotate(rotate3D, CGFloat(M_PI / 0.3), 0.0, 1.0, 0.0)
+        view.layer.transform = rotate3D
+        UIView.animate(withDuration: 1.0, delay: 0, usingSpringWithDamping: 1.6, initialSpringVelocity: 1, options: .curveEaseIn, animations: {
+            self.view.layer.transform = CATransform3DIdentity
+        }, completion: nil)
+    }
 
     
     private func pushViewFromLeftToRight(destVC: UIViewController){
@@ -120,6 +139,31 @@ extension HomePageController: UITableViewDelegate, UITableViewDataSource {
             pullSideButtonTapped()
         default:
             break
+        }
+    }
+
+    
+    func zoomToUserLocation(){
+        
+        mapView.delegate = self
+        mapView.showsScale = true
+        mapView.showsPointsOfInterest = true
+        mapView.showsUserLocation = true
+        
+        locationManager.requestAlwaysAuthorization()
+        locationManager.requestWhenInUseAuthorization()
+        
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        }
+        // zoom in to user location
+        guard let loc = locationManager.location?.coordinate else { return }
+        let viewRegion = MKCoordinateRegionMakeWithDistance(loc, 600, 600)
+        mapView.setRegion(viewRegion, animated: false)
+        
+        DispatchQueue.main.async {
+            self.locationManager.startUpdatingLocation()
         }
     }
 

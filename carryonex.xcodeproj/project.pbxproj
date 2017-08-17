@@ -192,6 +192,7 @@
 			isa = PBXGroup;
 			children = (
 				665DE4EE1F3A0B70004DDB88 /* HomePageController.swift */,
+				663F1C951F44DBD000E866C2 /* HomePageTableCell.swift */,
 			);
 			name = HomePages;
 			sourceTree = "<group>";
@@ -200,7 +201,6 @@
 			isa = PBXGroup;
 			children = (
 				66A16AF91F3B704A00B32AD3 /* HomePageController++.swift */,
-				663F1C951F44DBD000E866C2 /* HomePageTableCell.swift */,
 			);
 			name = HomePages;
 			sourceTree = "<group>";

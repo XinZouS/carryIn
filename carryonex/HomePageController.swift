@@ -151,30 +151,12 @@ class HomePageController: UIViewController, MKMapViewDelegate, CLLocationManager
         navigationItem.title = "游箱" // for returning from UserInfoPage, change title back;
     }
 
-//    private func setupNavigationBar(){
-//        UINavigationBar.appearance().tintColor = buttonColorPurple
-//        navigationController?.navigationBar.tintColor = buttonColorPurple
-//        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: buttonColorPurple]
-//        
-//        
-//    }
     
     private func setupMapView(){
         view.addSubview(mapView)
         mapView.addConstraints(left: view.leftAnchor, top: view.topAnchor, right: view.rightAnchor, bottom: view.bottomAnchor, leftConstent: 0, topConstent: 0, rightConstent: 0, bottomConstent: 0, width: 0, height: 0)
-        mapView.delegate = self
-        mapView.showsScale = true
-        mapView.showsPointsOfInterest = true
-        mapView.showsUserLocation = true
         
-        locationManager.requestAlwaysAuthorization()
-        locationManager.requestWhenInUseAuthorization()
-        
-        if CLLocationManager.locationServicesEnabled() {
-            locationManager.delegate = self
-            locationManager.desiredAccuracy = kCLLocationAccuracyBest
-            locationManager.startUpdatingLocation()
-        }
+        zoomToUserLocation()
     }
     
     private func setupSearchContents(){
@@ -207,6 +189,7 @@ class HomePageController: UIViewController, MKMapViewDelegate, CLLocationManager
         callShipperButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
     }
     
+
 
     private func setupNavigationBar(){
         UINavigationBar.appearance().tintColor = buttonColorWhite
