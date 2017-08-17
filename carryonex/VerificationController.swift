@@ -23,7 +23,7 @@ class VerificationController: UIViewController {
         let b = UILabel()
         b.text = "请输入您的验证码"
         b.textColor = .black
-        b.font = UIFont.systemFont(ofSize: 20)
+        b.font = UIFont.systemFont(ofSize: 16)
         b.textAlignment = .center
         return b
     }()
@@ -31,8 +31,8 @@ class VerificationController: UIViewController {
     let hintLabel2: UILabel = {
         let b = UILabel()
         b.text = "验证码已发送到"
-        b.textColor = .lightGray
-        b.font = UIFont.systemFont(ofSize: 15)
+        b.textColor = .darkGray
+        b.font = UIFont.systemFont(ofSize: 10)
         b.textAlignment = .center
         return b
     }()
@@ -61,7 +61,7 @@ class VerificationController: UIViewController {
         let b = UIButton()
         b.backgroundColor = .lightGray // buttonColorBlue
         b.setTitle("重新发送", for: .normal)
-        b.layer.cornerRadius = 6
+        b.layer.cornerRadius = 5
         b.layer.masksToBounds = true
         b.addTarget(self, action: #selector(resendButtonTapped), for: .touchUpInside)
         b.isEnabled = false
@@ -118,8 +118,9 @@ class VerificationController: UIViewController {
         for labe in labels {
             labe?.textAlignment = .center
             labe?.font = UIFont.boldSystemFont(ofSize: 30)
-            labe?.layer.borderColor = UIColor.black.cgColor
-            labe?.layer.borderWidth = 2
+            labe?.layer.borderColor = UIColor.lightGray.cgColor
+            labe?.layer.borderWidth = 1
+            labe?.layer.cornerRadius = 2
         }
 //        verifiCodeLabel1?.backgroundColor = .yellow
 //        verifiCodeLabel2?.backgroundColor = .cyan

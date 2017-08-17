@@ -33,7 +33,7 @@ class PhoneNumberController: UIViewController, UIPickerViewDelegate, UIPickerVie
     lazy var flagButton: UIButton = {
         let b = UIButton()
         b.backgroundColor = .white
-        b.layer.borderColor = UIColor.green.cgColor
+        b.layer.borderColor = UIColor.lightGray.cgColor
         b.layer.borderWidth = 1
         b.layer.cornerRadius = 5
         b.setTitle("🇨🇳 +86", for: .normal)
@@ -52,7 +52,7 @@ class PhoneNumberController: UIViewController, UIPickerViewDelegate, UIPickerVie
         t.layer.borderColor = UIColor.lightGray.cgColor
         t.keyboardType = .phonePad
         t.placeholder = " 请输入您的手机号"
-        t.font = UIFont.systemFont(ofSize: 20)
+        t.font = UIFont.systemFont(ofSize: 16)
         t.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         return t
     }()
@@ -95,7 +95,8 @@ class PhoneNumberController: UIViewController, UIPickerViewDelegate, UIPickerVie
         let b = UIButton()
         b.backgroundColor = .lightGray // buttonColorBlue
         b.setTitle("获取验证码", for: .normal)
-        b.layer.cornerRadius = 6
+        b.titleLabel?.font = UIFont.systemFont(ofSize: 16)
+        b.layer.cornerRadius = 5
         b.layer.masksToBounds = true
         b.addTarget(self, action: #selector(okButtonTapped), for: .touchUpInside)
         b.isEnabled = false
@@ -137,6 +138,10 @@ class PhoneNumberController: UIViewController, UIPickerViewDelegate, UIPickerVie
     
     
     private func setupNavigationBar(){
+        UINavigationBar.appearance().tintColor = buttonColorWhite
+        navigationController?.navigationBar.tintColor = buttonColorWhite
+        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: buttonColorWhite]
+        
         navigationItem.title = "输入手机"
     }
     
@@ -145,10 +150,10 @@ class PhoneNumberController: UIViewController, UIPickerViewDelegate, UIPickerVie
         okButton.translatesAutoresizingMaskIntoConstraints = false
         okButton.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 0).isActive = true
         okButton.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 20).isActive = true
-        okButton.widthAnchor.constraint(equalToConstant: 180).isActive = true
+        okButton.widthAnchor.constraint(equalToConstant: 148).isActive = true
         okButton.heightAnchor.constraint(equalToConstant: 40).isActive = true
         
-//        setupDevelopButton()
+        setupDevelopButton()
     }
     private func setupDevelopButton(){
         view.addSubview(devBtn)
@@ -159,15 +164,22 @@ class PhoneNumberController: UIViewController, UIPickerViewDelegate, UIPickerVie
     private func setupPhoneNumTextField(){
         view.addSubview(phoneNumberTextField)
         phoneNumberTextField.translatesAutoresizingMaskIntoConstraints = false
-        phoneNumberTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 40).isActive = true
+        phoneNumberTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 45).isActive = true
         phoneNumberTextField.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -120).isActive = true
-        phoneNumberTextField.widthAnchor.constraint(equalToConstant: 175).isActive = true
+        phoneNumberTextField.widthAnchor.constraint(equalToConstant: 178).isActive = true
         phoneNumberTextField.heightAnchor.constraint(equalToConstant: textFieldH).isActive = true
+        let re = CGRect(x: 10, y: 0, width: 7, height: 20)
+        let leftView = UILabel(frame: re)
+        leftView.backgroundColor = .clear
+        phoneNumberTextField.leftView = leftView
+        phoneNumberTextField.leftViewMode = .always
+        phoneNumberTextField.contentVerticalAlignment = .center        
     }
+    
     
     private func setupFlagButton(){
         view.addSubview(flagButton)
-        flagButton.addConstraints(left: nil, top: nil, right: phoneNumberTextField.leftAnchor, bottom: nil, leftConstent: 0, topConstent: 0, rightConstent: 0, bottomConstent: 0, width: 90, height: textFieldH)
+        flagButton.addConstraints(left: nil, top: nil, right: phoneNumberTextField.leftAnchor, bottom: nil, leftConstent: 0, topConstent: 0, rightConstent: 10, bottomConstent: 0, width: 76, height: textFieldH)
         flagButton.centerYAnchor.constraint(equalTo: phoneNumberTextField.centerYAnchor).isActive = true
     }
     

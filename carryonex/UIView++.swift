@@ -21,6 +21,7 @@ let menuColorLightOrange = UIColor(r: 255, g: 160, b: 133)
 
 let barColorGray = UIColor(r:50,g:50,b:50)
 let barColorLightGray = UIColor(r:174,g:174,b:174)
+let borderColorLightGray = UIColor(r:232,g:232,b:232)
 
 extension UIColor {
     static func rgb(r:CGFloat, g:CGFloat, b:CGFloat) -> UIColor {
