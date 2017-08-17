@@ -52,6 +52,10 @@ class DisclaimerController: UIViewController {
     }
 
     private func setupNavigationBar(){
+        UINavigationBar.appearance().tintColor = buttonColorWhite
+        navigationController?.navigationBar.tintColor = buttonColorWhite
+        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: buttonColorWhite]
+        
         navigationItem.title = "用户协议"
     }
 

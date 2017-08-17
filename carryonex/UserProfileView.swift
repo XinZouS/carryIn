@@ -49,6 +49,11 @@ class UserProfileView: UIView {
         b.imageView?.contentMode = .scaleAspectFill
         b.layer.cornerRadius = 50
         b.layer.masksToBounds = true
+        b.layer.shadowColor = UIColor(red:0,green:0,blue:0,alpha:0.3).cgColor
+        b.layer.shadowOffset = CGSize(width: 2.0, height: 2.0)
+        b.layer.shadowOpacity = 1.0
+        b.layer.shadowRadius = 1.0
+        b.layer.masksToBounds = false
         b.addTarget(self, action: #selector(profileButtonTapped), for: .touchUpInside)
         return b
     }()

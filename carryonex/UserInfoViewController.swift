@@ -49,8 +49,7 @@ class UserInfoViewController: UICollectionViewController, UICollectionViewDelega
     
     private func setupNavigationBarItems(){
         navigationItem.title = "我的帐户"
-        
-        let leftBackBtn = UIBarButtonItem(title: "<", style: .plain, target: self, action: #selector(dismissSelfToLeft))
+        let leftBackBtn = UIBarButtonItem(image: #imageLiteral(resourceName: "CarryonEx_Back"), style: .plain, target: self, action: #selector(dismissSelfToLeft))
         navigationItem.setLeftBarButton(leftBackBtn, animated: false)
     }
     
@@ -75,7 +74,7 @@ class UserInfoViewController: UICollectionViewController, UICollectionViewDelega
     
     private func setupLogoutButton(){
         view.addSubview(logoutButton)
-        logoutButton.addConstraints(left: view.leftAnchor, top: nil, right: nil, bottom: view.bottomAnchor, leftConstent: 0, topConstent: 0, rightConstent: 0, bottomConstent: 0, width: 40, height: 40)
+        logoutButton.addConstraints(left: view.leftAnchor, top: nil, right: nil, bottom: view.bottomAnchor, leftConstent: 15, topConstent: 0, rightConstent: 0, bottomConstent: 5, width: 30, height: 30)
     }
 
      
