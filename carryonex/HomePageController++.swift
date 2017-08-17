@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import MapKit
 
 
 extension HomePageController: UITableViewDelegate, UITableViewDataSource {
@@ -45,10 +45,18 @@ extension HomePageController: UITableViewDelegate, UITableViewDataSource {
 
     
     func callShipperButtonTapped(){
-        if true {
-            
+        if User.sharedInstance.isVerified {
+            let isShipper = User.sharedInstance.isShipper
+            if isShipper {
+                print("TODO: push TripPostController!!!")
+            }else{
+                print("TODO: push SendRequestCollectionViewController!!!")
+            }
         }else{
-            // go to SendRequest
+            let verifyView = PhotoIDController()
+//            let verifyNvg = UINavigationController(rootViewController: verifyView) // for single page
+//            present(verifyNvg, animated: false, completion: nil)
+            navigationController?.pushViewController(verifyView, animated: true) // for navigation page
         }
         print("HomePageController++.swift: call shipper button tapped!!!!!")
     }
@@ -66,7 +74,7 @@ extension HomePageController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func showGiftController(){
-        print("showGiftController!!!!!!")
+        print("TODO: showGiftController!!!!!!")
     }
     
     func pullSideButtonTapped(){
@@ -131,6 +139,31 @@ extension HomePageController: UITableViewDelegate, UITableViewDataSource {
             pullSideButtonTapped()
         default:
             break
+        }
+    }
+
+    
+    func zoomToUserLocation(){
+        
+        mapView.delegate = self
+        mapView.showsScale = true
+        mapView.showsPointsOfInterest = true
+        mapView.showsUserLocation = true
+        
+        locationManager.requestAlwaysAuthorization()
+        locationManager.requestWhenInUseAuthorization()
+        
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        }
+        // zoom in to user location
+        guard let loc = locationManager.location?.coordinate else { return }
+        let viewRegion = MKCoordinateRegionMakeWithDistance(loc, 600, 600)
+        mapView.setRegion(viewRegion, animated: false)
+        
+        DispatchQueue.main.async {
+            self.locationManager.startUpdatingLocation()
         }
     }
 

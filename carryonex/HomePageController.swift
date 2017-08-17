@@ -151,19 +151,8 @@ class HomePageController: UIViewController, MKMapViewDelegate, CLLocationManager
     private func setupMapView(){
         view.addSubview(mapView)
         mapView.addConstraints(left: view.leftAnchor, top: view.topAnchor, right: view.rightAnchor, bottom: view.bottomAnchor, leftConstent: 0, topConstent: 0, rightConstent: 0, bottomConstent: 0, width: 0, height: 0)
-        mapView.delegate = self
-        mapView.showsScale = true
-        mapView.showsPointsOfInterest = true
-        mapView.showsUserLocation = true
         
-        locationManager.requestAlwaysAuthorization()
-        locationManager.requestWhenInUseAuthorization()
-        
-        if CLLocationManager.locationServicesEnabled() {
-            locationManager.delegate = self
-            locationManager.desiredAccuracy = kCLLocationAccuracyBest
-            locationManager.startUpdatingLocation()
-        }
+        zoomToUserLocation()
     }
     
     private func setupSearchContents(){
