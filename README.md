@@ -2,8 +2,8 @@
 
 ## Data model class
 
-- User
-```
+### User
+~~~swift
 var id: String?
 var username: String?
 var password: String?
@@ -22,11 +22,10 @@ var itemList : [String]? // itemId better
 var tripList : [String]? // tripId
 
 var isShipper: Bool?
+~~~
 
-```
-
-- Item
-```
+### Item
+~~~swift
 class Item : NSObject {
 
 var id: String?
@@ -51,10 +50,10 @@ enum ItemCategory : String {
     case healthCareProducts = "Health Care Products"
     case electronics = "Electronics"
 }
-```
+~~~
 
-- Trip
-```
+### Trip
+~~~swift
 class Trip : NSObject {
 
 var id: String?
@@ -69,16 +68,13 @@ enum Transportation : String {
     case car = "Car"
     case bus = "Bus"
 }
-```
+~~~
 
 
-### View
-```
-Homepage
-```
 
-### Controller
-```
-HomePageController
-```
+
+## Compatibility
+- iOS 9.0+
+- Swift 3.0+
+- Xcode 8.0+
 
