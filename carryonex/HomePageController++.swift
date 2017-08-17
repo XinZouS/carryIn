@@ -88,8 +88,19 @@ extension HomePageController: UITableViewDelegate, UITableViewDataSource {
         let uStr = User.sharedInstance.isShipper ? btnTitleShipForMe : btnTitleShipForYou
         setupSwitchUserTypeBtnTitle(str: uStr)
         print("now I am a sipper == \(User.sharedInstance.isShipper), I can change to \(uStr)")
+        
+        flipPageHorizontally()
     }
     
+    private func flipPageHorizontally(){
+        var rotate3D = CATransform3DIdentity
+        rotate3D.m34 = 1.0 / -1000
+        rotate3D = CATransform3DRotate(rotate3D, CGFloat(M_PI / 0.3), 0.0, 1.0, 0.0)
+        view.layer.transform = rotate3D
+        UIView.animate(withDuration: 1.0, delay: 0, usingSpringWithDamping: 1.6, initialSpringVelocity: 1, options: .curveEaseIn, animations: {
+            self.view.layer.transform = CATransform3DIdentity
+        }, completion: nil)
+    }
 
     
     private func pushViewFromLeftToRight(destVC: UIViewController){

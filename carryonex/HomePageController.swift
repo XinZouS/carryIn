@@ -140,9 +140,9 @@ class HomePageController: UIViewController, MKMapViewDelegate, CLLocationManager
     }
 
     private func setupNavigationBar(){
-        UINavigationBar.appearance().tintColor = buttonColorPurple
-        navigationController?.navigationBar.tintColor = buttonColorPurple
-        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: buttonColorPurple]
+        UINavigationBar.appearance().tintColor = buttonColorWhite
+        navigationController?.navigationBar.tintColor = buttonColorWhite
+        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: buttonColorWhite]
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(customView: userInfoBarButtonView)
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: giftBarButtonView)
@@ -196,11 +196,6 @@ class HomePageController: UIViewController, MKMapViewDelegate, CLLocationManager
         callShipperButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
     }
     
-
-    private func setupNavigationBar(){
-        UINavigationBar.appearance().tintColor = buttonColorWhite
-        navigationController?.navigationBar.tintColor = buttonColorWhite
-        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: buttonColorWhite]
 
     private func setupSideButtonView(){
         view.addSubview(sideButtonContainerView)
