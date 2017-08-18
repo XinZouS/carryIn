@@ -16,18 +16,23 @@ class PhotoIDController: UIViewController {
         case passport = "护照 🔽"
     }
     
+    enum ImageForIDsType {
+        case passport, idCardA, idCardB, profile
+    }
+    
     var idType: IDType = .passport
     
     var idCardA_Img : UIImage?
     var idCardB_Img : UIImage?
     var passportImg : UIImage?
     var profileImg  : UIImage?
+    var imagePickedType: ImageForIDsType?
     
     let pageMargin: CGFloat = 20
     let imgMargin : CGFloat = 30
     let labelH : CGFloat = 50
+    /// imgH: screen.Width - 2 * (imgMargin + pageMargin) * screenRatio(9/16)
     let imgH : CGFloat = (UIScreen.main.bounds.width - 2 * (30 + 20)) * (9.0 / 14.0)
-    // imgH: screen.Width - 2 * (imgMargin + pageMargin) * screenRatio(9/16)
     
     let titleLabel: UILabel = {
         let t = UILabel()
@@ -38,7 +43,7 @@ class PhotoIDController: UIViewController {
     }()
     
     let scrollContainer : UIScrollView = {
-        let v = UIScrollView() //(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width - 2 * (30 + 20), height: 1000) )
+        let v = UIScrollView()
         //v.backgroundColor = .yellow
         v.isDirectionalLockEnabled = true
         return v
@@ -114,7 +119,7 @@ class PhotoIDController: UIViewController {
         let b = UIButton()
         //b.backgroundColor = .green
         b.setBackgroundImage(#imageLiteral(resourceName: "uploadID"), for: .normal)
-//        b.addTarget(self, action: #selector(), for: .touchUpInside)
+        b.addTarget(self, action: #selector(passportButtonTapped), for: .touchUpInside)
         return b
     }()
     
@@ -135,7 +140,7 @@ class PhotoIDController: UIViewController {
         let b = UIButton()
         //b.backgroundColor = .green
         b.setBackgroundImage(#imageLiteral(resourceName: "uploadID"), for: .normal)
-//        b.addTarget(self, action: #selector(), for: .touchUpInside)
+        b.addTarget(self, action: #selector(idCardA_ButtonTapped), for: .touchUpInside)
         return b
     }()
     
@@ -151,7 +156,7 @@ class PhotoIDController: UIViewController {
         let b = UIButton()
         //b.backgroundColor = .green
         b.setBackgroundImage(#imageLiteral(resourceName: "uploadID"), for: .normal)
-//        b.addTarget(self, action: #selector(), for: .touchUpInside)
+        b.addTarget(self, action: #selector(idCardB_ButtonTapped), for: .touchUpInside)
         return b
     }()
     
@@ -166,7 +171,7 @@ class PhotoIDController: UIViewController {
         let b = UIButton()
         //b.backgroundColor = .green
         b.setBackgroundImage(#imageLiteral(resourceName: "uploadID"), for: .normal)
-//        b.addTarget(self, action: #selector(), for: .touchUpInside)
+        b.addTarget(self, action: #selector(profileButtonTapped), for: .touchUpInside)
         return b
     }()
     
