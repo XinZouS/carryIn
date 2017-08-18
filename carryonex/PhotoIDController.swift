@@ -51,11 +51,13 @@ class PhotoIDController: UIViewController {
         t.text = "姓名："
         return t
     }()
-    let nameTextField : UITextField = {
+    lazy var nameTextField : UITextField = {
         let t = UITextField()
         //t.backgroundColor = .green
         t.textAlignment = .right
         t.placeholder = "请输入您的姓名"
+        t.returnKeyType = .done
+        t.delegate = self
         return t
     }()
     let nameUnderLineView: UIView = {
@@ -171,8 +173,12 @@ class PhotoIDController: UIViewController {
     
     lazy var submitButton : UIButton = {
         let b = UIButton()
-        b.setTitle("完成验证", for: .normal)
-        //b.backgroundColor = .blue
+        b.backgroundColor = buttonColorBlue
+        //b.setTitle("完成验证", for: .normal)
+        let att = [NSFontAttributeName: UIFont.systemFont(ofSize: 18),
+                   NSForegroundColorAttributeName: UIColor.black]
+        let str = NSAttributedString(string: "完成验证", attributes: att)
+        b.setAttributedTitle(str, for: .normal)
         b.addTarget(self, action: #selector(submitButtonTapped), for: .touchUpInside)
         return b
     }()
@@ -202,6 +208,7 @@ class PhotoIDController: UIViewController {
         //scrollContainer.contentSize = CGSize(width: UIScreen.main.bounds.width - 220.0, height: 1000)
         view.addSubview(scrollContainer)
         scrollContainer.addConstraints(left: view.leftAnchor, top: titleLabel.bottomAnchor, right: view.rightAnchor, bottom: view.bottomAnchor, leftConstent: 0, topConstent: 10, rightConstent: 0, bottomConstent: 0, width: 0, height: 0)
+        scrollContainer.keyboardDismissMode = .interactive // allow user to drag down keyboard
         
         // following setup orders NOT allow to change, post items depend on pre items;
         setupNameInputContents()
@@ -221,6 +228,7 @@ class PhotoIDController: UIViewController {
         
         scrollContainer.addSubview(nameTextField)
         nameTextField.addConstraints(left: nameLabel.rightAnchor, top: nameLabel.topAnchor, right: view.rightAnchor, bottom: nameLabel.bottomAnchor, leftConstent: 10, topConstent: 0, rightConstent: pageMargin, bottomConstent: 0, width: 0, height: 0)
+        nameTextField.becomeFirstResponder()
         
         scrollContainer.addSubview(nameUnderLineView)
         nameUnderLineView.addConstraints(left: view.leftAnchor, top: nameLabel.bottomAnchor, right: view.rightAnchor, bottom: nil, leftConstent: pageMargin, topConstent: 0, rightConstent: pageMargin, bottomConstent: 0, width: 0, height: 1)
