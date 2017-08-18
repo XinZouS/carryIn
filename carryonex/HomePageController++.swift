@@ -92,14 +92,24 @@ extension HomePageController: UITableViewDelegate, UITableViewDataSource {
     
     func switchUserType(){
         let s = User.sharedInstance.isShipper
-        User.sharedInstance.isShipper = !(s ?? false)
-        let uStr = User.sharedInstance.isShipper ? btnTitleShipForMe : btnTitleShipForYou
-        setupSwitchUserTypeBtnTitle(str: uStr)
-        print("now I am a sipper == \(User.sharedInstance.isShipper), I can change to \(uStr)")
+        User.sharedInstance.isShipper = !s
         
+        changeTextTo(isShipper: !s)
+        changeImageTo(isShipper: !s)
         flipPageHorizontally()
     }
-    
+    private func changeTextTo(isShipper: Bool){
+        let uStr = isShipper ? btnTitleShipForMe : btnTitleShipForYou
+        setupSwitchUserTypeBtnTitle(str: uStr)
+        print("now I am a sipper == \(User.sharedInstance.isShipper), I can change to \(uStr)")
+    }
+    private func changeImageTo(isShipper: Bool){
+        let newImgSideBtn : UIImage = isShipper ? #imageLiteral(resourceName: "CarryonEx_A") : #imageLiteral(resourceName: "yadianwenqing")
+        let newImgMainBtn : UIImage = isShipper ? #imageLiteral(resourceName: "yadianwenqing") : #imageLiteral(resourceName: "user29x29")
+        pullSideBtnViewButton.setImage(newImgSideBtn, for: .normal)
+        callShipperButton.setImage(newImgMainBtn, for: .normal)
+    }
+
     private func flipPageHorizontally(){
         var rotate3D = CATransform3DIdentity
         rotate3D.m34 = 1.0 / -1000
