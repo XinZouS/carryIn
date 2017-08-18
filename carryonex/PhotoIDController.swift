@@ -8,12 +8,15 @@
 
 import UIKit
 
+
 class PhotoIDController: UIViewController {
     
     enum IDType: String {
         case idCard = "身份证"
         case passport = "护照"
     }
+    
+    var idType: IDType = .passport
     
     var idCardA_Img : UIImage?
     var idCardB_Img : UIImage?
@@ -72,6 +75,7 @@ class PhotoIDController: UIViewController {
         let b = UIButton()
         b.backgroundColor = .cyan
         b.setTitle(IDType.idCard.rawValue, for: .normal)
+        b.contentHorizontalAlignment = .right // button title to the right
         b.addTarget(self, action: #selector(idTypeMakeChange), for: .touchUpInside)
         return b
     }()
@@ -186,7 +190,7 @@ class PhotoIDController: UIViewController {
     }
     private func setupTitleLabel(){
         view.addSubview(titleLabel)
-        titleLabel.addConstraints(left: view.leftAnchor, top: topLayoutGuide.bottomAnchor, right: view.rightAnchor, bottom: nil, leftConstent: 0, topConstent: 20, rightConstent: 0, bottomConstent: 0, width: 0, height: 26)
+        titleLabel.addConstraints(left: view.leftAnchor, top: topLayoutGuide.bottomAnchor, right: view.rightAnchor, bottom: nil, leftConstent: 0, topConstent: 10, rightConstent: 0, bottomConstent: 0, width: 0, height: 26)
     }
     private func setupScrollViewContainer(){ // this container MUST setup before other contents!!!
         //scrollContainer.contentSize = CGSize(width: UIScreen.main.bounds.width - 220.0, height: 1000)
@@ -294,6 +298,30 @@ class PhotoIDController: UIViewController {
     
     func idTypeMakeChange(){
         print("change user id type!!!!!")
+        switch idType { // current idType in cases:
+        case .passport:
+            idType = IDType.idCard // change to idCard
+            idTypeButton.setTitle(idType.rawValue, for: .normal)
+            passportLabelHeighConstraint?.isActive  = false
+            passportButtonHeighConstraint?.isActive = false
+            
+            idCardALabelHeightConstraint?.isActive  = true
+            idCardAButtonHeightConstraint?.isActive = true
+            idCardBLabelHeightConstraint?.isActive  = true
+            idCardBButtonHeightConstraint?.isActive = true
+        case .idCard:
+            idType = IDType.passport
+            idTypeButton.setTitle(idType.rawValue, for: .normal)
+            passportLabelHeighConstraint?.isActive = true
+            passportButtonHeighConstraint?.isActive = true
+            
+            idCardALabelHeightConstraint?.isActive  = false
+            idCardAButtonHeightConstraint?.isActive = false
+            idCardBLabelHeightConstraint?.isActive  = false
+            idCardBButtonHeightConstraint?.isActive = false
+        default:
+            print("Error: PhotoIDController: ")
+        }
     }
     
     func submitButtonTapped(){
