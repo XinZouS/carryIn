@@ -37,6 +37,7 @@ class PhotoIDController: UIViewController {
     let scrollContainer : UIScrollView = {
         let v = UIScrollView() //(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width - 2 * (30 + 20), height: 1000) )
         v.backgroundColor = .yellow
+        v.isDirectionalLockEnabled = true
         return v
     }()
     
@@ -86,6 +87,7 @@ class PhotoIDController: UIViewController {
     }()
     
     var passportLabelHeighConstraint : NSLayoutConstraint?
+    
     let passportUploadLabel: UILabel = {
         let t = UILabel()
         t.backgroundColor = .green
@@ -95,6 +97,7 @@ class PhotoIDController: UIViewController {
     }()
     
     var passportButtonHeighConstraint: NSLayoutConstraint?
+    
     lazy var passportButton : UIButton = {
         let b = UIButton()
         b.backgroundColor = .green
@@ -143,6 +146,7 @@ class PhotoIDController: UIViewController {
     let profileUploadLabel: UILabel = {
         let t = UILabel()
         t.text = "上传真人大头照："
+        t.textAlignment = .left
         return t
     }()
     
@@ -158,6 +162,7 @@ class PhotoIDController: UIViewController {
     lazy var submitButton : UIButton = {
         let b = UIButton()
         b.setTitle("完成验证", for: .normal)
+        b.backgroundColor = .blue
         b.addTarget(self, action: #selector(submitButtonTapped), for: .touchUpInside)
         return b
     }()
@@ -186,9 +191,9 @@ class PhotoIDController: UIViewController {
     private func setupScrollViewContainer(){ // this container MUST setup before other contents!!!
         //scrollContainer.contentSize = CGSize(width: UIScreen.main.bounds.width - 220.0, height: 1000)
         view.addSubview(scrollContainer)
-        scrollContainer.addConstraints(left: view.leftAnchor, top: titleLabel.bottomAnchor, right: view.rightAnchor, bottom: nil, leftConstent: pageMargin, topConstent: 10, rightConstent: pageMargin, bottomConstent: 0, width: 0, height: 2000)
+        scrollContainer.addConstraints(left: view.leftAnchor, top: titleLabel.bottomAnchor, right: view.rightAnchor, bottom: view.bottomAnchor, leftConstent: 0, topConstent: 10, rightConstent: 0, bottomConstent: 0, width: 0, height: 0)
         
-        // these setup orders NOT allow to change, post items depend on pre items;
+        // following setup orders NOT allow to change, post items depend on pre items;
         setupNameInputContents()
         setupIdTypeSelectionContents()
         
@@ -202,26 +207,26 @@ class PhotoIDController: UIViewController {
     private func setupNameInputContents(){
         
         scrollContainer.addSubview(nameLabel)
-        nameLabel.addConstraints(left: scrollContainer.leftAnchor, top: scrollContainer.topAnchor, right: nil, bottom: nil, leftConstent: 0, topConstent: 10, rightConstent: 0, bottomConstent: 0, width: 90, height: labelH)
+        nameLabel.addConstraints(left: view.leftAnchor, top: scrollContainer.topAnchor, right: nil, bottom: nil, leftConstent: pageMargin, topConstent: 10, rightConstent: 0, bottomConstent: 0, width: 90, height: labelH)
         
         scrollContainer.addSubview(nameTextField)
-        nameTextField.addConstraints(left: nameLabel.rightAnchor, top: nameLabel.topAnchor, right: scrollContainer.rightAnchor, bottom: nameLabel.bottomAnchor, leftConstent: 30, topConstent: 0, rightConstent: 0, bottomConstent: 0, width: 0, height: 0)
+        nameTextField.addConstraints(left: nameLabel.rightAnchor, top: nameLabel.topAnchor, right: view.rightAnchor, bottom: nameLabel.bottomAnchor, leftConstent: 10, topConstent: 0, rightConstent: pageMargin, bottomConstent: 0, width: 0, height: 0)
         
         scrollContainer.addSubview(nameUnderLineView)
-        nameUnderLineView.addConstraints(left: scrollContainer.leftAnchor, top: nameLabel.bottomAnchor, right: scrollContainer.rightAnchor, bottom: nil, leftConstent: 0, topConstent: 10, rightConstent: 0, bottomConstent: 0, width: 0, height: 1)
+        nameUnderLineView.addConstraints(left: view.leftAnchor, top: nameLabel.bottomAnchor, right: view.rightAnchor, bottom: nil, leftConstent: pageMargin, topConstent: 10, rightConstent: pageMargin, bottomConstent: 0, width: 0, height: 1)
         
     }
     
     private func setupIdTypeSelectionContents(){
         
         scrollContainer.addSubview(idTypeLabel)
-        idTypeLabel.addConstraints(left: scrollContainer.leftAnchor, top: nameUnderLineView.bottomAnchor, right: nil, bottom: nil, leftConstent: 0, topConstent: 10, rightConstent: 0, bottomConstent: 0, width: 90, height: labelH)
+        idTypeLabel.addConstraints(left: view.leftAnchor, top: nameUnderLineView.bottomAnchor, right: nil, bottom: nil, leftConstent: pageMargin, topConstent: 10, rightConstent: 0, bottomConstent: 0, width: 90, height: labelH)
         
         scrollContainer.addSubview(idTypeButton)
-        idTypeButton.addConstraints(left: idTypeLabel.rightAnchor, top: idTypeLabel.topAnchor, right: scrollContainer.rightAnchor, bottom: idTypeLabel.bottomAnchor, leftConstent: 30, topConstent: 0, rightConstent: 0, bottomConstent: 0, width: 0, height: 0)
+        idTypeButton.addConstraints(left: idTypeLabel.rightAnchor, top: idTypeLabel.topAnchor, right: view.rightAnchor, bottom: idTypeLabel.bottomAnchor, leftConstent: 10, topConstent: 0, rightConstent: pageMargin, bottomConstent: 0, width: 0, height: 0)
         
         scrollContainer.addSubview(idTypeUnderLineView)
-        idTypeUnderLineView.addConstraints(left: scrollContainer.leftAnchor, top: idTypeLabel.bottomAnchor, right: scrollContainer.rightAnchor, bottom: nil, leftConstent: 0, topConstent: 10, rightConstent: 0, bottomConstent: 0, width: 0, height: 1)
+        idTypeUnderLineView.addConstraints(left: view.leftAnchor, top: idTypeLabel.bottomAnchor, right: view.rightAnchor, bottom: nil, leftConstent: pageMargin, topConstent: 10, rightConstent: pageMargin, bottomConstent: 0, width: 0, height: 1)
         
     }
     
@@ -230,12 +235,12 @@ class PhotoIDController: UIViewController {
     private func setupPassportContents(){
         
         scrollContainer.addSubview(passportUploadLabel)
-        passportUploadLabel.addConstraints(left: scrollContainer.leftAnchor, top: idTypeUnderLineView.bottomAnchor, right: scrollContainer.rightAnchor, bottom: nil, leftConstent: 0, topConstent: 0, rightConstent: 0, bottomConstent: 0, width: 0, height: 0)
+        passportUploadLabel.addConstraints(left: view.leftAnchor, top: idTypeUnderLineView.bottomAnchor, right: view.rightAnchor, bottom: nil, leftConstent: pageMargin, topConstent: 0, rightConstent: pageMargin, bottomConstent: 0, width: 0, height: 0)
         passportLabelHeighConstraint = passportUploadLabel.heightAnchor.constraint(equalToConstant: labelH)
         passportLabelHeighConstraint?.isActive = true
 
         scrollContainer.addSubview(passportButton)
-        passportButton.addConstraints(left: scrollContainer.leftAnchor, top: passportUploadLabel.bottomAnchor, right: scrollContainer.rightAnchor, bottom: nil, leftConstent: imgMargin, topConstent: 0, rightConstent: imgMargin, bottomConstent: 0, width: 0, height: 0)
+        passportButton.addConstraints(left: view.leftAnchor, top: passportUploadLabel.bottomAnchor, right: view.rightAnchor, bottom: nil, leftConstent: pageMargin + imgMargin, topConstent: 0, rightConstent: pageMargin + imgMargin, bottomConstent: 0, width: 0, height: 0)
         passportButtonHeighConstraint = passportButton.heightAnchor.constraint(equalToConstant: imgH)
         passportButtonHeighConstraint?.isActive = true
         
@@ -243,26 +248,26 @@ class PhotoIDController: UIViewController {
     
     private func setupIdCardContents(){
         
-        let sL = scrollContainer.leftAnchor
-        let sR = scrollContainer.rightAnchor
+        let sL = view.leftAnchor // scrollContainer.leftAnchor
+        let sR = view.rightAnchor // scrollContainer.rightAnchor
         
         scrollContainer.addSubview(idCardAUploadLabel)
-        idCardAUploadLabel.addConstraints(left: sL, top: passportButton.bottomAnchor, right: sR, bottom: nil, leftConstent: 0, topConstent: 0, rightConstent: 0, bottomConstent: 0, width: 0, height: 0)
+        idCardAUploadLabel.addConstraints(left: sL, top: passportButton.bottomAnchor, right: sR, bottom: nil, leftConstent: pageMargin, topConstent: 0, rightConstent: pageMargin, bottomConstent: 0, width: 0, height: 0)
         idCardALabelHeightConstraint = idCardAUploadLabel.heightAnchor.constraint(equalToConstant: labelH)
         idCardALabelHeightConstraint?.isActive = true
         
         scrollContainer.addSubview(idCardA_Button)
-        idCardA_Button.addConstraints(left: sL, top: idCardAUploadLabel.bottomAnchor, right: sR, bottom: nil, leftConstent: imgMargin, topConstent: 0, rightConstent: imgMargin, bottomConstent: 0, width: 0, height: 0)
+        idCardA_Button.addConstraints(left: sL, top: idCardAUploadLabel.bottomAnchor, right: sR, bottom: nil, leftConstent: pageMargin + imgMargin, topConstent: 0, rightConstent: pageMargin + imgMargin, bottomConstent: 0, width: 0, height: 0)
         idCardAButtonHeightConstraint = idCardA_Button.heightAnchor.constraint(equalToConstant: imgH)
         idCardAButtonHeightConstraint?.isActive = true
         //--------------
         scrollContainer.addSubview(idCardBUploadLabel)
-        idCardBUploadLabel.addConstraints(left: sL, top: idCardA_Button.bottomAnchor, right: sR, bottom: nil, leftConstent: 0, topConstent: 0, rightConstent: 0, bottomConstent: 0, width: 0, height: 0)
+        idCardBUploadLabel.addConstraints(left: sL, top: idCardA_Button.bottomAnchor, right: sR, bottom: nil, leftConstent: pageMargin, topConstent: 0, rightConstent: pageMargin, bottomConstent: 0, width: 0, height: 0)
         idCardBLabelHeightConstraint = idCardBUploadLabel.heightAnchor.constraint(equalToConstant: labelH)
         idCardBLabelHeightConstraint?.isActive = true
         
         scrollContainer.addSubview(idCardB_Button)
-        idCardB_Button.addConstraints(left: sL, top: idCardBUploadLabel.bottomAnchor, right: sR, bottom: nil, leftConstent: imgMargin, topConstent: 0, rightConstent: imgMargin, bottomConstent: 0, width: 0, height: 0)
+        idCardB_Button.addConstraints(left: sL, top: idCardBUploadLabel.bottomAnchor, right: sR, bottom: nil, leftConstent: pageMargin + imgMargin, topConstent: 0, rightConstent: pageMargin + imgMargin, bottomConstent: 0, width: 0, height: 0)
         idCardBButtonHeightConstraint = idCardB_Button.heightAnchor.constraint(equalToConstant: imgH)
         idCardBButtonHeightConstraint?.isActive = true
         
@@ -270,19 +275,19 @@ class PhotoIDController: UIViewController {
     
     private func setupProfileContents(){
         scrollContainer.addSubview(profileUploadLabel)
-        profileUploadLabel.addConstraints(left: scrollContainer.leftAnchor, top: idCardB_Button.bottomAnchor, right: scrollContainer.rightAnchor, bottom: nil, leftConstent: 0, topConstent: 0, rightConstent: 0, bottomConstent: 0, width: 0, height: labelH)
+        profileUploadLabel.addConstraints(left: view.leftAnchor, top: idCardB_Button.bottomAnchor, right: view.rightAnchor, bottom: nil, leftConstent: pageMargin, topConstent: 0, rightConstent: pageMargin, bottomConstent: 0, width: 0, height: labelH)
         
         let imgHW : CGFloat = UIScreen.main.bounds.width - 2 * (imgMargin + pageMargin + 30)
         
         scrollContainer.addSubview(profileButton)
         profileButton.addConstraints(left: nil, top: profileUploadLabel.bottomAnchor, right: nil, bottom: nil, leftConstent: 0, topConstent: 0, rightConstent: 0, bottomConstent: 0, width: imgHW, height: imgHW)
-        profileButton.centerXAnchor.constraint(equalTo: scrollContainer.centerXAnchor).isActive = true
+        profileButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
     }
     
     private func setupSubmitButton(){
         scrollContainer.addSubview(submitButton)
-        submitButton.addConstraints(left: nil, top: profileButton.bottomAnchor, right: nil, bottom: scrollContainer.bottomAnchor, leftConstent: 0, topConstent: 30, rightConstent: 0, bottomConstent: 0, width: 100, height: 40)
-        submitButton.centerXAnchor.constraint(equalTo: scrollContainer.centerXAnchor).isActive = true
+        submitButton.addConstraints(left: view.leftAnchor, top: profileButton.bottomAnchor, right: view.rightAnchor, bottom: scrollContainer.bottomAnchor, leftConstent: 0, topConstent: 30, rightConstent: 0, bottomConstent: 0, width: 0, height: 40)
+        //submitButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
     }
     
     

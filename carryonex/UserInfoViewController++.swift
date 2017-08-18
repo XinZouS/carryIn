@@ -13,6 +13,9 @@ extension UserInfoViewController {
     
     
     func dismissSelfToLeft(){
+//        navigationController?.popToRootViewController(animated: true)
+//        return
+        
         let transition: CATransition = CATransition()
         let timeFunc : CAMediaTimingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
         transition.duration = 0.25
