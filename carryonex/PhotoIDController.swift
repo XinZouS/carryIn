@@ -12,8 +12,8 @@ import UIKit
 class PhotoIDController: UIViewController {
     
     enum IDType: String {
-        case idCard = "身份证"
-        case passport = "护照"
+        case idCard = "身份证 🔽"
+        case passport = "护照 🔽"
     }
     
     var idType: IDType = .passport
@@ -25,7 +25,7 @@ class PhotoIDController: UIViewController {
     
     let pageMargin: CGFloat = 20
     let imgMargin : CGFloat = 30
-    let labelH : CGFloat = 40
+    let labelH : CGFloat = 50
     let imgH : CGFloat = (UIScreen.main.bounds.width - 2 * (30 + 20)) * (9.0 / 14.0)
     // imgH: screen.Width - 2 * (imgMargin + pageMargin) * screenRatio(9/16)
     
@@ -39,21 +39,21 @@ class PhotoIDController: UIViewController {
     
     let scrollContainer : UIScrollView = {
         let v = UIScrollView() //(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width - 2 * (30 + 20), height: 1000) )
-        v.backgroundColor = .yellow
+        //v.backgroundColor = .yellow
         v.isDirectionalLockEnabled = true
         return v
     }()
     
     let nameLabel: UILabel = {
         let t = UILabel()
-        t.backgroundColor = .orange
+        //t.backgroundColor = .orange
         t.textAlignment = .left
         t.text = "姓名："
         return t
     }()
     let nameTextField : UITextField = {
         let t = UITextField()
-        t.backgroundColor = .green
+        //t.backgroundColor = .green
         t.textAlignment = .right
         t.placeholder = "请输入您的姓名"
         return t
@@ -66,22 +66,28 @@ class PhotoIDController: UIViewController {
     
     let idTypeLabel: UILabel = {
         let t = UILabel()
-        t.backgroundColor = .orange
+        //t.backgroundColor = .orange
         t.textAlignment = .left
         t.text = "证件类型："
         return t
     }()
+    let idTypeBtnTitleAttributes = [NSFontAttributeName: UIFont.systemFont(ofSize: 16),
+                                    NSForegroundColorAttributeName: UIColor.black]
     lazy var idTypeButton: UIButton = {
         let b = UIButton()
-        b.backgroundColor = .cyan
-        b.setTitle(IDType.idCard.rawValue, for: .normal)
+        //b.backgroundColor = buttonColorBlue
+        //b.setTitle(IDType.passport.rawValue, for: .normal)
+        let att = [NSFontAttributeName: UIFont.systemFont(ofSize: 16),
+                   NSForegroundColorAttributeName: UIColor.black]
+        let attributeStr = NSAttributedString(string: IDType.passport.rawValue, attributes: att)
+        b.setAttributedTitle(attributeStr, for: .normal)
         b.contentHorizontalAlignment = .right // button title to the right
         b.addTarget(self, action: #selector(idTypeMakeChange), for: .touchUpInside)
         return b
     }()
     let idTypeSelectionView: UIView = {
         let v = UIView()
-        v.backgroundColor = .orange
+        //v.backgroundColor = .orange
         return v
     }()
     let idTypeUnderLineView: UIView = {
@@ -94,7 +100,7 @@ class PhotoIDController: UIViewController {
     
     let passportUploadLabel: UILabel = {
         let t = UILabel()
-        t.backgroundColor = .green
+        //t.backgroundColor = .green
         t.textAlignment = .left
         t.text = "上传护照个人信息页照片："
         return t
@@ -104,7 +110,7 @@ class PhotoIDController: UIViewController {
     
     lazy var passportButton : UIButton = {
         let b = UIButton()
-        b.backgroundColor = .green
+        //b.backgroundColor = .green
         b.setBackgroundImage(#imageLiteral(resourceName: "uploadID"), for: .normal)
 //        b.addTarget(self, action: #selector(), for: .touchUpInside)
         return b
@@ -117,7 +123,7 @@ class PhotoIDController: UIViewController {
 
     let idCardAUploadLabel: UILabel = {
         let t = UILabel()
-        t.backgroundColor = .green
+        //t.backgroundColor = .green
         t.textAlignment = .left
         t.text = "上传身份证正面照片："
         return t
@@ -125,7 +131,7 @@ class PhotoIDController: UIViewController {
     
     lazy var idCardA_Button : UIButton = {
         let b = UIButton()
-        b.backgroundColor = .green
+        //b.backgroundColor = .green
         b.setBackgroundImage(#imageLiteral(resourceName: "uploadID"), for: .normal)
 //        b.addTarget(self, action: #selector(), for: .touchUpInside)
         return b
@@ -133,7 +139,7 @@ class PhotoIDController: UIViewController {
     
     let idCardBUploadLabel: UILabel = {
         let t = UILabel()
-        t.backgroundColor = .green
+        //t.backgroundColor = .green
         t.textAlignment = .left
         t.text = "上传身份证背面照片："
         return t
@@ -141,7 +147,7 @@ class PhotoIDController: UIViewController {
     
     lazy var idCardB_Button : UIButton = {
         let b = UIButton()
-        b.backgroundColor = .green
+        //b.backgroundColor = .green
         b.setBackgroundImage(#imageLiteral(resourceName: "uploadID"), for: .normal)
 //        b.addTarget(self, action: #selector(), for: .touchUpInside)
         return b
@@ -156,7 +162,7 @@ class PhotoIDController: UIViewController {
     
     lazy var profileButton : UIButton = {
         let b = UIButton()
-        b.backgroundColor = .green
+        //b.backgroundColor = .green
         b.setBackgroundImage(#imageLiteral(resourceName: "uploadID"), for: .normal)
 //        b.addTarget(self, action: #selector(), for: .touchUpInside)
         return b
@@ -166,7 +172,7 @@ class PhotoIDController: UIViewController {
     lazy var submitButton : UIButton = {
         let b = UIButton()
         b.setTitle("完成验证", for: .normal)
-        b.backgroundColor = .blue
+        //b.backgroundColor = .blue
         b.addTarget(self, action: #selector(submitButtonTapped), for: .touchUpInside)
         return b
     }()
@@ -217,20 +223,20 @@ class PhotoIDController: UIViewController {
         nameTextField.addConstraints(left: nameLabel.rightAnchor, top: nameLabel.topAnchor, right: view.rightAnchor, bottom: nameLabel.bottomAnchor, leftConstent: 10, topConstent: 0, rightConstent: pageMargin, bottomConstent: 0, width: 0, height: 0)
         
         scrollContainer.addSubview(nameUnderLineView)
-        nameUnderLineView.addConstraints(left: view.leftAnchor, top: nameLabel.bottomAnchor, right: view.rightAnchor, bottom: nil, leftConstent: pageMargin, topConstent: 10, rightConstent: pageMargin, bottomConstent: 0, width: 0, height: 1)
+        nameUnderLineView.addConstraints(left: view.leftAnchor, top: nameLabel.bottomAnchor, right: view.rightAnchor, bottom: nil, leftConstent: pageMargin, topConstent: 0, rightConstent: pageMargin, bottomConstent: 0, width: 0, height: 1)
         
     }
     
     private func setupIdTypeSelectionContents(){
         
         scrollContainer.addSubview(idTypeLabel)
-        idTypeLabel.addConstraints(left: view.leftAnchor, top: nameUnderLineView.bottomAnchor, right: nil, bottom: nil, leftConstent: pageMargin, topConstent: 10, rightConstent: 0, bottomConstent: 0, width: 90, height: labelH)
+        idTypeLabel.addConstraints(left: view.leftAnchor, top: nameUnderLineView.bottomAnchor, right: nil, bottom: nil, leftConstent: pageMargin, topConstent: 20, rightConstent: 0, bottomConstent: 0, width: 90, height: labelH)
         
         scrollContainer.addSubview(idTypeButton)
         idTypeButton.addConstraints(left: idTypeLabel.rightAnchor, top: idTypeLabel.topAnchor, right: view.rightAnchor, bottom: idTypeLabel.bottomAnchor, leftConstent: 10, topConstent: 0, rightConstent: pageMargin, bottomConstent: 0, width: 0, height: 0)
         
         scrollContainer.addSubview(idTypeUnderLineView)
-        idTypeUnderLineView.addConstraints(left: view.leftAnchor, top: idTypeLabel.bottomAnchor, right: view.rightAnchor, bottom: nil, leftConstent: pageMargin, topConstent: 10, rightConstent: pageMargin, bottomConstent: 0, width: 0, height: 1)
+        idTypeUnderLineView.addConstraints(left: view.leftAnchor, top: idTypeLabel.bottomAnchor, right: view.rightAnchor, bottom: nil, leftConstent: pageMargin, topConstent: 0, rightConstent: pageMargin, bottomConstent: 0, width: 0, height: 1)
         
     }
     
@@ -239,7 +245,7 @@ class PhotoIDController: UIViewController {
     private func setupPassportContents(){
         
         scrollContainer.addSubview(passportUploadLabel)
-        passportUploadLabel.addConstraints(left: view.leftAnchor, top: idTypeUnderLineView.bottomAnchor, right: view.rightAnchor, bottom: nil, leftConstent: pageMargin, topConstent: 0, rightConstent: pageMargin, bottomConstent: 0, width: 0, height: 0)
+        passportUploadLabel.addConstraints(left: view.leftAnchor, top: idTypeUnderLineView.bottomAnchor, right: view.rightAnchor, bottom: nil, leftConstent: pageMargin, topConstent: 10, rightConstent: pageMargin, bottomConstent: 0, width: 0, height: 0)
         passportLabelHeighConstraint = passportUploadLabel.heightAnchor.constraint(equalToConstant: labelH)
         passportLabelHeighConstraint?.isActive = true
 
@@ -257,22 +263,22 @@ class PhotoIDController: UIViewController {
         
         scrollContainer.addSubview(idCardAUploadLabel)
         idCardAUploadLabel.addConstraints(left: sL, top: passportButton.bottomAnchor, right: sR, bottom: nil, leftConstent: pageMargin, topConstent: 0, rightConstent: pageMargin, bottomConstent: 0, width: 0, height: 0)
-        idCardALabelHeightConstraint = idCardAUploadLabel.heightAnchor.constraint(equalToConstant: labelH)
+        idCardALabelHeightConstraint = idCardAUploadLabel.heightAnchor.constraint(equalToConstant: 0) // labelH
         idCardALabelHeightConstraint?.isActive = true
         
         scrollContainer.addSubview(idCardA_Button)
         idCardA_Button.addConstraints(left: sL, top: idCardAUploadLabel.bottomAnchor, right: sR, bottom: nil, leftConstent: pageMargin + imgMargin, topConstent: 0, rightConstent: pageMargin + imgMargin, bottomConstent: 0, width: 0, height: 0)
-        idCardAButtonHeightConstraint = idCardA_Button.heightAnchor.constraint(equalToConstant: imgH)
+        idCardAButtonHeightConstraint = idCardA_Button.heightAnchor.constraint(equalToConstant: 0) // imgH
         idCardAButtonHeightConstraint?.isActive = true
         //--------------
         scrollContainer.addSubview(idCardBUploadLabel)
         idCardBUploadLabel.addConstraints(left: sL, top: idCardA_Button.bottomAnchor, right: sR, bottom: nil, leftConstent: pageMargin, topConstent: 0, rightConstent: pageMargin, bottomConstent: 0, width: 0, height: 0)
-        idCardBLabelHeightConstraint = idCardBUploadLabel.heightAnchor.constraint(equalToConstant: labelH)
+        idCardBLabelHeightConstraint = idCardBUploadLabel.heightAnchor.constraint(equalToConstant: 0) // labelH
         idCardBLabelHeightConstraint?.isActive = true
         
         scrollContainer.addSubview(idCardB_Button)
         idCardB_Button.addConstraints(left: sL, top: idCardBUploadLabel.bottomAnchor, right: sR, bottom: nil, leftConstent: pageMargin + imgMargin, topConstent: 0, rightConstent: pageMargin + imgMargin, bottomConstent: 0, width: 0, height: 0)
-        idCardBButtonHeightConstraint = idCardB_Button.heightAnchor.constraint(equalToConstant: imgH)
+        idCardBButtonHeightConstraint = idCardB_Button.heightAnchor.constraint(equalToConstant: 0) // imgH
         idCardBButtonHeightConstraint?.isActive = true
         
     }
@@ -297,31 +303,42 @@ class PhotoIDController: UIViewController {
     
     
     func idTypeMakeChange(){
-        print("change user id type!!!!!")
+        
+        print("change user id type!! current type is \(idType)!!!")
+        
         switch idType { // current idType in cases:
+            
         case .passport:
             idType = IDType.idCard // change to idCard
-            idTypeButton.setTitle(idType.rawValue, for: .normal)
-            passportLabelHeighConstraint?.isActive  = false
-            passportButtonHeighConstraint?.isActive = false
+            passportLabelHeighConstraint?.constant = 0
+            passportButtonHeighConstraint?.constant = 0
             
-            idCardALabelHeightConstraint?.isActive  = true
-            idCardAButtonHeightConstraint?.isActive = true
-            idCardBLabelHeightConstraint?.isActive  = true
-            idCardBButtonHeightConstraint?.isActive = true
+            idCardALabelHeightConstraint?.constant = labelH
+            idCardAButtonHeightConstraint?.constant = imgH
+            idCardBLabelHeightConstraint?.constant = labelH
+            idCardBButtonHeightConstraint?.constant = imgH
+            
         case .idCard:
             idType = IDType.passport
-            idTypeButton.setTitle(idType.rawValue, for: .normal)
-            passportLabelHeighConstraint?.isActive = true
-            passportButtonHeighConstraint?.isActive = true
+            passportLabelHeighConstraint?.constant = labelH
+            passportButtonHeighConstraint?.constant = imgH
             
-            idCardALabelHeightConstraint?.isActive  = false
-            idCardAButtonHeightConstraint?.isActive = false
-            idCardBLabelHeightConstraint?.isActive  = false
-            idCardBButtonHeightConstraint?.isActive = false
+            idCardALabelHeightConstraint?.constant = 0
+            idCardAButtonHeightConstraint?.constant = 0
+            idCardBLabelHeightConstraint?.constant = 0
+            idCardBButtonHeightConstraint?.constant = 0
+            
         default:
             print("Error: PhotoIDController: ")
         }
+        
+        // change button title by attributed string:
+        let attStr = NSAttributedString(string: idType.rawValue, attributes: idTypeBtnTitleAttributes)
+        idTypeButton.setAttributedTitle(attStr, for: .normal)
+        
+        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
+            self.view.layoutIfNeeded()
+        }, completion: nil)
     }
     
     func submitButtonTapped(){
