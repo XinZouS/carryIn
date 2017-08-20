@@ -1,11 +1,10 @@
-# carryonex
+# CarryonEx
 
 ## Server APIs Need
-- 用户注册createUser(username: String, appToken: String, completion:{ (callback登录结果与user){} })  
-例如，是否能像这样的：
+- 用户注册createUser(username: String, appToken: String, timestamp: String, completion:{ (callback登录结果与user){} })  
 ~~~swift
 // username==phoneNumber
-DatabaseAPI.createUser(username: String, appToken: String, completion: { (user: User?, err) in
+DatabaseAPI.createUser(username: String, appToken: String, timestamp: String, completion: { (statusCode: String?, msg: String?, data:[String:Any]) in
     if err != nil {
         print("get error: \(err)")
         return
@@ -18,10 +17,10 @@ DatabaseAPI.createUser(username: String, appToken: String, completion: { (user: 
 })
 ~~~
 
-- 用户登录login(username: String, isVerified: Bool, token: String, completion: { (callback登录结果, user){} }) 
+- 用户登录login(username: String, isVerified: Bool, token: String, timestamp: String, completion: { (callback登录结果, user){} }) 
 ~~~swift
 // username==phoneNumber
-DatabaseAPI.login(withUsername: String, token: String, completion: { (user: User?, err: Error?) in
+DatabaseAPI.login(username: String, appToken: String, timestamp: String, completion: { (statusCode: String?, msg: String?, data:[String:Any]) in
     if err != nil {
         print("get error when sign in: \(err)")
         return
@@ -33,14 +32,14 @@ DatabaseAPI.login(withUsername: String, token: String, completion: { (user: User
 })
 ~~~
 
-- 上传用户信息updateChildValues(id: String, token: String, userInfoDictionary: [String : Any])
+- 上传用户信息updateChildValues(id: String, appToken: String, timestamp: String, userInfoDictionary: [String : Any])
 ~~~swift
-DatabaseAPI.updateChildValues(id: String, token: String, userInfoDictionary: [String: Any])
+DatabaseAPI.updateChildValues(id: String, appToken: String, timestamp: String, userInfoDictionary: [String: Any])
 ~~~
 
-- 下载用户信息getChildValues(id: String, token: String, completion: { (user: User?, err: Error?){} })
+- 下载用户信息getChildValues(userToken: String, appToken: String, timestamp: String, completion: { (callback下载结果){} })
 ~~~swift
-DatabaseAPI.getChildValues(id: String, token: String, completion: { (user: User?, err: Error?) in 
+DatabaseAPI.getChildValues(userToken: String, appToken: String, timestamp: String, completion: { (statusCode: String?, msg: String?, data:[String:Any]) in 
     if err != nil { return }
     // 读取用户成功，设置本地用户值
     currUser.id = user.id
@@ -50,9 +49,15 @@ DatabaseAPI.getChildValues(id: String, token: String, completion: { (user: User?
 })
 ~~~
 
-- 上传图片uploadImageWith(id: String, token: String, imageData: Image, completion: { (metaData, error){}  })
+- 上传图片uploadImageWith(userToken: String, appToken: String, timestamp: String, imageData: Image, completion: { (metaData, error){}  })
+~~~swift
+DatabaseAPI.uploadImageWith(userToken: String, appToken: String, userInfoDictionary: [String: Any], completion: { (metaData, err) in  
+    user.passportImgURL = metaData.url
+})
+~~~
 
-- to be continue ...
+### - to be continue ...
+
 
 ## Data model class
 - dictionary里key的String和变量名一样，如 
