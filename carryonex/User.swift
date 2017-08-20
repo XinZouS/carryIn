@@ -15,6 +15,8 @@ class User : NSObject {
     var username: String?
     var password: String?
     
+    var token: String?
+    
     var nickName: String?
     var phone:    String?
     var phoneCountryCode: String?
@@ -35,11 +37,13 @@ class User : NSObject {
     // use: User.sharedInstance.xxx
     static var sharedInstance = User()  // This is singleton
     
+    
     private override init() {
         super.init()
         id = ""
         username = ""
         password = ""
+        token = ""
         nickName = ""
         phone = ""
         phoneCountryCode = "86"
@@ -58,6 +62,8 @@ class User : NSObject {
         id = dictionary["id"] as? String
         username = dictionary["username"] as? String ?? ""
         password = dictionary["password"] as? String
+        
+        token = dictionary["token"] as? String
         
         nickName = dictionary["nickName"] as? String
         phone = dictionary["phone"] as? String

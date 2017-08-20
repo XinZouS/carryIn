@@ -1,12 +1,79 @@
 # carryonex
 
+## Server APIs Need
+- 用户注册createUser(username: String, appToken: String, completion:{ (callback登录结果与user){} })  
+例如，是否能像这样的：
+~~~swift
+// username==phoneNumber
+DatabaseAPI.createUser(username: String, appToken: String, completion: { (user: User?, err) in
+    if err != nil {
+        print("get error: \(err)")
+        return
+    }            
+    // if login success, get new User from callback function
+    guard let id = user?.id else { return }
+    //服务器创建用户成功，设置user更多信息并将dictionary上传；
+    let currUser: [String: Any] = ["id":"xxx", "username":"str", "phoneNumber":"123456", "idImageURL":"http://databaseStorageURL"]
+    DatabaseAPI.updateChildValues(currUser)
+})
+~~~
+
+- 用户登录login(username: String, isVerified: Bool, token: String, completion: { (callback登录结果, user){} }) 
+~~~swift
+// username==phoneNumber
+DatabaseAPI.login(withUsername: String, token: String, completion: { (user: User?, err: Error?) in
+    if err != nil {
+        print("get error when sign in: \(err)")
+        return
+    }
+    // see user login successfully:
+    if user?.username != nil {
+        设置本地User来自服务器的参数：id, token, ...
+    }
+})
+~~~
+
+- 上传用户信息updateChildValues(id: String, token: String, userInfoDictionary: [String : Any])
+~~~swift
+DatabaseAPI.updateChildValues(id: String, token: String, userInfoDictionary: [String: Any])
+~~~
+
+- 下载用户信息getChildValues(id: String, token: String, completion: { (user: User?, err: Error?){} })
+~~~swift
+DatabaseAPI.getChildValues(id: String, token: String, completion: { (user: User?, err: Error?) in 
+    if err != nil { return }
+    // 读取用户成功，设置本地用户值
+    currUser.id = user.id
+    currUser.phone = user.phoneNumber
+    currUser.passportImgURL = user.passportImgUrl
+    ... ...
+})
+~~~
+
+- 上传图片uploadImageWith(id: String, token: String, imageData: Image, completion: { (metaData, error){}  })
+
+- to be continue ...
+
 ## Data model class
+- dictionary里key的String和变量名一样，如 
+~~~swift
+func setupBy(dictionary: [String : Any]) {
+id = dictionary["id"] as? String
+username = dictionary["username"] as? String ?? ""
+password = dictionary["password"] as? String
+
+token = dictionary["token"] as? String
+... ...
+}
+~~~
 
 ### User
 ~~~swift
 var id: String?
 var username: String?
 var password: String?
+
+var token: String? // for login server verification
 
 var nickName: String?
 var phone:    String?

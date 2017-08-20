@@ -9,7 +9,51 @@
 import UIKit
 import MapKit
 
+/**
+ for textField and keyboard control;
+ */
+extension HomePageController: UITextFieldDelegate {
+        
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        searchTextField.resignFirstResponder()
+        return true
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        //searchTextField.becomeFirstResponder()
+        tableViewHeightConstraint?.constant = tableViewHeigh
+        animateTableView()
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        tableViewHeightConstraint?.constant = 0
+        animateTableView()
+    }
+    
+    private func animateTableView(){
+        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 1.6, options: .curveEaseIn, animations: { 
+            self.view.layoutIfNeeded()
+        }, completion: nil)
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        guard let touch = touches.first else { return }
+        
+        let location = touch.location(in: self.view)
+        let sideMargin: CGFloat = 40  // margin in setupSearchContents()
+        let topMargin : CGFloat = 90
+        //print("touch location = \(location)")
+        if location.x < sideMargin || location.x > UIScreen.main.bounds.width - sideMargin || location.y < topMargin {
+            searchTextField.resignFirstResponder()
+        }
+    }
+    
+}
 
+/**
+ for textField searching result table usage;
+ */
 extension HomePageController: UITableViewDelegate, UITableViewDataSource {
     
     func searchButtonTapped(){
@@ -44,13 +88,17 @@ extension HomePageController: UITableViewDelegate, UITableViewDataSource {
     
 
     
+    /// MARK: MUST check if user isVerified
     func callShipperButtonTapped(){
-        if User.sharedInstance.isVerified {
+        if true { // *** for development ONLY ***
+//        if User.sharedInstance.isVerified {
             let isShipper = User.sharedInstance.isShipper
             if isShipper {
                 print("TODO: push TripPostController!!!")
             }else{
-                print("TODO: push SendRequestCollectionViewController!!!")
+                print("--- push SendRequestCollectionViewController!!!")
+                let itemTypeListCtl = ItemTypeListController(collectionViewLayout: UICollectionViewFlowLayout())
+                navigationController?.pushViewController(itemTypeListCtl, animated: true)
             }
         }else{
             let verifyView = PhotoIDController()
@@ -58,7 +106,7 @@ extension HomePageController: UITableViewDelegate, UITableViewDataSource {
 //            present(verifyNvg, animated: false, completion: nil)
             navigationController?.pushViewController(verifyView, animated: true) // for navigation page
         }
-        print("HomePageController++.swift: call shipper button tapped!!!!!")
+        print("HomePageController++.swift: main calling button tapped!!!!!")
     }
     
     func showUserInfoSideMenu(){
@@ -176,7 +224,7 @@ extension HomePageController: UITableViewDelegate, UITableViewDataSource {
             self.locationManager.startUpdatingLocation()
         }
     }
-
+    
     
 }
 

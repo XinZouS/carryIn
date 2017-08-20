@@ -39,6 +39,8 @@ class HomePageController: UIViewController, MKMapViewDelegate, CLLocationManager
         v.layer.cornerRadius = 5
         return v
     }()
+    
+    let tableViewHeigh : CGFloat = UIScreen.main.bounds.height / 2.0
     var tableView = UITableView() // for search results
     lazy var searchButton : UIButton = { // replaced by searchController
         let b = UIButton()
@@ -47,10 +49,13 @@ class HomePageController: UIViewController, MKMapViewDelegate, CLLocationManager
         b.addTarget(self, action: #selector(searchButtonTapped), for: .touchUpInside)
         return b
     }()
+    var tableViewHeightConstraint: NSLayoutConstraint?
     
-    let searchTextField : UITextField = {
+    lazy var searchTextField : UITextField = {
         let t = UITextField()
         t.placeholder = " 搜索地址"
+        t.delegate = self
+        t.returnKeyType = .go
         return t
     }()
 
@@ -65,7 +70,7 @@ class HomePageController: UIViewController, MKMapViewDelegate, CLLocationManager
         let v = UIView()
         v.backgroundColor = .white
         v.layer.cornerRadius = 20 // bcz w,h = 40
-        v.layer.borderColor = buttonColorBlue.cgColor
+        v.layer.borderColor = buttonThemeColor.cgColor
         v.layer.borderWidth = 2
         v.layer.masksToBounds = true
         return v
@@ -178,9 +183,12 @@ class HomePageController: UIViewController, MKMapViewDelegate, CLLocationManager
     
     private func setupTableView(){
         view.addSubview(tableView)
-        tableView.addConstraints(left: searchContainerView.leftAnchor, top: searchContainerView.bottomAnchor, right: searchContainerView.rightAnchor, bottom: nil, leftConstent: 0, topConstent: 6, rightConstent: 0, bottomConstent: 0, width: 0, height: 300)
+        tableView.addConstraints(left: searchContainerView.leftAnchor, top: searchContainerView.bottomAnchor, right: searchContainerView.rightAnchor, bottom: nil, leftConstent: 0, topConstent: 6, rightConstent: 0, bottomConstent: 0, width: 0, height: 0)
+        tableViewHeightConstraint = tableView.heightAnchor.constraint(equalToConstant: 0)
+        tableViewHeightConstraint?.isActive = true
      
-        tableView.isHidden = true
+        tableView.keyboardDismissMode = .interactive
+        //tableView.isHidden = true
     }
 
     private func setupCallShipperButton(){

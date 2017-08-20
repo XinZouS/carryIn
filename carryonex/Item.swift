@@ -9,13 +9,6 @@
 import Foundation
 
 
-enum ItemCategory : String {
-    case bagsOrShoes = "Bags Or Shoes"
-    case healthCareProducts = "Health Care Products"
-    case electronics = "Electronics"
-}
-
-
 class Item : NSObject {
     
     var id: String?
@@ -33,7 +26,7 @@ class Item : NSObject {
     var endShippingTimeStamp: NSNumber?
     
     var tripId: String?
-    var itemCategory: ItemCategory?
+    var itemCategory: String?
     
     
     override init() {
@@ -47,7 +40,7 @@ class Item : NSObject {
         owner = nil
         startShippingTimeStamp = 0
         tripId = ""
-        itemCategory = nil
+        itemCategory = ""
     }
     
     
@@ -66,7 +59,7 @@ class Item : NSObject {
         startShippingTimeStamp = dictionary["startShippingTimeStamp"] as? NSNumber
         endShippingTimeStamp = dictionary["endShippingTimeStamp"] as? NSNumber
         tripId = dictionary["tripId"] as? String
-        itemCategory = dictionary["itemCategory"] as? ItemCategory
+        itemCategory = dictionary["itemCategory"] as? String
     }
     
 }

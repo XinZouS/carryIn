@@ -29,6 +29,10 @@
 		66A16AFA1F3B704A00B32AD3 /* HomePageController++.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A16AF91F3B704A00B32AD3 /* HomePageController++.swift */; };
 		66A16AFE1F3BA82000B32AD3 /* PageContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A16AFD1F3BA82000B32AD3 /* PageContainer.swift */; };
 		66A16B001F3BB3AA00B32AD3 /* SideMenuLeftController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A16AFF1F3BB3AA00B32AD3 /* SideMenuLeftController.swift */; };
+		66BB08301F487E3E00935950 /* ItemTypeListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66BB082F1F487E3E00935950 /* ItemTypeListController.swift */; };
+		66BB08321F487E5000935950 /* ItemTypeListController++.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66BB08311F487E5000935950 /* ItemTypeListController++.swift */; };
+		66BB08341F48967600935950 /* ItemCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66BB08331F48967600935950 /* ItemCategory.swift */; };
+		66BB08361F489DEA00935950 /* ItemTypeListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66BB08351F489DEA00935950 /* ItemTypeListCell.swift */; };
 		66C9756D1F3DEFB000450F37 /* UserInfoViewController++.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C9756C1F3DEFB000450F37 /* UserInfoViewController++.swift */; };
 		66C9756F1F3DF15200450F37 /* UserProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C9756E1F3DF15200450F37 /* UserProfileView.swift */; };
 		66C975771F3E141600450F37 /* PhoneNumberController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C975761F3E141600450F37 /* PhoneNumberController.swift */; };
@@ -68,6 +72,10 @@
 		66A16AFF1F3BB3AA00B32AD3 /* SideMenuLeftController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuLeftController.swift; sourceTree = "<group>"; };
 		66B1CA8F1F41FA4700EA0A43 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		66B1CA901F41FA7000EA0A43 /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
+		66BB082F1F487E3E00935950 /* ItemTypeListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemTypeListController.swift; sourceTree = "<group>"; };
+		66BB08311F487E5000935950 /* ItemTypeListController++.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ItemTypeListController++.swift"; sourceTree = "<group>"; };
+		66BB08331F48967600935950 /* ItemCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemCategory.swift; sourceTree = "<group>"; };
+		66BB08351F489DEA00935950 /* ItemTypeListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemTypeListCell.swift; sourceTree = "<group>"; };
 		66C9756C1F3DEFB000450F37 /* UserInfoViewController++.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UserInfoViewController++.swift"; sourceTree = "<group>"; };
 		66C9756E1F3DF15200450F37 /* UserProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileView.swift; sourceTree = "<group>"; };
 		66C975761F3E141600450F37 /* PhoneNumberController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhoneNumberController.swift; sourceTree = "<group>"; };
@@ -149,6 +157,7 @@
 			children = (
 				66A16AF31F3B56B500B32AD3 /* User.swift */,
 				66A16AF51F3B5EDB00B32AD3 /* Item.swift */,
+				66BB08331F48967600935950 /* ItemCategory.swift */,
 				66A16AF71F3B6B2E00B32AD3 /* Trip.swift */,
 			);
 			name = Model;
@@ -161,6 +170,7 @@
 				66C975721F3E133200450F37 /* UserInfoPage */,
 				66C975741F3E139700450F37 /* VerificationPages */,
 				6657E9481F435B9F00755443 /* PhotoID */,
+				66BB082D1F487DC900935950 /* SenderPages */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -172,6 +182,7 @@
 				66C975731F3E137100450F37 /* UserInfoPage */,
 				66C975751F3E13B100450F37 /* VerificationPages */,
 				6657E9491F435BBA00755443 /* PhotoID */,
+				66BB082E1F487DDF00935950 /* SenderPages */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -186,6 +197,23 @@
 				66A16AFF1F3BB3AA00B32AD3 /* SideMenuLeftController.swift */,
 			);
 			name = Helpers;
+			sourceTree = "<group>";
+		};
+		66BB082D1F487DC900935950 /* SenderPages */ = {
+			isa = PBXGroup;
+			children = (
+				66BB082F1F487E3E00935950 /* ItemTypeListController.swift */,
+				66BB08351F489DEA00935950 /* ItemTypeListCell.swift */,
+			);
+			name = SenderPages;
+			sourceTree = "<group>";
+		};
+		66BB082E1F487DDF00935950 /* SenderPages */ = {
+			isa = PBXGroup;
+			children = (
+				66BB08311F487E5000935950 /* ItemTypeListController++.swift */,
+			);
+			name = SenderPages;
 			sourceTree = "<group>";
 		};
 		66C975701F3E12F500450F37 /* HomePages */ = {
@@ -395,14 +423,17 @@
 				66C975771F3E141600450F37 /* PhoneNumberController.swift in Sources */,
 				66C9757F1F3E167C00450F37 /* DisclaimerController.swift in Sources */,
 				665DE4F51F3A0B70004DDB88 /* carryonex.xcdatamodeld in Sources */,
+				66BB08341F48967600935950 /* ItemCategory.swift in Sources */,
 				66A16AF61F3B5EDB00B32AD3 /* Item.swift in Sources */,
 				66C975791F3E149700450F37 /* VerificationController++.swift in Sources */,
 				665DE4EF1F3A0B70004DDB88 /* HomePageController.swift in Sources */,
 				66A16B001F3BB3AA00B32AD3 /* SideMenuLeftController.swift in Sources */,
+				66BB08321F487E5000935950 /* ItemTypeListController++.swift in Sources */,
 				66A16AF41F3B56B500B32AD3 /* User.swift in Sources */,
 				663F1C941F44ABEB00E866C2 /* README.md in Sources */,
 				66A16AFA1F3B704A00B32AD3 /* HomePageController++.swift in Sources */,
 				66C9757B1F3E159400450F37 /* PhoneNumberController++.swift in Sources */,
+				66BB08361F489DEA00935950 /* ItemTypeListCell.swift in Sources */,
 				6657E94B1F435BEF00755443 /* PhotoIDController.swift in Sources */,
 				660704E81F3D062E000C09FD /* UserInfoViewCell.swift in Sources */,
 				66A16AF81F3B6B2E00B32AD3 /* Trip.swift in Sources */,
@@ -410,6 +441,7 @@
 				66A16AFE1F3BA82000B32AD3 /* PageContainer.swift in Sources */,
 				660704E61F3CFB15000C09FD /* UserInfoViewController.swift in Sources */,
 				660704E01F3CBD42000C09FD /* SideMenuUserInfoView.swift in Sources */,
+				66BB08301F487E3E00935950 /* ItemTypeListController.swift in Sources */,
 				660704E21F3CDDC5000C09FD /* SlideMenuLeftCell.swift in Sources */,
 				665DE4ED1F3A0B70004DDB88 /* AppDelegate.swift in Sources */,
 				660704E41F3CF3E8000C09FD /* VerificationController.swift in Sources */,

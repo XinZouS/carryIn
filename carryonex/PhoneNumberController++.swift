@@ -43,7 +43,7 @@ extension PhoneNumberController: UITextFieldDelegate, PhoneNumberDelegate {
     }
     @objc private func okButtonEnable(){
         okButton.setTitle("获取验证码", for: .normal)
-        okButton.backgroundColor = buttonColorBlue
+        okButton.backgroundColor = buttonThemeColor
         okButton.isEnabled = true
     }
     private func showAlertWith(title:String, message:String){
@@ -101,7 +101,7 @@ extension PhoneNumberController: UITextFieldDelegate, PhoneNumberDelegate {
         isUserAgree = agreeCheckbox.checkState == .checked
         
         okButton.isEnabled = isUserAgree && isPhoneNumValid
-        okButton.backgroundColor = okButton.isEnabled ? buttonColorBlue : .lightGray
+        okButton.backgroundColor = okButton.isEnabled ? buttonThemeColor : .lightGray
     }
     
     func setupKeyboardObserver(){

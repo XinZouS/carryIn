@@ -39,7 +39,7 @@ extension PhotoIDController: UITextFieldDelegate, UINavigationControllerDelegate
     
     /// open menu to select image source
     func imageIDsButtonTapped(){
-        let attachmentMenu = UIAlertController(title: "选择图片来源", message: "", preferredStyle: .actionSheet)
+        let attachmentMenu = UIAlertController(title: "选择图片来源", message: "选择证件清晰照或拍摄证件上传以验证身份", preferredStyle: .actionSheet)
         let openLibrary = UIAlertAction(title: "相册选择", style: .default) { (action) in
             self.openImagePickerWith(source: .photoLibrary, isAllowEditing: self.imagePickedType == ImageForIDsType.profile)
         }

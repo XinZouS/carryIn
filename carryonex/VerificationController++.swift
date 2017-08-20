@@ -25,7 +25,7 @@ extension VerificationController: UITextFieldDelegate {
         resetTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(countDown1sec), userInfo: nil, repeats: resetTime != 0)
     }
     func countDown1sec(){
-        resendButton.backgroundColor = resetTime == 0 ? buttonColorBlue : UIColor.lightGray
+        resendButton.backgroundColor = resetTime == 0 ? buttonThemeColor : UIColor.lightGray
         resendButton.isEnabled = (resetTime == 0)
         if resetTime == 0 {
             resetTimer?.invalidate()

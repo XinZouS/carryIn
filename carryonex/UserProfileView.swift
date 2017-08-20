@@ -61,7 +61,7 @@ class UserProfileView: UIView {
     lazy var isCarrierSegmentControl: UISegmentedControl = {
         let s = UISegmentedControl(items: ["寄件人","揽件人"])
         //s.tintColor = .white
-        s.tintColor = buttonColorBlue
+        s.tintColor = buttonThemeColor
         s.selectedSegmentIndex = 0
         s.setTitleTextAttributes([NSFontAttributeName:UIFont.systemFont(ofSize: 16)], for: .normal)
         s.addTarget(self, action: #selector(changeUserCarrierState), for: .valueChanged)

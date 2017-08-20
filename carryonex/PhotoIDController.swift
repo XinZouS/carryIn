@@ -178,7 +178,7 @@ class PhotoIDController: UIViewController {
     
     lazy var submitButton : UIButton = {
         let b = UIButton()
-        b.backgroundColor = buttonColorBlue
+        b.backgroundColor = buttonThemeColor
         //b.setTitle("完成验证", for: .normal)
         let att = [NSFontAttributeName: UIFont.systemFont(ofSize: 18),
                    NSForegroundColorAttributeName: UIColor.black]
