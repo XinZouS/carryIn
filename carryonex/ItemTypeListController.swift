@@ -36,7 +36,7 @@ class ItemTypeListController: UICollectionViewController, UICollectionViewDelega
         
         setupCollectionView()
         
-        setupSubmitButton()
+        setupSubmitButton() 
     }
     
     private func addItemTypesToList(){

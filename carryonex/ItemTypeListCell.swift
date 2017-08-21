@@ -42,7 +42,7 @@ class ItemTypeListCell : UICollectionViewCell {
         b.layer.masksToBounds = true
         //b.layer.shouldRasterize = true // 使用光栅化技术将圆角缓存起来, 但图模糊了。。。
         //b.layer.rasterizationScale = b.layer.contentsScale
-        return b
+        return b 
     }()
     
     lazy var buttonAdd : UIButton = {
