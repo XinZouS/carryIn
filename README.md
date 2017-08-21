@@ -78,7 +78,7 @@ var id: String?
 var username: String?
 var password: String?
 
-var token: String? // for login server verification
+var token: Int? // for login server verification
 
 var nickName: String?
 var phone:    String?

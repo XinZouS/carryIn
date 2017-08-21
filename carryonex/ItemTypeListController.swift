@@ -16,14 +16,27 @@ class ItemTypeListController: UICollectionViewController, UICollectionViewDelega
     
     let cellId = "ItemTypeListCellId"
     
+    lazy var submitButton : UIButton = {
+        let b = UIButton()
+        b.backgroundColor = buttonThemeColor
+        b.addTarget(self, action: #selector(submitButtonTapped), for: .touchUpInside)
+        b.setTitle("确认清单", for: .normal)
+        return b
+    }()
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
         
         addItemTypesToList()
         
+        setupNavigationBar()
+        
         setupCollectionView()
         
+        setupSubmitButton()
     }
     
     private func addItemTypesToList(){
@@ -49,20 +62,29 @@ class ItemTypeListController: UICollectionViewController, UICollectionViewDelega
         itemTypes.append(jewelry)
     }
     
+    
     private func setupCollectionView(){
         if let layout = collectionView?.collectionViewLayout as? UICollectionViewFlowLayout {
             layout.scrollDirection = .vertical
             layout.minimumLineSpacing = 1
         }
-        collectionView?.backgroundColor = .white
+        collectionView?.backgroundColor = .lightGray
+        
+        // reset content area: UIEdgeInsetsMake(top, left, bottom, right)
+        //collectionView?.contentInset = UIEdgeInsetsMake(0, 20, 50, 20) // replaced by constraints:
+        collectionView?.addConstraints(left: view.leftAnchor, top: view.topAnchor, right: view.rightAnchor, bottom: view.bottomAnchor, leftConstent: 20, topConstent: 0, rightConstent: 20, bottomConstent: 40, width: 0, height: 0)
         
         collectionView?.dataSource = self
         collectionView?.delegate = self
         collectionView?.register(ItemTypeListCell.self, forCellWithReuseIdentifier: cellId)
-        // reset content area: UIEdgeInsetsMake(top, left, bottom, right)
-        //collectionView?.contentInset = UIEdgeInsetsMake(30, 0, 30, 0)
         collectionView?.isScrollEnabled = true
     }
+    
+    private func setupSubmitButton(){
+        view.addSubview(submitButton)
+        submitButton.addConstraints(left: view.leftAnchor, top: nil, right: view.rightAnchor, bottom: view.bottomAnchor, leftConstent: 0, topConstent: 0, rightConstent: 0, bottomConstent: 0, width: 0, height: 40)
+    }
+
     
     
     /// collectionView delegate
@@ -76,9 +98,12 @@ class ItemTypeListController: UICollectionViewController, UICollectionViewDelega
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: view.frame.width, height: 56)
+        return CGSize(width: view.frame.width - 40, height: 56)
     }
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 2
+    }
     
     
     

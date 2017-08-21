@@ -15,7 +15,7 @@ class User : NSObject {
     var username: String?
     var password: String?
     
-    var token: String?
+    var token: Int?
     
     var nickName: String?
     var phone:    String?
@@ -43,7 +43,7 @@ class User : NSObject {
         id = ""
         username = ""
         password = ""
-        token = ""
+        token = 0
         nickName = ""
         phone = ""
         phoneCountryCode = "86"
@@ -63,7 +63,7 @@ class User : NSObject {
         username = dictionary["username"] as? String ?? ""
         password = dictionary["password"] as? String
         
-        token = dictionary["token"] as? String
+        token = dictionary["token"] as? Int
         
         nickName = dictionary["nickName"] as? String
         phone = dictionary["phone"] as? String
