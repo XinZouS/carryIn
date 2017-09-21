@@ -23,7 +23,7 @@ class WaitingController: UIViewController {
     
     lazy var closeButton: UIButton = {
         let b = UIButton()
-        b.setImage(#imageLiteral(resourceName: "CarryonEx_Close"), for: .normal)
+        b.setImage(#imageLiteral(resourceName: "yadianwenqing"), for: .normal)
         b.addTarget(self, action: #selector(dismissView), for: .touchUpInside)
         return b
     }()
@@ -32,7 +32,7 @@ class WaitingController: UIViewController {
         let v = UIImageView()
         v.backgroundColor = .white
         v.contentMode = .scaleAspectFit
-        v.image = #imageLiteral(resourceName: "CarryonEx_Waiting_B")
+        v.image = #imageLiteral(resourceName: "yadianwenqing")
         return v
     }()
     
@@ -62,28 +62,28 @@ class WaitingController: UIViewController {
     
     lazy var wechatButton : UIButton = {
         let b = UIButton(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
-        b.setImage(#imageLiteral(resourceName: "CarryonEx_Wechat_Icon"), for: .normal)
+        b.setImage(#imageLiteral(resourceName: "yadianwenqing"), for: .normal)
         b.addTarget(self, action: #selector(shareToWechat), for: .touchUpInside)
         return b
     }()
     
     lazy var momentButton : UIButton = {
         let b = UIButton(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
-        b.setImage(#imageLiteral(resourceName: "CarryonEx_Moment_Icon"), for: .normal)
+        b.setImage(#imageLiteral(resourceName: "yadianwenqing"), for: .normal)
         b.addTarget(self, action: #selector(shareToMonent), for: .touchUpInside)
         return b
     }()
     
     lazy var weiboButton : UIButton = {
         let b = UIButton(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
-        b.setImage(#imageLiteral(resourceName: "CarryonEx_Weibo_Icon"), for: .normal)
+        b.setImage(#imageLiteral(resourceName: "yadianwenqing"), for: .normal)
         b.addTarget(self, action: #selector(shareToWeibo), for: .touchUpInside)
         return b
     }()
     
     lazy var facebookButton : UIButton = {
         let b = UIButton(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
-        b.setImage(#imageLiteral(resourceName: "CarryonEx_Facebook_Icon"), for: .normal)
+        b.setImage(#imageLiteral(resourceName: "yadianwenqing"), for: .normal)
         b.addTarget(self, action: #selector(shareToFacebook), for: .touchUpInside)
         return b
     }()
@@ -162,7 +162,7 @@ class WaitingController: UIViewController {
         imageView.addConstraints(left: nil, top: titleLabel.bottomAnchor, right: nil, bottom: nil, leftConstent: 0, topConstent: 30, rightConstent: 0, bottomConstent: 0, width: imgWidth, height: imgHeigh)
         imageView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         
-        imageView.image = isForShipper ? #imageLiteral(resourceName: "CarryonEx_waiting_A") : #imageLiteral(resourceName: "CarryonEx_Waiting_B")
+        imageView.image = #imageLiteral(resourceName: "yadianwenqing")
     }
     func setupHintTextView(){
         let sideMargin: CGFloat = 40
