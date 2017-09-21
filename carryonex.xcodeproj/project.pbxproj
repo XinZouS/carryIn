@@ -31,6 +31,8 @@
 		66A16AFA1F3B704A00B32AD3 /* HomePageController++.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A16AF91F3B704A00B32AD3 /* HomePageController++.swift */; };
 		66A16AFE1F3BA82000B32AD3 /* PageContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A16AFD1F3BA82000B32AD3 /* PageContainer.swift */; };
 		66A16B001F3BB3AA00B32AD3 /* SideMenuLeftController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A16AFF1F3BB3AA00B32AD3 /* SideMenuLeftController.swift */; };
+		66B31C1B1F742011005A4382 /* WaitingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B31C1A1F742011005A4382 /* WaitingController.swift */; };
+		66B31C1D1F742049005A4382 /* WaitingController++.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B31C1C1F742049005A4382 /* WaitingController++.swift */; };
 		66BB08301F487E3E00935950 /* ItemTypeListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66BB082F1F487E3E00935950 /* ItemTypeListController.swift */; };
 		66BB08321F487E5000935950 /* ItemTypeListController++.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66BB08311F487E5000935950 /* ItemTypeListController++.swift */; };
 		66BB08341F48967600935950 /* ItemCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66BB08331F48967600935950 /* ItemCategory.swift */; };
@@ -76,6 +78,8 @@
 		66A16AFF1F3BB3AA00B32AD3 /* SideMenuLeftController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuLeftController.swift; sourceTree = "<group>"; };
 		66B1CA8F1F41FA4700EA0A43 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		66B1CA901F41FA7000EA0A43 /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
+		66B31C1A1F742011005A4382 /* WaitingController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaitingController.swift; sourceTree = "<group>"; };
+		66B31C1C1F742049005A4382 /* WaitingController++.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "WaitingController++.swift"; sourceTree = "<group>"; };
 		66BB082F1F487E3E00935950 /* ItemTypeListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemTypeListController.swift; sourceTree = "<group>"; };
 		66BB08311F487E5000935950 /* ItemTypeListController++.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ItemTypeListController++.swift"; sourceTree = "<group>"; };
 		66BB08331F48967600935950 /* ItemCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemCategory.swift; sourceTree = "<group>"; };
@@ -175,6 +179,7 @@
 				66C975741F3E139700450F37 /* VerificationPages */,
 				6657E9481F435B9F00755443 /* PhotoID */,
 				66BB082D1F487DC900935950 /* SenderPages */,
+				66B31C1A1F742011005A4382 /* WaitingController.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -187,6 +192,7 @@
 				66C975751F3E13B100450F37 /* VerificationPages */,
 				6657E9491F435BBA00755443 /* PhotoID */,
 				66BB082E1F487DDF00935950 /* SenderPages */,
+				66B31C1C1F742049005A4382 /* WaitingController++.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -443,10 +449,12 @@
 				66BB08361F489DEA00935950 /* ItemTypeListCell.swift in Sources */,
 				6657E94B1F435BEF00755443 /* PhotoIDController.swift in Sources */,
 				660704E81F3D062E000C09FD /* UserInfoViewCell.swift in Sources */,
+				66B31C1B1F742011005A4382 /* WaitingController.swift in Sources */,
 				66A16AF81F3B6B2E00B32AD3 /* Trip.swift in Sources */,
 				661C821D1F4A1DCC0064D1FB /* RequestController++.swift in Sources */,
 				66C9756D1F3DEFB000450F37 /* UserInfoViewController++.swift in Sources */,
 				66A16AFE1F3BA82000B32AD3 /* PageContainer.swift in Sources */,
+				66B31C1D1F742049005A4382 /* WaitingController++.swift in Sources */,
 				660704E61F3CFB15000C09FD /* UserInfoViewController.swift in Sources */,
 				660704E01F3CBD42000C09FD /* SideMenuUserInfoView.swift in Sources */,
 				66BB08301F487E3E00935950 /* ItemTypeListController.swift in Sources */,
